@@ -1,0 +1,804 @@
+/*
+ * Copyright (c) 2020 Morgan Gallant
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+syntax = "proto3";
+package plaid;
+
+/* Accounts */
+
+message Account {
+  string account_id = 1;
+  AccountBalances balances = 2;
+  string mask = 3;
+  string name = 4;
+  string official_name = 5;
+  string subtype = 6;
+  string type = 7;
+  string verification_status = 8;
+}
+
+message AccountBalances {
+  double available = 1;
+  double current = 2;
+  double limit = 3;
+  string iso_currency_code = 4;
+  string unofficial_currency_code = 5;
+}
+
+message ACHNumber {
+  string account = 1;
+  string account_id = 2;
+  string routing = 3;
+  string wire_routing = 4;
+}
+
+message EFTNumber {
+  string account = 1;
+  string account_id = 2;
+  string institution = 3;
+  string branch = 4;
+}
+
+message IBANNumber {
+  string account_id = 1;
+  string iban = 2;
+  string bic = 3;
+}
+
+message BACSNumber {
+  string account_id = 1;
+  string account = 2;
+  string sort_code = 3;
+}
+
+message GetBalancesRequestOptions {
+  repeated string account_ids = 1;
+}
+
+message GetBalancesRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  GetBalancesRequestOptions options = 4;
+}
+
+message GetBalancesResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+}
+
+message GetAccountsRequestOptions {
+  repeated string account_ids = 1;
+}
+
+message GetAccountsRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  GetAccountsRequestOptions options = 4;
+}
+
+message GetAccountsResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+  Item item = 3;
+}
+
+message GetAccountsOptions {
+  repeated string account_ids = 1;
+}
+
+message GetBalancesOptions {
+  repeated string account_ids = 1;
+}
+
+/* Assets */
+
+message AssetReport {
+  string asset_report_id = 1;
+  string client_report_id = 2;
+  string date_generated = 3;
+  int64 days_requested = 4;
+  repeated AssetReportItem items = 5;
+  AssetReportUser user = 6;
+}
+
+message AssetReportItem {
+  repeated Account accounts = 1;
+  string date_last_updated = 2;
+  string institution_id = 3;
+  string institution_name = 4;
+  string item_id = 5;
+}
+
+message AssetReportUser {
+  string client_user_id = 1;
+  string email = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string middle_name = 5;
+  string phone_number = 6;
+  string ssn = 7;
+}
+
+message GetAssetReportRequest {
+  string client_id = 1;
+  string secret = 2;
+  string asset_report_token = 3;
+}
+
+message GetAssetReportResponse {
+  string request_id = 1;
+  AssetReport report = 2;
+  repeated string warnings = 3;
+}
+
+message RemoveAssetReportRequest {
+  string client_id = 1;
+  string secret = 2;
+  string asset_report_token = 3;
+}
+
+message RemoveAssetReportResponse {
+  string request_id = 1;
+  bool removed = 2;
+}
+
+message CreateAuditCopyRequest {
+  string client_id = 1;
+  string secret = 2;
+  string asset_report_token = 3;
+  string auditor_id = 4;
+}
+
+message CreateAuditCopyRespose {
+  string request_id = 1;
+  string audit_copy_token = 2;
+}
+
+/* Auth */
+
+message GetAuthRequestOptions {
+  repeated string account_ids = 1;
+}
+
+message GetAuthRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  GetAuthRequestOptions options = 4;
+}
+
+message AccountNumberCollection {
+  repeated ACHNumber ach = 1;
+  repeated EFTNumber eft = 2;
+  repeated IBANNumber international = 3;
+  repeated BACSNumber bacs = 4;
+}
+
+message GetAuthResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+  AccountNumberCollection numbers = 3;
+}
+
+message GetAuthOptions {
+  repeated string account_ids = 1;
+}
+
+/* Categories */
+
+message Category {
+  string category_id = 1;
+  string group = 2;
+  repeated string hierarchy = 3;
+}
+
+message GetCategoriesResponse {
+  string request_id = 1;
+  repeated Category categories = 2;
+}
+
+/* Errors */
+
+message Error {
+  string request_id = 1;
+  string error_type = 2;
+  string error_code = 3;
+  string error_message = 4;
+  string display_message = 5;
+  int64 status_code = 6;
+}
+
+/* Holdings */
+
+message Security {
+  string security_id = 1;
+  string cusip = 2;
+  string sedol = 3;
+  string isin = 4;
+  string institution_security_id = 5;
+  string institution_id = 6;
+  string proxy_security_id = 7;
+  string name = 8;
+  string ticker_symbol = 9;
+  bool is_cash_equivalent = 10;
+  string type = 11;
+  double close_price = 12;
+  string close_price_as_of = 13;
+  string iso_currency_code = 14;
+  string unofficial_currency_code = 15;
+}
+
+message Holding {
+  string account_id = 1;
+  string security_id = 2;
+  double institution_value = 3;
+  double institution_price = 4;
+  double quantity = 5;
+  string institution_price_as_of = 6;
+  double cost_basis = 7;
+  string iso_currency_code = 8;
+  string unofficial_currency_code = 9;
+}
+
+message GetHoldingsRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  GetHoldingsOptions options = 4;
+}
+
+message GetHoldingsOptions {
+  repeated string account_ids = 1;
+}
+
+message GetHoldingsResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+  Item item = 3;
+  repeated Security securities = 4;
+  repeated Holding holdings = 5;
+}
+
+/* Identity */
+
+message Identity {
+  repeated Address addresses = 1;
+  repeated Email emails = 2;
+  repeated string names = 3;
+  repeated PhoneNumber phone_numbers = 4;
+}
+
+message Address {
+  AddressData data = 1;
+  bool primary = 2;
+}
+
+message AddressData {
+  string city = 1;
+  string region = 2;
+  string street = 3;
+  string postal_code = 4;
+  string country = 5;
+}
+
+message Email {
+  string data = 1;
+  bool primary = 2;
+  string type = 3;
+}
+
+message PhoneNumber {
+  bool primary = 1;
+  string type = 2;
+  string data = 3;
+}
+
+message GetIdentityRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message AccountWithOwners {
+  repeated Identity owners = 1;
+  string account_id = 2;
+  AccountBalances balances = 3;
+  string mask = 4;
+  string name = 5;
+  string official_name = 6;
+  string subtype = 7;
+  string type = 8;
+  string verification_status = 9;
+}
+
+message GetIdentityResponse {
+  string request_id = 1;
+  repeated AccountWithOwners accounts = 2;
+  Item item = 3;
+}
+
+/* Income */
+
+message Income {
+  repeated IncomeStream income_streams = 1;
+  int64 last_year_income = 2;
+  int64 last_year_income_before_tax = 3;
+  int64 projected_yearly_income = 4;
+  int64 projected_yearly_income_before_tax = 5;
+  int64 max_number_of_overlapping_income_streams = 6;
+  int64 number_of_income_streams = 7;
+}
+
+message IncomeStream {
+  double confidence = 1;
+  int64 days = 2;
+  int64 monthly_income = 3;
+  string name = 4;
+}
+
+message GetIncomeRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message GetIncomeResponse {
+  string request_id = 1;
+  Income income = 2;
+}
+
+/* Institutions */
+
+message Institution {
+  repeated Credential credentials = 1;
+  bool has_mfa = 2;
+  string institution_id = 3;
+  repeated string mfa = 4;
+  string name = 5;
+  repeated string products = 6;
+  repeated string country_codes = 7;
+  InstitutionStatus status = 8;
+  string primary_color = 9;
+  string url = 10;
+  string logo = 11;
+}
+
+message InstitutionStatus {
+  ItemLogins item_logins = 1;
+}
+
+message ItemLogins {
+  string status = 1;
+  string last_status_change = 2;
+  InstitutionStatusBreakdown breakdown = 3;
+}
+
+message InstitutionStatusBreakdown {
+  double success = 1;
+  double error_plaid = 2;
+  double error_institution = 3;
+}
+
+message Credential {
+  string label = 1;
+  string name = 2;
+  string type = 3;
+}
+
+message GetInstitutionsRequest {
+  string client_id = 1;
+  string secret = 2;
+  int64 count = 3;
+  int64 offset = 4;
+  GetInstitutionOptions options = 5;
+}
+
+message GetInstitutionOptions {
+  repeated string products = 1;
+  bool include_optional_metadata = 2;
+  repeated string country_codes = 3;
+}
+
+message GetInstitutionsResponse {
+  string request_id = 1;
+  repeated Institution institutions = 2;
+  int64 total = 3;
+}
+
+message GetInstitutionByIDRequest {
+  string institution_id = 1;
+  string public_key = 2;
+  GetInstitutionByIDOptions options = 3;
+}
+
+message GetInstitutionByIDOptions {
+  bool include_optional_metadata = 1;
+  bool include_status = 2;
+}
+
+message GetInstitutionByIDResponse {
+  string request_id = 1;
+  Institution institution = 2;
+}
+
+message SearchInstitutionsRequest {
+  string query = 1;
+  repeated string products = 2;
+  string public_key = 3;
+  SearchInstitutionsOptions options = 4;
+}
+
+message SearchInstitutionsOptions {
+  bool include_optional_metadata = 1;
+  repeated string country_codes = 2;
+  repeated string routing_numbers = 3;
+}
+
+message SearchInstitutionsResponse {
+  string request_id = 1;
+  repeated Institution institutions = 2;
+}
+
+/* Investment Transactions */
+
+message InvestmentTransaction {
+  string investment_transaction_id = 1;
+  string account_id = 2;
+  string security_id = 3;
+  string cancel_transaction_id = 4;
+  string date = 5;
+  string name = 6;
+  double quantity = 7;
+  double amount = 8;
+  double price = 9;
+  double fees = 10;
+  string type = 11;
+  string iso_currency_code = 12;
+  string unofficial_currency_code = 13;
+}
+
+message GetInvestmentTransactionsResponse {
+  string request_id = 1;
+  Item item = 2;
+  repeated Account accounts = 3;
+  repeated InvestmentTransaction investment_transactions = 4;
+  repeated Security securities = 5;
+  int64 total_investment_transactions = 6;
+}
+
+message GetInvestmentTransactionsOptions {
+  string start_date = 1;
+  string end_date = 2;
+  repeated string account_ids = 3;
+  int64 count = 4;
+  int64 offset = 5;
+}
+
+message GetInvestmentTransactionsRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  string start_date = 4;
+  string end_date = 5;
+  GetInvestmentTransactionsRequestOptions options = 6;
+}
+
+message GetInvestmentTransactionsRequestOptions {
+  repeated string account_ids = 1;
+  int64 count = 2;
+  int64 offset = 3;
+}
+
+/* Items */
+
+message Item {
+  repeated string available_products = 1;
+  repeated string billed_products = 2;
+  Error error = 3;
+  string institution_id = 4;
+  string item_id = 5;
+  string webhook = 6;
+}
+
+message GetItemRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message GetItemResponse {
+  string request_id = 1;
+  Item item = 2;
+}
+
+message RemoveItemRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message RemoveItemResponse {
+  string request_id = 1;
+  bool removed = 2;
+}
+
+message UpdateItemWebhookRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  string webhook = 4;
+}
+
+message UpdateItemWebhookResponse {
+  string request_id = 1;
+  Item item = 2;
+}
+
+message InvalidateAccessTokenRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message InvalidateAccessTokenResponse {
+  string request_id = 1;
+  string new_access_token = 2;
+}
+
+message UpdateAccessTokenVersionRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token_v2 = 3;
+}
+
+message UpdateAccessTokenVersionResponse {
+  string request_id = 1;
+  string access_token = 2;
+  string item_id = 3;
+}
+
+message CreatePublicTokenRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message CreatePublicTokenResponse {
+  string request_id = 1;
+  string public_token = 2;
+}
+
+message ExchangePublicTokenRequest {
+  string client_id = 1;
+  string secret = 2;
+  string public_token = 3;
+}
+
+message ExchangePublicTokenResponse {
+  string request_id = 1;
+  string access_token = 2;
+  string item_id = 3;
+}
+
+/* Liabilities */
+
+message StudentLoanLiability {
+  string account_id = 1;
+  string account_number = 2;
+  repeated string disbursement_dates = 3;
+  string expected_payoff_date = 4;
+  string guarantor = 5;
+  double interest_rate_percentage = 6;
+  bool is_overdue = 7;
+  double last_payment_amount = 8;
+  string last_payment_date = 9;
+  double last_satement_balance = 10;
+  string last_statement_issue_date = 11;
+  string loan_name = 12;
+  StudentLoanStatus loan_status = 13;
+  double minimum_payment_amount = 14;
+  string next_payment_due_date = 15;
+  string origination_date = 16;
+  double origination_principal_amount = 17;
+  double outstanding_interest_amount = 18;
+  string payment_reference_number = 19;
+  PSLFStatus pslf_status = 20;
+  StudentLoanRepaymentPlan repayment_plan = 21;
+  string sequence_number = 22;
+  StudentLoanServicerAddress servicer_address = 23;
+  double ytd_interest_paid = 24;
+  double ytd_principal_paid = 25;
+}
+
+message PSLFStatus {
+  string estimated_eligibility_date = 1;
+  int64 payments_made = 2;
+  int64 payments_remaining = 3;
+}
+
+message StudentLoanServicerAddress {
+  string city = 1;
+  string country = 2;
+  string postal_code = 3;
+  string region = 4;
+  string street = 5;
+}
+
+message StudentLoanStatus {
+  string type = 1;
+  string end_date = 2;
+}
+
+message StudentLoanRepaymentPlan {
+  string type = 1;
+  string description = 2;
+}
+
+message GetLiabilitiesRequestOptions {
+  repeated string account_ids = 1;
+}
+
+message GetLiabilitiesRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  GetLiabilitiesRequestOptions options = 4;
+}
+
+message GetLiabilitiesResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+  Item item = 3;
+  Liabilities liabilities = 4;
+}
+
+message Liabilities {
+  repeated StudentLoanLiability student = 1;
+}
+
+message GetLiabilitiesOptions {
+  repeated string account_ids = 1;
+}
+
+/* Processor */
+
+message CreateProcessorTokenRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  string account_id = 4;
+}
+
+message CreateProcessorTokenResponse {
+  string request_id = 1;
+  string processor_token = 2;
+}
+
+message CreateStripeTokenRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  string account_id = 4;
+}
+
+message CreateStripeTokenResponse {
+  string request_id = 1;
+  string stripe_bank_account_token = 2;
+}
+
+/* Sandbox */
+
+message CreateSandboxPublicTokenRequest {
+  string institution_id = 1;
+  repeated string inital_products = 2;
+  string public_key = 3;
+}
+
+message CreateSandboxPublicTokenResponse {
+  string request_id = 1;
+  string public_token = 2;
+}
+
+message ResetSandboxItemRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+}
+
+message ResetSandboxItemResponse {
+  string request_id = 1;
+  bool reset_login = 2;
+}
+
+/* Transactions */
+
+message Transaction {
+  string account_id = 1;
+  double amount = 2;
+  string iso_currency_code = 3;
+  string unofficial_currency_code = 4;
+  repeated string category = 5;
+  string category_id = 6;
+  string date = 7;
+  Location location = 8;
+  string name = 9;
+  PaymentMeta payment_meta = 10;
+  bool pending = 11;
+  string pending_transaction_id = 12;
+  string account_owner = 13;
+  string transaction_id = 14;
+  string transaction_type = 15;
+}
+
+message Location {
+  string addreess = 1;
+  string city = 2;
+  double lat = 3;
+  double lon = 4;
+  string region = 5;
+  string store_number = 6;
+  string postal_code = 7;
+  string country = 8;
+}
+
+message PaymentMeta {
+  string by_order_of = 1;
+  string payee = 2;
+  string payer = 3;
+  string payment_method = 4;
+  string payment_processor = 5;
+  string ppd_id = 6;
+  string reason = 7;
+  string reference_number = 8;
+}
+
+message GetTransactionsRequestOptions {
+  repeated string account_ids = 1;
+  int64 count = 2;
+  int64 offset = 3;
+}
+
+message GetTransactionsRequest {
+  string client_id = 1;
+  string secret = 2;
+  string access_token = 3;
+  string start_date = 4;
+  string end_date = 5;
+  GetTransactionsRequestOptions options = 6;
+}
+
+message GetTransactionsResponse {
+  string request_id = 1;
+  repeated Account accounts = 2;
+  Item item = 3;
+  repeated Transaction transactions = 4;
+  int64 total_transactions = 5;
+}
+
+message GetTransactionOptions {
+  string start_date = 1;
+  string end_date = 2;
+  repeated string account_ids = 3;
+  int64 count = 4;
+  int64 offset = 5;
+}
