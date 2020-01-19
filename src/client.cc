@@ -702,10 +702,42 @@ Client::CreateStripeToken(const std::string &access_token,
 StatusWrapped<CreateSandboxPublicTokenResponse>
 Client::CreateSandboxPublicToken(
     const std::string &institution_id,
-    const std::vector<std::string> &initial_products) {}
+    const std::vector<std::string> &initial_products) {
+  if (institution_id == "")
+    return StatusWrapped<CreateSandboxPublicTokenResponse>::FromStatus(
+        Status::MissingInfo("missing institution id"));
+  if (initial_products.size() == 0)
+    return StatusWrapped<CreateSandboxPublicTokenResponse>::FromStatus(
+        Status::MissingInfo("missing initial products"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("sandbox/public_token/create"));
+    auto req_data = CreateSandboxPublicTokenRequest();
+    req_data.set_institution_id(institution_id);
+    req_data.set_public_key(creds_.public_key);
+    for (const auto &product : initial_products)
+      req_data.add_inital_products(product);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreateSandboxPublicTokenResponse>(req);
+}
 
 StatusWrapped<ResetSandboxItemResponse>
-Client::ResetSandboxItem(const std::string &access_token) {}
+Client::ResetSandboxItem(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<ResetSandboxItemResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("sandbox/item/reset_login"));
+    auto req_data = ResetSandboxItemRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<ResetSandboxItemResponse>(req);
+}
 
 // Transactions
 
