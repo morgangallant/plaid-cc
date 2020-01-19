@@ -35,7 +35,7 @@ extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal:
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetBalancesRequestOptions_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetHoldingsOptions_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInstitutionByIDOptions_plaid_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInstitutionOptions_plaid_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInstitutionsOptions_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInvestmentTransactionsRequestOptions_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetLiabilitiesRequestOptions_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetTransactionsRequestOptions_plaid_2eproto;
@@ -279,10 +279,10 @@ class GetInstitutionsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInstitutionsRequest> _instance;
 } _GetInstitutionsRequest_default_instance_;
-class GetInstitutionOptionsDefaultTypeInternal {
+class GetInstitutionsOptionsDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInstitutionOptions> _instance;
-} _GetInstitutionOptions_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInstitutionsOptions> _instance;
+} _GetInstitutionsOptions_default_instance_;
 class GetInstitutionsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetInstitutionsResponse> _instance;
@@ -1265,19 +1265,19 @@ static void InitDefaultsscc_info_GetInstitutionByIDResponse_plaid_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetInstitutionByIDResponse_plaid_2eproto}, {
       &scc_info_Institution_plaid_2eproto.base,}};
 
-static void InitDefaultsscc_info_GetInstitutionOptions_plaid_2eproto() {
+static void InitDefaultsscc_info_GetInstitutionsOptions_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::plaid::_GetInstitutionOptions_default_instance_;
-    new (ptr) ::plaid::GetInstitutionOptions();
+    void* ptr = &::plaid::_GetInstitutionsOptions_default_instance_;
+    new (ptr) ::plaid::GetInstitutionsOptions();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::plaid::GetInstitutionOptions::InitAsDefaultInstance();
+  ::plaid::GetInstitutionsOptions::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInstitutionOptions_plaid_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetInstitutionOptions_plaid_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetInstitutionsOptions_plaid_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetInstitutionsOptions_plaid_2eproto}, {}};
 
 static void InitDefaultsscc_info_GetInstitutionsRequest_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1292,7 +1292,7 @@ static void InitDefaultsscc_info_GetInstitutionsRequest_plaid_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetInstitutionsRequest_plaid_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetInstitutionsRequest_plaid_2eproto}, {
-      &scc_info_GetInstitutionOptions_plaid_2eproto.base,}};
+      &scc_info_GetInstitutionsOptions_plaid_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetInstitutionsResponse_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2543,13 +2543,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plaid_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsRequest, offset_),
   PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsRequest, options_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionOptions, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsOptions, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionOptions, products_),
-  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionOptions, include_optional_metadata_),
-  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionOptions, country_codes_),
+  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsOptions, products_),
+  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsOptions, include_optional_metadata_),
+  PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsOptions, country_codes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::plaid::GetInstitutionsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3082,7 +3082,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 455, -1, sizeof(::plaid::InstitutionStatusBreakdown)},
   { 463, -1, sizeof(::plaid::Credential)},
   { 471, -1, sizeof(::plaid::GetInstitutionsRequest)},
-  { 481, -1, sizeof(::plaid::GetInstitutionOptions)},
+  { 481, -1, sizeof(::plaid::GetInstitutionsOptions)},
   { 489, -1, sizeof(::plaid::GetInstitutionsResponse)},
   { 497, -1, sizeof(::plaid::GetInstitutionByIDRequest)},
   { 505, -1, sizeof(::plaid::GetInstitutionByIDOptions)},
@@ -3192,7 +3192,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_InstitutionStatusBreakdown_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_Credential_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionOptions_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionsOptions_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionByIDRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetInstitutionByIDOptions_default_instance_),
@@ -3396,178 +3396,178 @@ const char descriptor_table_protodef_plaid_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "tutionStatusBreakdown\022\017\n\007success\030\001 \001(\001\022\023"
   "\n\013error_plaid\030\002 \001(\001\022\031\n\021error_institution"
   "\030\003 \001(\001\"7\n\nCredential\022\r\n\005label\030\001 \001(\t\022\014\n\004n"
-  "ame\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"\211\001\n\026GetInstituti"
+  "ame\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"\212\001\n\026GetInstituti"
   "onsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030"
-  "\002 \001(\t\022\r\n\005count\030\003 \001(\003\022\016\n\006offset\030\004 \001(\003\022-\n\007"
-  "options\030\005 \001(\0132\034.plaid.GetInstitutionOpti"
-  "ons\"c\n\025GetInstitutionOptions\022\020\n\010products"
-  "\030\001 \003(\t\022!\n\031include_optional_metadata\030\002 \001("
-  "\010\022\025\n\rcountry_codes\030\003 \003(\t\"f\n\027GetInstituti"
-  "onsResponse\022\022\n\nrequest_id\030\001 \001(\t\022(\n\014insti"
-  "tutions\030\002 \003(\0132\022.plaid.Institution\022\r\n\005tot"
-  "al\030\003 \001(\003\"z\n\031GetInstitutionByIDRequest\022\026\n"
-  "\016institution_id\030\001 \001(\t\022\022\n\npublic_key\030\002 \001("
-  "\t\0221\n\007options\030\003 \001(\0132 .plaid.GetInstitutio"
-  "nByIDOptions\"V\n\031GetInstitutionByIDOption"
-  "s\022!\n\031include_optional_metadata\030\001 \001(\010\022\026\n\016"
-  "include_status\030\002 \001(\010\"Y\n\032GetInstitutionBy"
-  "IDResponse\022\022\n\nrequest_id\030\001 \001(\t\022\'\n\013instit"
-  "ution\030\002 \001(\0132\022.plaid.Institution\"\203\001\n\031Sear"
-  "chInstitutionsRequest\022\r\n\005query\030\001 \001(\t\022\020\n\010"
-  "products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\0221\n\007op"
-  "tions\030\004 \001(\0132 .plaid.SearchInstitutionsOp"
-  "tions\"n\n\031SearchInstitutionsOptions\022!\n\031in"
-  "clude_optional_metadata\030\001 \001(\010\022\025\n\rcountry"
-  "_codes\030\002 \003(\t\022\027\n\017routing_numbers\030\003 \003(\t\"Z\n"
-  "\032SearchInstitutionsResponse\022\022\n\nrequest_i"
-  "d\030\001 \001(\t\022(\n\014institutions\030\002 \003(\0132\022.plaid.In"
-  "stitution\"\250\002\n\025InvestmentTransaction\022!\n\031i"
-  "nvestment_transaction_id\030\001 \001(\t\022\022\n\naccoun"
-  "t_id\030\002 \001(\t\022\023\n\013security_id\030\003 \001(\t\022\035\n\025cance"
-  "l_transaction_id\030\004 \001(\t\022\014\n\004date\030\005 \001(\t\022\014\n\004"
-  "name\030\006 \001(\t\022\020\n\010quantity\030\007 \001(\001\022\016\n\006amount\030\010"
-  " \001(\001\022\r\n\005price\030\t \001(\001\022\014\n\004fees\030\n \001(\001\022\014\n\004typ"
-  "e\030\013 \001(\t\022\031\n\021iso_currency_code\030\014 \001(\t\022 \n\030un"
-  "official_currency_code\030\r \001(\t\"\377\001\n!GetInve"
-  "stmentTransactionsResponse\022\022\n\nrequest_id"
-  "\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\022 \n\010acc"
-  "ounts\030\003 \003(\0132\016.plaid.Account\022=\n\027investmen"
-  "t_transactions\030\004 \003(\0132\034.plaid.InvestmentT"
-  "ransaction\022#\n\nsecurities\030\005 \003(\0132\017.plaid.S"
-  "ecurity\022%\n\035total_investment_transactions"
-  "\030\006 \001(\003\"|\n GetInvestmentTransactionsOptio"
-  "ns\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t"
-  "\022\023\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006"
-  "offset\030\005 \001(\003\"\302\001\n GetInvestmentTransactio"
-  "nsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002"
-  " \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date"
-  "\030\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\022\?\n\007options\030\006 \001("
-  "\0132..plaid.GetInvestmentTransactionsReque"
-  "stOptions\"]\n\'GetInvestmentTransactionsRe"
-  "questOptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005cou"
-  "nt\030\002 \001(\003\022\016\n\006offset\030\003 \001(\003\"\222\001\n\004Item\022\032\n\022ava"
-  "ilable_products\030\001 \003(\t\022\027\n\017billed_products"
-  "\030\002 \003(\t\022\033\n\005error\030\003 \001(\0132\014.plaid.Error\022\026\n\016i"
-  "nstitution_id\030\004 \001(\t\022\017\n\007item_id\030\005 \001(\t\022\017\n\007"
-  "webhook\030\006 \001(\t\"I\n\016GetItemRequest\022\021\n\tclien"
-  "t_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_tok"
-  "en\030\003 \001(\t\"@\n\017GetItemResponse\022\022\n\nrequest_i"
-  "d\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"L\n\021Re"
-  "moveItemRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
-  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"9\n\022Remo"
-  "veItemResponse\022\022\n\nrequest_id\030\001 \001(\t\022\017\n\007re"
-  "moved\030\002 \001(\010\"d\n\030UpdateItemWebhookRequest\022"
-  "\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014ac"
-  "cess_token\030\003 \001(\t\022\017\n\007webhook\030\004 \001(\t\"J\n\031Upd"
-  "ateItemWebhookResponse\022\022\n\nrequest_id\030\001 \001"
-  "(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"W\n\034Invalid"
-  "ateAccessTokenRequest\022\021\n\tclient_id\030\001 \001(\t"
-  "\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"M"
-  "\n\035InvalidateAccessTokenResponse\022\022\n\nreque"
-  "st_id\030\001 \001(\t\022\030\n\020new_access_token\030\002 \001(\t\"]\n"
-  "\037UpdateAccessTokenVersionRequest\022\021\n\tclie"
-  "nt_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\027\n\017access_to"
-  "ken_v2\030\003 \001(\t\"]\n UpdateAccessTokenVersion"
-  "Response\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014access_t"
-  "oken\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t\"S\n\030CreatePub"
+  "\002 \001(\t\022\r\n\005count\030\003 \001(\003\022\016\n\006offset\030\004 \001(\003\022.\n\007"
+  "options\030\005 \001(\0132\035.plaid.GetInstitutionsOpt"
+  "ions\"d\n\026GetInstitutionsOptions\022\020\n\010produc"
+  "ts\030\001 \003(\t\022!\n\031include_optional_metadata\030\002 "
+  "\001(\010\022\025\n\rcountry_codes\030\003 \003(\t\"f\n\027GetInstitu"
+  "tionsResponse\022\022\n\nrequest_id\030\001 \001(\t\022(\n\014ins"
+  "titutions\030\002 \003(\0132\022.plaid.Institution\022\r\n\005t"
+  "otal\030\003 \001(\003\"z\n\031GetInstitutionByIDRequest\022"
+  "\026\n\016institution_id\030\001 \001(\t\022\022\n\npublic_key\030\002 "
+  "\001(\t\0221\n\007options\030\003 \001(\0132 .plaid.GetInstitut"
+  "ionByIDOptions\"V\n\031GetInstitutionByIDOpti"
+  "ons\022!\n\031include_optional_metadata\030\001 \001(\010\022\026"
+  "\n\016include_status\030\002 \001(\010\"Y\n\032GetInstitution"
+  "ByIDResponse\022\022\n\nrequest_id\030\001 \001(\t\022\'\n\013inst"
+  "itution\030\002 \001(\0132\022.plaid.Institution\"\203\001\n\031Se"
+  "archInstitutionsRequest\022\r\n\005query\030\001 \001(\t\022\020"
+  "\n\010products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\0221\n\007"
+  "options\030\004 \001(\0132 .plaid.SearchInstitutions"
+  "Options\"n\n\031SearchInstitutionsOptions\022!\n\031"
+  "include_optional_metadata\030\001 \001(\010\022\025\n\rcount"
+  "ry_codes\030\002 \003(\t\022\027\n\017routing_numbers\030\003 \003(\t\""
+  "Z\n\032SearchInstitutionsResponse\022\022\n\nrequest"
+  "_id\030\001 \001(\t\022(\n\014institutions\030\002 \003(\0132\022.plaid."
+  "Institution\"\250\002\n\025InvestmentTransaction\022!\n"
+  "\031investment_transaction_id\030\001 \001(\t\022\022\n\nacco"
+  "unt_id\030\002 \001(\t\022\023\n\013security_id\030\003 \001(\t\022\035\n\025can"
+  "cel_transaction_id\030\004 \001(\t\022\014\n\004date\030\005 \001(\t\022\014"
+  "\n\004name\030\006 \001(\t\022\020\n\010quantity\030\007 \001(\001\022\016\n\006amount"
+  "\030\010 \001(\001\022\r\n\005price\030\t \001(\001\022\014\n\004fees\030\n \001(\001\022\014\n\004t"
+  "ype\030\013 \001(\t\022\031\n\021iso_currency_code\030\014 \001(\t\022 \n\030"
+  "unofficial_currency_code\030\r \001(\t\"\377\001\n!GetIn"
+  "vestmentTransactionsResponse\022\022\n\nrequest_"
+  "id\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\022 \n\010a"
+  "ccounts\030\003 \003(\0132\016.plaid.Account\022=\n\027investm"
+  "ent_transactions\030\004 \003(\0132\034.plaid.Investmen"
+  "tTransaction\022#\n\nsecurities\030\005 \003(\0132\017.plaid"
+  ".Security\022%\n\035total_investment_transactio"
+  "ns\030\006 \001(\003\"|\n GetInvestmentTransactionsOpt"
+  "ions\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001"
+  "(\t\022\023\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016"
+  "\n\006offset\030\005 \001(\003\"\302\001\n GetInvestmentTransact"
+  "ionsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret"
+  "\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_da"
+  "te\030\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\022\?\n\007options\030\006 "
+  "\001(\0132..plaid.GetInvestmentTransactionsReq"
+  "uestOptions\"]\n\'GetInvestmentTransactions"
+  "RequestOptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005c"
+  "ount\030\002 \001(\003\022\016\n\006offset\030\003 \001(\003\"\222\001\n\004Item\022\032\n\022a"
+  "vailable_products\030\001 \003(\t\022\027\n\017billed_produc"
+  "ts\030\002 \003(\t\022\033\n\005error\030\003 \001(\0132\014.plaid.Error\022\026\n"
+  "\016institution_id\030\004 \001(\t\022\017\n\007item_id\030\005 \001(\t\022\017"
+  "\n\007webhook\030\006 \001(\t\"I\n\016GetItemRequest\022\021\n\tcli"
+  "ent_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_t"
+  "oken\030\003 \001(\t\"@\n\017GetItemResponse\022\022\n\nrequest"
+  "_id\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"L\n\021"
+  "RemoveItemRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006"
+  "secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"9\n\022Re"
+  "moveItemResponse\022\022\n\nrequest_id\030\001 \001(\t\022\017\n\007"
+  "removed\030\002 \001(\010\"d\n\030UpdateItemWebhookReques"
+  "t\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014"
+  "access_token\030\003 \001(\t\022\017\n\007webhook\030\004 \001(\t\"J\n\031U"
+  "pdateItemWebhookResponse\022\022\n\nrequest_id\030\001"
+  " \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"W\n\034Inval"
+  "idateAccessTokenRequest\022\021\n\tclient_id\030\001 \001"
+  "(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t"
+  "\"M\n\035InvalidateAccessTokenResponse\022\022\n\nreq"
+  "uest_id\030\001 \001(\t\022\030\n\020new_access_token\030\002 \001(\t\""
+  "]\n\037UpdateAccessTokenVersionRequest\022\021\n\tcl"
+  "ient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\027\n\017access_"
+  "token_v2\030\003 \001(\t\"]\n UpdateAccessTokenVersi"
+  "onResponse\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014access"
+  "_token\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t\"S\n\030CreateP"
+  "ublicTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006"
+  "secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"E\n\031Cr"
+  "eatePublicTokenResponse\022\022\n\nrequest_id\030\001 "
+  "\001(\t\022\024\n\014public_token\030\002 \001(\t\"U\n\032ExchangePub"
   "licTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
-  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"E\n\031Crea"
-  "tePublicTokenResponse\022\022\n\nrequest_id\030\001 \001("
-  "\t\022\024\n\014public_token\030\002 \001(\t\"U\n\032ExchangePubli"
-  "cTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secr"
-  "et\030\002 \001(\t\022\024\n\014public_token\030\003 \001(\t\"X\n\033Exchan"
-  "gePublicTokenResponse\022\022\n\nrequest_id\030\001 \001("
-  "\t\022\024\n\014access_token\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t"
-  "\"\265\006\n\024StudentLoanLiability\022\022\n\naccount_id\030"
-  "\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\032\n\022disburs"
-  "ement_dates\030\003 \003(\t\022\034\n\024expected_payoff_dat"
-  "e\030\004 \001(\t\022\021\n\tguarantor\030\005 \001(\t\022 \n\030interest_r"
-  "ate_percentage\030\006 \001(\001\022\022\n\nis_overdue\030\007 \001(\010"
-  "\022\033\n\023last_payment_amount\030\010 \001(\001\022\031\n\021last_pa"
-  "yment_date\030\t \001(\t\022\035\n\025last_satement_balanc"
-  "e\030\n \001(\001\022!\n\031last_statement_issue_date\030\013 \001"
-  "(\t\022\021\n\tloan_name\030\014 \001(\t\022-\n\013loan_status\030\r \001"
-  "(\0132\030.plaid.StudentLoanStatus\022\036\n\026minimum_"
-  "payment_amount\030\016 \001(\001\022\035\n\025next_payment_due"
-  "_date\030\017 \001(\t\022\030\n\020origination_date\030\020 \001(\t\022$\n"
-  "\034origination_principal_amount\030\021 \001(\001\022#\n\033o"
-  "utstanding_interest_amount\030\022 \001(\001\022 \n\030paym"
-  "ent_reference_number\030\023 \001(\t\022&\n\013pslf_statu"
-  "s\030\024 \001(\0132\021.plaid.PSLFStatus\0227\n\016repayment_"
-  "plan\030\025 \001(\0132\037.plaid.StudentLoanRepaymentP"
-  "lan\022\027\n\017sequence_number\030\026 \001(\t\022;\n\020servicer"
-  "_address\030\027 \001(\0132!.plaid.StudentLoanServic"
-  "erAddress\022\031\n\021ytd_interest_paid\030\030 \001(\001\022\032\n\022"
-  "ytd_principal_paid\030\031 \001(\001\"c\n\nPSLFStatus\022\""
-  "\n\032estimated_eligibility_date\030\001 \001(\t\022\025\n\rpa"
-  "yments_made\030\002 \001(\003\022\032\n\022payments_remaining\030"
-  "\003 \001(\003\"p\n\032StudentLoanServicerAddress\022\014\n\004c"
-  "ity\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\023\n\013postal_cod"
-  "e\030\003 \001(\t\022\016\n\006region\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\""
-  "3\n\021StudentLoanStatus\022\014\n\004type\030\001 \001(\t\022\020\n\010en"
-  "d_date\030\002 \001(\t\"=\n\030StudentLoanRepaymentPlan"
-  "\022\014\n\004type\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"3\n\034G"
-  "etLiabilitiesRequestOptions\022\023\n\013account_i"
-  "ds\030\001 \003(\t\"\206\001\n\025GetLiabilitiesRequest\022\021\n\tcl"
+  "cret\030\002 \001(\t\022\024\n\014public_token\030\003 \001(\t\"X\n\033Exch"
+  "angePublicTokenResponse\022\022\n\nrequest_id\030\001 "
+  "\001(\t\022\024\n\014access_token\030\002 \001(\t\022\017\n\007item_id\030\003 \001"
+  "(\t\"\265\006\n\024StudentLoanLiability\022\022\n\naccount_i"
+  "d\030\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\032\n\022disbu"
+  "rsement_dates\030\003 \003(\t\022\034\n\024expected_payoff_d"
+  "ate\030\004 \001(\t\022\021\n\tguarantor\030\005 \001(\t\022 \n\030interest"
+  "_rate_percentage\030\006 \001(\001\022\022\n\nis_overdue\030\007 \001"
+  "(\010\022\033\n\023last_payment_amount\030\010 \001(\001\022\031\n\021last_"
+  "payment_date\030\t \001(\t\022\035\n\025last_satement_bala"
+  "nce\030\n \001(\001\022!\n\031last_statement_issue_date\030\013"
+  " \001(\t\022\021\n\tloan_name\030\014 \001(\t\022-\n\013loan_status\030\r"
+  " \001(\0132\030.plaid.StudentLoanStatus\022\036\n\026minimu"
+  "m_payment_amount\030\016 \001(\001\022\035\n\025next_payment_d"
+  "ue_date\030\017 \001(\t\022\030\n\020origination_date\030\020 \001(\t\022"
+  "$\n\034origination_principal_amount\030\021 \001(\001\022#\n"
+  "\033outstanding_interest_amount\030\022 \001(\001\022 \n\030pa"
+  "yment_reference_number\030\023 \001(\t\022&\n\013pslf_sta"
+  "tus\030\024 \001(\0132\021.plaid.PSLFStatus\0227\n\016repaymen"
+  "t_plan\030\025 \001(\0132\037.plaid.StudentLoanRepaymen"
+  "tPlan\022\027\n\017sequence_number\030\026 \001(\t\022;\n\020servic"
+  "er_address\030\027 \001(\0132!.plaid.StudentLoanServ"
+  "icerAddress\022\031\n\021ytd_interest_paid\030\030 \001(\001\022\032"
+  "\n\022ytd_principal_paid\030\031 \001(\001\"c\n\nPSLFStatus"
+  "\022\"\n\032estimated_eligibility_date\030\001 \001(\t\022\025\n\r"
+  "payments_made\030\002 \001(\003\022\032\n\022payments_remainin"
+  "g\030\003 \001(\003\"p\n\032StudentLoanServicerAddress\022\014\n"
+  "\004city\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\023\n\013postal_c"
+  "ode\030\003 \001(\t\022\016\n\006region\030\004 \001(\t\022\016\n\006street\030\005 \001("
+  "\t\"3\n\021StudentLoanStatus\022\014\n\004type\030\001 \001(\t\022\020\n\010"
+  "end_date\030\002 \001(\t\"=\n\030StudentLoanRepaymentPl"
+  "an\022\014\n\004type\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"3\n"
+  "\034GetLiabilitiesRequestOptions\022\023\n\013account"
+  "_ids\030\001 \003(\t\"\206\001\n\025GetLiabilitiesRequest\022\021\n\t"
+  "client_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014acces"
+  "s_token\030\003 \001(\t\0224\n\007options\030\004 \001(\0132#.plaid.G"
+  "etLiabilitiesRequestOptions\"\222\001\n\026GetLiabi"
+  "litiesResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010ac"
+  "counts\030\002 \003(\0132\016.plaid.Account\022\031\n\004item\030\003 \001"
+  "(\0132\013.plaid.Item\022\'\n\013liabilities\030\004 \001(\0132\022.p"
+  "laid.Liabilities\";\n\013Liabilities\022,\n\007stude"
+  "nt\030\001 \003(\0132\033.plaid.StudentLoanLiability\",\n"
+  "\025GetLiabilitiesOptions\022\023\n\013account_ids\030\001 "
+  "\003(\t\"j\n\033CreateProcessorTokenRequest\022\021\n\tcl"
   "ient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_"
-  "token\030\003 \001(\t\0224\n\007options\030\004 \001(\0132#.plaid.Get"
-  "LiabilitiesRequestOptions\"\222\001\n\026GetLiabili"
-  "tiesResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010acco"
-  "unts\030\002 \003(\0132\016.plaid.Account\022\031\n\004item\030\003 \001(\013"
-  "2\013.plaid.Item\022\'\n\013liabilities\030\004 \001(\0132\022.pla"
-  "id.Liabilities\";\n\013Liabilities\022,\n\007student"
-  "\030\001 \003(\0132\033.plaid.StudentLoanLiability\",\n\025G"
-  "etLiabilitiesOptions\022\023\n\013account_ids\030\001 \003("
-  "\t\"j\n\033CreateProcessorTokenRequest\022\021\n\tclie"
-  "nt_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_to"
-  "ken\030\003 \001(\t\022\022\n\naccount_id\030\004 \001(\t\"K\n\034CreateP"
-  "rocessorTokenResponse\022\022\n\nrequest_id\030\001 \001("
-  "\t\022\027\n\017processor_token\030\002 \001(\t\"g\n\030CreateStri"
-  "peTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006sec"
-  "ret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\naccou"
-  "nt_id\030\004 \001(\t\"R\n\031CreateStripeTokenResponse"
-  "\022\022\n\nrequest_id\030\001 \001(\t\022!\n\031stripe_bank_acco"
-  "unt_token\030\002 \001(\t\"f\n\037CreateSandboxPublicTo"
-  "kenRequest\022\026\n\016institution_id\030\001 \001(\t\022\027\n\017in"
-  "ital_products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\""
-  "L\n CreateSandboxPublicTokenResponse\022\022\n\nr"
-  "equest_id\030\001 \001(\t\022\024\n\014public_token\030\002 \001(\t\"R\n"
-  "\027ResetSandboxItemRequest\022\021\n\tclient_id\030\001 "
-  "\001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001("
-  "\t\"C\n\030ResetSandboxItemResponse\022\022\n\nrequest"
-  "_id\030\001 \001(\t\022\023\n\013reset_login\030\002 \001(\010\"\370\002\n\013Trans"
-  "action\022\022\n\naccount_id\030\001 \001(\t\022\016\n\006amount\030\002 \001"
-  "(\001\022\031\n\021iso_currency_code\030\003 \001(\t\022 \n\030unoffic"
-  "ial_currency_code\030\004 \001(\t\022\020\n\010category\030\005 \003("
-  "\t\022\023\n\013category_id\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022!\n\010"
-  "location\030\010 \001(\0132\017.plaid.Location\022\014\n\004name\030"
-  "\t \001(\t\022(\n\014payment_meta\030\n \001(\0132\022.plaid.Paym"
-  "entMeta\022\017\n\007pending\030\013 \001(\010\022\036\n\026pending_tran"
-  "saction_id\030\014 \001(\t\022\025\n\raccount_owner\030\r \001(\t\022"
-  "\026\n\016transaction_id\030\016 \001(\t\022\030\n\020transaction_t"
-  "ype\030\017 \001(\t\"\220\001\n\010Location\022\020\n\010addreess\030\001 \001(\t"
-  "\022\014\n\004city\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013\n\003lon\030\004 \001(\001"
-  "\022\016\n\006region\030\005 \001(\t\022\024\n\014store_number\030\006 \001(\t\022\023"
-  "\n\013postal_code\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\255\001\n"
-  "\013PaymentMeta\022\023\n\013by_order_of\030\001 \001(\t\022\r\n\005pay"
-  "ee\030\002 \001(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016payment_metho"
-  "d\030\004 \001(\t\022\031\n\021payment_processor\030\005 \001(\t\022\016\n\006pp"
-  "d_id\030\006 \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n\020reference_"
-  "number\030\010 \001(\t\"S\n\035GetTransactionsRequestOp"
-  "tions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030\002 \001("
-  "\003\022\016\n\006offset\030\003 \001(\003\"\256\001\n\026GetTransactionsReq"
-  "uest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022"
-  "\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date\030\004 \001("
-  "\t\022\020\n\010end_date\030\005 \001(\t\0225\n\007options\030\006 \001(\0132$.p"
-  "laid.GetTransactionsRequestOptions\"\260\001\n\027G"
-  "etTransactionsResponse\022\022\n\nrequest_id\030\001 \001"
-  "(\t\022 \n\010accounts\030\002 \003(\0132\016.plaid.Account\022\031\n\004"
-  "item\030\003 \001(\0132\013.plaid.Item\022(\n\014transactions\030"
-  "\004 \003(\0132\022.plaid.Transaction\022\032\n\022total_trans"
-  "actions\030\005 \001(\003\"q\n\025GetTransactionOptions\022\022"
-  "\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t\022\023\n\013"
-  "account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006offs"
-  "et\030\005 \001(\003b\006proto3"
+  "token\030\003 \001(\t\022\022\n\naccount_id\030\004 \001(\t\"K\n\034Creat"
+  "eProcessorTokenResponse\022\022\n\nrequest_id\030\001 "
+  "\001(\t\022\027\n\017processor_token\030\002 \001(\t\"g\n\030CreateSt"
+  "ripeTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006s"
+  "ecret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nacc"
+  "ount_id\030\004 \001(\t\"R\n\031CreateStripeTokenRespon"
+  "se\022\022\n\nrequest_id\030\001 \001(\t\022!\n\031stripe_bank_ac"
+  "count_token\030\002 \001(\t\"f\n\037CreateSandboxPublic"
+  "TokenRequest\022\026\n\016institution_id\030\001 \001(\t\022\027\n\017"
+  "inital_products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001("
+  "\t\"L\n CreateSandboxPublicTokenResponse\022\022\n"
+  "\nrequest_id\030\001 \001(\t\022\024\n\014public_token\030\002 \001(\t\""
+  "R\n\027ResetSandboxItemRequest\022\021\n\tclient_id\030"
+  "\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 "
+  "\001(\t\"C\n\030ResetSandboxItemResponse\022\022\n\nreque"
+  "st_id\030\001 \001(\t\022\023\n\013reset_login\030\002 \001(\010\"\370\002\n\013Tra"
+  "nsaction\022\022\n\naccount_id\030\001 \001(\t\022\016\n\006amount\030\002"
+  " \001(\001\022\031\n\021iso_currency_code\030\003 \001(\t\022 \n\030unoff"
+  "icial_currency_code\030\004 \001(\t\022\020\n\010category\030\005 "
+  "\003(\t\022\023\n\013category_id\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022!"
+  "\n\010location\030\010 \001(\0132\017.plaid.Location\022\014\n\004nam"
+  "e\030\t \001(\t\022(\n\014payment_meta\030\n \001(\0132\022.plaid.Pa"
+  "ymentMeta\022\017\n\007pending\030\013 \001(\010\022\036\n\026pending_tr"
+  "ansaction_id\030\014 \001(\t\022\025\n\raccount_owner\030\r \001("
+  "\t\022\026\n\016transaction_id\030\016 \001(\t\022\030\n\020transaction"
+  "_type\030\017 \001(\t\"\220\001\n\010Location\022\020\n\010addreess\030\001 \001"
+  "(\t\022\014\n\004city\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013\n\003lon\030\004 \001"
+  "(\001\022\016\n\006region\030\005 \001(\t\022\024\n\014store_number\030\006 \001(\t"
+  "\022\023\n\013postal_code\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\255"
+  "\001\n\013PaymentMeta\022\023\n\013by_order_of\030\001 \001(\t\022\r\n\005p"
+  "ayee\030\002 \001(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016payment_met"
+  "hod\030\004 \001(\t\022\031\n\021payment_processor\030\005 \001(\t\022\016\n\006"
+  "ppd_id\030\006 \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n\020referenc"
+  "e_number\030\010 \001(\t\"S\n\035GetTransactionsRequest"
+  "Options\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030\002 "
+  "\001(\003\022\016\n\006offset\030\003 \001(\003\"\256\001\n\026GetTransactionsR"
+  "equest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001("
+  "\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date\030\004 "
+  "\001(\t\022\020\n\010end_date\030\005 \001(\t\0225\n\007options\030\006 \001(\0132$"
+  ".plaid.GetTransactionsRequestOptions\"\260\001\n"
+  "\027GetTransactionsResponse\022\022\n\nrequest_id\030\001"
+  " \001(\t\022 \n\010accounts\030\002 \003(\0132\016.plaid.Account\022\031"
+  "\n\004item\030\003 \001(\0132\013.plaid.Item\022(\n\014transaction"
+  "s\030\004 \003(\0132\022.plaid.Transaction\022\032\n\022total_tra"
+  "nsactions\030\005 \001(\003\"q\n\025GetTransactionOptions"
+  "\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t\022\023"
+  "\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006of"
+  "fset\030\005 \001(\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plaid_2eproto_deps[1] = {
 };
@@ -3625,7 +3625,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pla
   &scc_info_GetInstitutionByIDOptions_plaid_2eproto.base,
   &scc_info_GetInstitutionByIDRequest_plaid_2eproto.base,
   &scc_info_GetInstitutionByIDResponse_plaid_2eproto.base,
-  &scc_info_GetInstitutionOptions_plaid_2eproto.base,
+  &scc_info_GetInstitutionsOptions_plaid_2eproto.base,
   &scc_info_GetInstitutionsRequest_plaid_2eproto.base,
   &scc_info_GetInstitutionsResponse_plaid_2eproto.base,
   &scc_info_GetInvestmentTransactionsOptions_plaid_2eproto.base,
@@ -3683,7 +3683,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pla
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plaid_2eproto_once;
 static bool descriptor_table_plaid_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plaid_2eproto = {
-  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 12776,
+  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 12778,
   &descriptor_table_plaid_2eproto_once, descriptor_table_plaid_2eproto_sccs, descriptor_table_plaid_2eproto_deps, 107, 0,
   schemas, file_default_instances, TableStruct_plaid_2eproto::offsets,
   file_level_metadata_plaid_2eproto, 107, file_level_enum_descriptors_plaid_2eproto, file_level_service_descriptors_plaid_2eproto,
@@ -19717,15 +19717,15 @@ void Credential::InternalSwap(Credential* other) {
 // ===================================================================
 
 void GetInstitutionsRequest::InitAsDefaultInstance() {
-  ::plaid::_GetInstitutionsRequest_default_instance_._instance.get_mutable()->options_ = const_cast< ::plaid::GetInstitutionOptions*>(
-      ::plaid::GetInstitutionOptions::internal_default_instance());
+  ::plaid::_GetInstitutionsRequest_default_instance_._instance.get_mutable()->options_ = const_cast< ::plaid::GetInstitutionsOptions*>(
+      ::plaid::GetInstitutionsOptions::internal_default_instance());
 }
 class GetInstitutionsRequest::_Internal {
  public:
-  static const ::plaid::GetInstitutionOptions& options(const GetInstitutionsRequest* msg);
+  static const ::plaid::GetInstitutionsOptions& options(const GetInstitutionsRequest* msg);
 };
 
-const ::plaid::GetInstitutionOptions&
+const ::plaid::GetInstitutionsOptions&
 GetInstitutionsRequest::_Internal::options(const GetInstitutionsRequest* msg) {
   return *msg->options_;
 }
@@ -19747,7 +19747,7 @@ GetInstitutionsRequest::GetInstitutionsRequest(const GetInstitutionsRequest& fro
     secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
   }
   if (from._internal_has_options()) {
-    options_ = new ::plaid::GetInstitutionOptions(*from.options_);
+    options_ = new ::plaid::GetInstitutionsOptions(*from.options_);
   } else {
     options_ = nullptr;
   }
@@ -19843,7 +19843,7 @@ const char* GetInstitutionsRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .plaid.GetInstitutionOptions options = 5;
+      // .plaid.GetInstitutionsOptions options = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_options(), ptr);
@@ -19908,7 +19908,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_offset(), target);
   }
 
-  // .plaid.GetInstitutionOptions options = 5;
+  // .plaid.GetInstitutionsOptions options = 5;
   if (this->has_options()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -19946,7 +19946,7 @@ size_t GetInstitutionsRequest::ByteSizeLong() const {
         this->_internal_secret());
   }
 
-  // .plaid.GetInstitutionOptions options = 5;
+  // .plaid.GetInstitutionsOptions options = 5;
   if (this->has_options()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -20007,7 +20007,7 @@ void GetInstitutionsRequest::MergeFrom(const GetInstitutionsRequest& from) {
     secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
   }
   if (from.has_options()) {
-    _internal_mutable_options()->::plaid::GetInstitutionOptions::MergeFrom(from._internal_options());
+    _internal_mutable_options()->::plaid::GetInstitutionsOptions::MergeFrom(from._internal_options());
   }
   if (from.count() != 0) {
     _internal_set_count(from._internal_count());
@@ -20054,51 +20054,51 @@ void GetInstitutionsRequest::InternalSwap(GetInstitutionsRequest* other) {
 
 // ===================================================================
 
-void GetInstitutionOptions::InitAsDefaultInstance() {
+void GetInstitutionsOptions::InitAsDefaultInstance() {
 }
-class GetInstitutionOptions::_Internal {
+class GetInstitutionsOptions::_Internal {
  public:
 };
 
-GetInstitutionOptions::GetInstitutionOptions()
+GetInstitutionsOptions::GetInstitutionsOptions()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(constructor:plaid.GetInstitutionsOptions)
 }
-GetInstitutionOptions::GetInstitutionOptions(const GetInstitutionOptions& from)
+GetInstitutionsOptions::GetInstitutionsOptions(const GetInstitutionsOptions& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       products_(from.products_),
       country_codes_(from.country_codes_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   include_optional_metadata_ = from.include_optional_metadata_;
-  // @@protoc_insertion_point(copy_constructor:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(copy_constructor:plaid.GetInstitutionsOptions)
 }
 
-void GetInstitutionOptions::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetInstitutionOptions_plaid_2eproto.base);
+void GetInstitutionsOptions::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetInstitutionsOptions_plaid_2eproto.base);
   include_optional_metadata_ = false;
 }
 
-GetInstitutionOptions::~GetInstitutionOptions() {
-  // @@protoc_insertion_point(destructor:plaid.GetInstitutionOptions)
+GetInstitutionsOptions::~GetInstitutionsOptions() {
+  // @@protoc_insertion_point(destructor:plaid.GetInstitutionsOptions)
   SharedDtor();
 }
 
-void GetInstitutionOptions::SharedDtor() {
+void GetInstitutionsOptions::SharedDtor() {
 }
 
-void GetInstitutionOptions::SetCachedSize(int size) const {
+void GetInstitutionsOptions::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetInstitutionOptions& GetInstitutionOptions::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetInstitutionOptions_plaid_2eproto.base);
+const GetInstitutionsOptions& GetInstitutionsOptions::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetInstitutionsOptions_plaid_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GetInstitutionOptions::Clear() {
-// @@protoc_insertion_point(message_clear_start:plaid.GetInstitutionOptions)
+void GetInstitutionsOptions::Clear() {
+// @@protoc_insertion_point(message_clear_start:plaid.GetInstitutionsOptions)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -20109,7 +20109,7 @@ void GetInstitutionOptions::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* GetInstitutionOptions::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetInstitutionsOptions::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -20124,7 +20124,7 @@ const char* GetInstitutionOptions::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr += 1;
             auto str = _internal_add_products();
             ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.GetInstitutionOptions.products"));
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.GetInstitutionsOptions.products"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -20145,7 +20145,7 @@ const char* GetInstitutionOptions::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr += 1;
             auto str = _internal_add_country_codes();
             ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.GetInstitutionOptions.country_codes"));
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.GetInstitutionsOptions.country_codes"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
@@ -20171,9 +20171,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetInstitutionOptions::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* GetInstitutionsOptions::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(serialize_to_array_start:plaid.GetInstitutionsOptions)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -20183,7 +20183,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.GetInstitutionOptions.products");
+      "plaid.GetInstitutionsOptions.products");
     target = stream->WriteString(1, s, target);
   }
 
@@ -20199,7 +20199,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.GetInstitutionOptions.country_codes");
+      "plaid.GetInstitutionsOptions.country_codes");
     target = stream->WriteString(3, s, target);
   }
 
@@ -20207,12 +20207,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(serialize_to_array_end:plaid.GetInstitutionsOptions)
   return target;
 }
 
-size_t GetInstitutionOptions::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:plaid.GetInstitutionOptions)
+size_t GetInstitutionsOptions::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:plaid.GetInstitutionsOptions)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -20249,23 +20249,23 @@ size_t GetInstitutionOptions::ByteSizeLong() const {
   return total_size;
 }
 
-void GetInstitutionOptions::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:plaid.GetInstitutionOptions)
+void GetInstitutionsOptions::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:plaid.GetInstitutionsOptions)
   GOOGLE_DCHECK_NE(&from, this);
-  const GetInstitutionOptions* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetInstitutionOptions>(
+  const GetInstitutionsOptions* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetInstitutionsOptions>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:plaid.GetInstitutionsOptions)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:plaid.GetInstitutionsOptions)
     MergeFrom(*source);
   }
 }
 
-void GetInstitutionOptions::MergeFrom(const GetInstitutionOptions& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:plaid.GetInstitutionOptions)
+void GetInstitutionsOptions::MergeFrom(const GetInstitutionsOptions& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:plaid.GetInstitutionsOptions)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -20278,25 +20278,25 @@ void GetInstitutionOptions::MergeFrom(const GetInstitutionOptions& from) {
   }
 }
 
-void GetInstitutionOptions::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:plaid.GetInstitutionOptions)
+void GetInstitutionsOptions::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:plaid.GetInstitutionsOptions)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GetInstitutionOptions::CopyFrom(const GetInstitutionOptions& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:plaid.GetInstitutionOptions)
+void GetInstitutionsOptions::CopyFrom(const GetInstitutionsOptions& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:plaid.GetInstitutionsOptions)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetInstitutionOptions::IsInitialized() const {
+bool GetInstitutionsOptions::IsInitialized() const {
   return true;
 }
 
-void GetInstitutionOptions::InternalSwap(GetInstitutionOptions* other) {
+void GetInstitutionsOptions::InternalSwap(GetInstitutionsOptions* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   products_.InternalSwap(&other->products_);
@@ -20304,7 +20304,7 @@ void GetInstitutionOptions::InternalSwap(GetInstitutionOptions* other) {
   swap(include_optional_metadata_, other->include_optional_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetInstitutionOptions::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetInstitutionsOptions::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -36734,8 +36734,8 @@ template<> PROTOBUF_NOINLINE ::plaid::Credential* Arena::CreateMaybeMessage< ::p
 template<> PROTOBUF_NOINLINE ::plaid::GetInstitutionsRequest* Arena::CreateMaybeMessage< ::plaid::GetInstitutionsRequest >(Arena* arena) {
   return Arena::CreateInternal< ::plaid::GetInstitutionsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::plaid::GetInstitutionOptions* Arena::CreateMaybeMessage< ::plaid::GetInstitutionOptions >(Arena* arena) {
-  return Arena::CreateInternal< ::plaid::GetInstitutionOptions >(arena);
+template<> PROTOBUF_NOINLINE ::plaid::GetInstitutionsOptions* Arena::CreateMaybeMessage< ::plaid::GetInstitutionsOptions >(Arena* arena) {
+  return Arena::CreateInternal< ::plaid::GetInstitutionsOptions >(arena);
 }
 template<> PROTOBUF_NOINLINE ::plaid::GetInstitutionsResponse* Arena::CreateMaybeMessage< ::plaid::GetInstitutionsResponse >(Arena* arena) {
   return Arena::CreateInternal< ::plaid::GetInstitutionsResponse >(arena);

@@ -6,6 +6,7 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 namespace plaid {
 
@@ -70,6 +71,24 @@ public:
 
   // Income
   StatusWrapped<GetIncomeResponse> GetIncome(const std::string &access_token);
+
+  // Institutions
+  StatusWrapped<GetInstitutionByIDResponse>
+  GetInstitutionByIDWithOptions(const std::string &id,
+                                const GetInstitutionByIDOptions &options);
+  StatusWrapped<GetInstitutionByIDResponse>
+  GetInstitutionByID(const std::string &id);
+  StatusWrapped<GetInstitutionsResponse>
+  GetInstitutionsWithOptions(int count, int offset,
+                             const GetInstitutionsOptions &options);
+  StatusWrapped<GetInstitutionsResponse> GetInstitutions(int count, int offset);
+  StatusWrapped<SearchInstitutionsResponse>
+  SearchInstitutionsWithOptions(const std::string &query,
+                                const std::vector<std::string> &products,
+                                const SearchInstitutionsOptions &options);
+  StatusWrapped<SearchInstitutionsResponse>
+  SearchInstitutions(const std::string &query,
+                     const std::vector<std::string> &products);
 
 private:
   Client(const Credentials &creds);

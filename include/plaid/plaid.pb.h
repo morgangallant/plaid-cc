@@ -214,9 +214,9 @@ extern GetInstitutionByIDRequestDefaultTypeInternal _GetInstitutionByIDRequest_d
 class GetInstitutionByIDResponse;
 class GetInstitutionByIDResponseDefaultTypeInternal;
 extern GetInstitutionByIDResponseDefaultTypeInternal _GetInstitutionByIDResponse_default_instance_;
-class GetInstitutionOptions;
-class GetInstitutionOptionsDefaultTypeInternal;
-extern GetInstitutionOptionsDefaultTypeInternal _GetInstitutionOptions_default_instance_;
+class GetInstitutionsOptions;
+class GetInstitutionsOptionsDefaultTypeInternal;
+extern GetInstitutionsOptionsDefaultTypeInternal _GetInstitutionsOptions_default_instance_;
 class GetInstitutionsRequest;
 class GetInstitutionsRequestDefaultTypeInternal;
 extern GetInstitutionsRequestDefaultTypeInternal _GetInstitutionsRequest_default_instance_;
@@ -431,7 +431,7 @@ template<> ::plaid::GetIncomeResponse* Arena::CreateMaybeMessage<::plaid::GetInc
 template<> ::plaid::GetInstitutionByIDOptions* Arena::CreateMaybeMessage<::plaid::GetInstitutionByIDOptions>(Arena*);
 template<> ::plaid::GetInstitutionByIDRequest* Arena::CreateMaybeMessage<::plaid::GetInstitutionByIDRequest>(Arena*);
 template<> ::plaid::GetInstitutionByIDResponse* Arena::CreateMaybeMessage<::plaid::GetInstitutionByIDResponse>(Arena*);
-template<> ::plaid::GetInstitutionOptions* Arena::CreateMaybeMessage<::plaid::GetInstitutionOptions>(Arena*);
+template<> ::plaid::GetInstitutionsOptions* Arena::CreateMaybeMessage<::plaid::GetInstitutionsOptions>(Arena*);
 template<> ::plaid::GetInstitutionsRequest* Arena::CreateMaybeMessage<::plaid::GetInstitutionsRequest>(Arena*);
 template<> ::plaid::GetInstitutionsResponse* Arena::CreateMaybeMessage<::plaid::GetInstitutionsResponse>(Arena*);
 template<> ::plaid::GetInvestmentTransactionsOptions* Arena::CreateMaybeMessage<::plaid::GetInvestmentTransactionsOptions>(Arena*);
@@ -10474,19 +10474,19 @@ class GetInstitutionsRequest :
   std::string* _internal_mutable_secret();
   public:
 
-  // .plaid.GetInstitutionOptions options = 5;
+  // .plaid.GetInstitutionsOptions options = 5;
   bool has_options() const;
   private:
   bool _internal_has_options() const;
   public:
   void clear_options();
-  const ::plaid::GetInstitutionOptions& options() const;
-  ::plaid::GetInstitutionOptions* release_options();
-  ::plaid::GetInstitutionOptions* mutable_options();
-  void set_allocated_options(::plaid::GetInstitutionOptions* options);
+  const ::plaid::GetInstitutionsOptions& options() const;
+  ::plaid::GetInstitutionsOptions* release_options();
+  ::plaid::GetInstitutionsOptions* mutable_options();
+  void set_allocated_options(::plaid::GetInstitutionsOptions* options);
   private:
-  const ::plaid::GetInstitutionOptions& _internal_options() const;
-  ::plaid::GetInstitutionOptions* _internal_mutable_options();
+  const ::plaid::GetInstitutionsOptions& _internal_options() const;
+  ::plaid::GetInstitutionsOptions* _internal_mutable_options();
   public:
 
   // int64 count = 3;
@@ -10514,7 +10514,7 @@ class GetInstitutionsRequest :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secret_;
-  ::plaid::GetInstitutionOptions* options_;
+  ::plaid::GetInstitutionsOptions* options_;
   ::PROTOBUF_NAMESPACE_ID::int64 count_;
   ::PROTOBUF_NAMESPACE_ID::int64 offset_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -10522,23 +10522,23 @@ class GetInstitutionsRequest :
 };
 // -------------------------------------------------------------------
 
-class GetInstitutionOptions :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:plaid.GetInstitutionOptions) */ {
+class GetInstitutionsOptions :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:plaid.GetInstitutionsOptions) */ {
  public:
-  GetInstitutionOptions();
-  virtual ~GetInstitutionOptions();
+  GetInstitutionsOptions();
+  virtual ~GetInstitutionsOptions();
 
-  GetInstitutionOptions(const GetInstitutionOptions& from);
-  GetInstitutionOptions(GetInstitutionOptions&& from) noexcept
-    : GetInstitutionOptions() {
+  GetInstitutionsOptions(const GetInstitutionsOptions& from);
+  GetInstitutionsOptions(GetInstitutionsOptions&& from) noexcept
+    : GetInstitutionsOptions() {
     *this = ::std::move(from);
   }
 
-  inline GetInstitutionOptions& operator=(const GetInstitutionOptions& from) {
+  inline GetInstitutionsOptions& operator=(const GetInstitutionsOptions& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetInstitutionOptions& operator=(GetInstitutionOptions&& from) noexcept {
+  inline GetInstitutionsOptions& operator=(GetInstitutionsOptions&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -10556,37 +10556,37 @@ class GetInstitutionOptions :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const GetInstitutionOptions& default_instance();
+  static const GetInstitutionsOptions& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetInstitutionOptions* internal_default_instance() {
-    return reinterpret_cast<const GetInstitutionOptions*>(
-               &_GetInstitutionOptions_default_instance_);
+  static inline const GetInstitutionsOptions* internal_default_instance() {
+    return reinterpret_cast<const GetInstitutionsOptions*>(
+               &_GetInstitutionsOptions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     54;
 
-  friend void swap(GetInstitutionOptions& a, GetInstitutionOptions& b) {
+  friend void swap(GetInstitutionsOptions& a, GetInstitutionsOptions& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetInstitutionOptions* other) {
+  inline void Swap(GetInstitutionsOptions* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline GetInstitutionOptions* New() const final {
-    return CreateMaybeMessage<GetInstitutionOptions>(nullptr);
+  inline GetInstitutionsOptions* New() const final {
+    return CreateMaybeMessage<GetInstitutionsOptions>(nullptr);
   }
 
-  GetInstitutionOptions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetInstitutionOptions>(arena);
+  GetInstitutionsOptions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetInstitutionsOptions>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GetInstitutionOptions& from);
-  void MergeFrom(const GetInstitutionOptions& from);
+  void CopyFrom(const GetInstitutionsOptions& from);
+  void MergeFrom(const GetInstitutionsOptions& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -10600,10 +10600,10 @@ class GetInstitutionOptions :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetInstitutionOptions* other);
+  void InternalSwap(GetInstitutionsOptions* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "plaid.GetInstitutionOptions";
+    return "plaid.GetInstitutionsOptions";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -10689,7 +10689,7 @@ class GetInstitutionOptions :
   void _internal_set_include_optional_metadata(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:plaid.GetInstitutionOptions)
+  // @@protoc_insertion_point(class_scope:plaid.GetInstitutionsOptions)
  private:
   class _Internal;
 
@@ -31923,7 +31923,7 @@ inline void GetInstitutionsRequest::set_offset(::PROTOBUF_NAMESPACE_ID::int64 va
   // @@protoc_insertion_point(field_set:plaid.GetInstitutionsRequest.offset)
 }
 
-// .plaid.GetInstitutionOptions options = 5;
+// .plaid.GetInstitutionsOptions options = 5;
 inline bool GetInstitutionsRequest::_internal_has_options() const {
   return this != internal_default_instance() && options_ != nullptr;
 }
@@ -31936,35 +31936,35 @@ inline void GetInstitutionsRequest::clear_options() {
   }
   options_ = nullptr;
 }
-inline const ::plaid::GetInstitutionOptions& GetInstitutionsRequest::_internal_options() const {
-  const ::plaid::GetInstitutionOptions* p = options_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::plaid::GetInstitutionOptions*>(
-      &::plaid::_GetInstitutionOptions_default_instance_);
+inline const ::plaid::GetInstitutionsOptions& GetInstitutionsRequest::_internal_options() const {
+  const ::plaid::GetInstitutionsOptions* p = options_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::plaid::GetInstitutionsOptions*>(
+      &::plaid::_GetInstitutionsOptions_default_instance_);
 }
-inline const ::plaid::GetInstitutionOptions& GetInstitutionsRequest::options() const {
+inline const ::plaid::GetInstitutionsOptions& GetInstitutionsRequest::options() const {
   // @@protoc_insertion_point(field_get:plaid.GetInstitutionsRequest.options)
   return _internal_options();
 }
-inline ::plaid::GetInstitutionOptions* GetInstitutionsRequest::release_options() {
+inline ::plaid::GetInstitutionsOptions* GetInstitutionsRequest::release_options() {
   // @@protoc_insertion_point(field_release:plaid.GetInstitutionsRequest.options)
   
-  ::plaid::GetInstitutionOptions* temp = options_;
+  ::plaid::GetInstitutionsOptions* temp = options_;
   options_ = nullptr;
   return temp;
 }
-inline ::plaid::GetInstitutionOptions* GetInstitutionsRequest::_internal_mutable_options() {
+inline ::plaid::GetInstitutionsOptions* GetInstitutionsRequest::_internal_mutable_options() {
   
   if (options_ == nullptr) {
-    auto* p = CreateMaybeMessage<::plaid::GetInstitutionOptions>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::plaid::GetInstitutionsOptions>(GetArenaNoVirtual());
     options_ = p;
   }
   return options_;
 }
-inline ::plaid::GetInstitutionOptions* GetInstitutionsRequest::mutable_options() {
+inline ::plaid::GetInstitutionsOptions* GetInstitutionsRequest::mutable_options() {
   // @@protoc_insertion_point(field_mutable:plaid.GetInstitutionsRequest.options)
   return _internal_mutable_options();
 }
-inline void GetInstitutionsRequest::set_allocated_options(::plaid::GetInstitutionOptions* options) {
+inline void GetInstitutionsRequest::set_allocated_options(::plaid::GetInstitutionsOptions* options) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete options_;
@@ -31985,173 +31985,173 @@ inline void GetInstitutionsRequest::set_allocated_options(::plaid::GetInstitutio
 
 // -------------------------------------------------------------------
 
-// GetInstitutionOptions
+// GetInstitutionsOptions
 
 // repeated string products = 1;
-inline int GetInstitutionOptions::_internal_products_size() const {
+inline int GetInstitutionsOptions::_internal_products_size() const {
   return products_.size();
 }
-inline int GetInstitutionOptions::products_size() const {
+inline int GetInstitutionsOptions::products_size() const {
   return _internal_products_size();
 }
-inline void GetInstitutionOptions::clear_products() {
+inline void GetInstitutionsOptions::clear_products() {
   products_.Clear();
 }
-inline std::string* GetInstitutionOptions::add_products() {
-  // @@protoc_insertion_point(field_add_mutable:plaid.GetInstitutionOptions.products)
+inline std::string* GetInstitutionsOptions::add_products() {
+  // @@protoc_insertion_point(field_add_mutable:plaid.GetInstitutionsOptions.products)
   return _internal_add_products();
 }
-inline const std::string& GetInstitutionOptions::_internal_products(int index) const {
+inline const std::string& GetInstitutionsOptions::_internal_products(int index) const {
   return products_.Get(index);
 }
-inline const std::string& GetInstitutionOptions::products(int index) const {
-  // @@protoc_insertion_point(field_get:plaid.GetInstitutionOptions.products)
+inline const std::string& GetInstitutionsOptions::products(int index) const {
+  // @@protoc_insertion_point(field_get:plaid.GetInstitutionsOptions.products)
   return _internal_products(index);
 }
-inline std::string* GetInstitutionOptions::mutable_products(int index) {
-  // @@protoc_insertion_point(field_mutable:plaid.GetInstitutionOptions.products)
+inline std::string* GetInstitutionsOptions::mutable_products(int index) {
+  // @@protoc_insertion_point(field_mutable:plaid.GetInstitutionsOptions.products)
   return products_.Mutable(index);
 }
-inline void GetInstitutionOptions::set_products(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:plaid.GetInstitutionOptions.products)
+inline void GetInstitutionsOptions::set_products(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:plaid.GetInstitutionsOptions.products)
   products_.Mutable(index)->assign(value);
 }
-inline void GetInstitutionOptions::set_products(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:plaid.GetInstitutionOptions.products)
+inline void GetInstitutionsOptions::set_products(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:plaid.GetInstitutionsOptions.products)
   products_.Mutable(index)->assign(std::move(value));
 }
-inline void GetInstitutionOptions::set_products(int index, const char* value) {
+inline void GetInstitutionsOptions::set_products(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   products_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_set_char:plaid.GetInstitutionsOptions.products)
 }
-inline void GetInstitutionOptions::set_products(int index, const char* value, size_t size) {
+inline void GetInstitutionsOptions::set_products(int index, const char* value, size_t size) {
   products_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_set_pointer:plaid.GetInstitutionsOptions.products)
 }
-inline std::string* GetInstitutionOptions::_internal_add_products() {
+inline std::string* GetInstitutionsOptions::_internal_add_products() {
   return products_.Add();
 }
-inline void GetInstitutionOptions::add_products(const std::string& value) {
+inline void GetInstitutionsOptions::add_products(const std::string& value) {
   products_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_add:plaid.GetInstitutionsOptions.products)
 }
-inline void GetInstitutionOptions::add_products(std::string&& value) {
+inline void GetInstitutionsOptions::add_products(std::string&& value) {
   products_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_add:plaid.GetInstitutionsOptions.products)
 }
-inline void GetInstitutionOptions::add_products(const char* value) {
+inline void GetInstitutionsOptions::add_products(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   products_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_add_char:plaid.GetInstitutionsOptions.products)
 }
-inline void GetInstitutionOptions::add_products(const char* value, size_t size) {
+inline void GetInstitutionsOptions::add_products(const char* value, size_t size) {
   products_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:plaid.GetInstitutionOptions.products)
+  // @@protoc_insertion_point(field_add_pointer:plaid.GetInstitutionsOptions.products)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-GetInstitutionOptions::products() const {
-  // @@protoc_insertion_point(field_list:plaid.GetInstitutionOptions.products)
+GetInstitutionsOptions::products() const {
+  // @@protoc_insertion_point(field_list:plaid.GetInstitutionsOptions.products)
   return products_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-GetInstitutionOptions::mutable_products() {
-  // @@protoc_insertion_point(field_mutable_list:plaid.GetInstitutionOptions.products)
+GetInstitutionsOptions::mutable_products() {
+  // @@protoc_insertion_point(field_mutable_list:plaid.GetInstitutionsOptions.products)
   return &products_;
 }
 
 // bool include_optional_metadata = 2;
-inline void GetInstitutionOptions::clear_include_optional_metadata() {
+inline void GetInstitutionsOptions::clear_include_optional_metadata() {
   include_optional_metadata_ = false;
 }
-inline bool GetInstitutionOptions::_internal_include_optional_metadata() const {
+inline bool GetInstitutionsOptions::_internal_include_optional_metadata() const {
   return include_optional_metadata_;
 }
-inline bool GetInstitutionOptions::include_optional_metadata() const {
-  // @@protoc_insertion_point(field_get:plaid.GetInstitutionOptions.include_optional_metadata)
+inline bool GetInstitutionsOptions::include_optional_metadata() const {
+  // @@protoc_insertion_point(field_get:plaid.GetInstitutionsOptions.include_optional_metadata)
   return _internal_include_optional_metadata();
 }
-inline void GetInstitutionOptions::_internal_set_include_optional_metadata(bool value) {
+inline void GetInstitutionsOptions::_internal_set_include_optional_metadata(bool value) {
   
   include_optional_metadata_ = value;
 }
-inline void GetInstitutionOptions::set_include_optional_metadata(bool value) {
+inline void GetInstitutionsOptions::set_include_optional_metadata(bool value) {
   _internal_set_include_optional_metadata(value);
-  // @@protoc_insertion_point(field_set:plaid.GetInstitutionOptions.include_optional_metadata)
+  // @@protoc_insertion_point(field_set:plaid.GetInstitutionsOptions.include_optional_metadata)
 }
 
 // repeated string country_codes = 3;
-inline int GetInstitutionOptions::_internal_country_codes_size() const {
+inline int GetInstitutionsOptions::_internal_country_codes_size() const {
   return country_codes_.size();
 }
-inline int GetInstitutionOptions::country_codes_size() const {
+inline int GetInstitutionsOptions::country_codes_size() const {
   return _internal_country_codes_size();
 }
-inline void GetInstitutionOptions::clear_country_codes() {
+inline void GetInstitutionsOptions::clear_country_codes() {
   country_codes_.Clear();
 }
-inline std::string* GetInstitutionOptions::add_country_codes() {
-  // @@protoc_insertion_point(field_add_mutable:plaid.GetInstitutionOptions.country_codes)
+inline std::string* GetInstitutionsOptions::add_country_codes() {
+  // @@protoc_insertion_point(field_add_mutable:plaid.GetInstitutionsOptions.country_codes)
   return _internal_add_country_codes();
 }
-inline const std::string& GetInstitutionOptions::_internal_country_codes(int index) const {
+inline const std::string& GetInstitutionsOptions::_internal_country_codes(int index) const {
   return country_codes_.Get(index);
 }
-inline const std::string& GetInstitutionOptions::country_codes(int index) const {
-  // @@protoc_insertion_point(field_get:plaid.GetInstitutionOptions.country_codes)
+inline const std::string& GetInstitutionsOptions::country_codes(int index) const {
+  // @@protoc_insertion_point(field_get:plaid.GetInstitutionsOptions.country_codes)
   return _internal_country_codes(index);
 }
-inline std::string* GetInstitutionOptions::mutable_country_codes(int index) {
-  // @@protoc_insertion_point(field_mutable:plaid.GetInstitutionOptions.country_codes)
+inline std::string* GetInstitutionsOptions::mutable_country_codes(int index) {
+  // @@protoc_insertion_point(field_mutable:plaid.GetInstitutionsOptions.country_codes)
   return country_codes_.Mutable(index);
 }
-inline void GetInstitutionOptions::set_country_codes(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:plaid.GetInstitutionOptions.country_codes)
+inline void GetInstitutionsOptions::set_country_codes(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:plaid.GetInstitutionsOptions.country_codes)
   country_codes_.Mutable(index)->assign(value);
 }
-inline void GetInstitutionOptions::set_country_codes(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:plaid.GetInstitutionOptions.country_codes)
+inline void GetInstitutionsOptions::set_country_codes(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:plaid.GetInstitutionsOptions.country_codes)
   country_codes_.Mutable(index)->assign(std::move(value));
 }
-inline void GetInstitutionOptions::set_country_codes(int index, const char* value) {
+inline void GetInstitutionsOptions::set_country_codes(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   country_codes_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_set_char:plaid.GetInstitutionsOptions.country_codes)
 }
-inline void GetInstitutionOptions::set_country_codes(int index, const char* value, size_t size) {
+inline void GetInstitutionsOptions::set_country_codes(int index, const char* value, size_t size) {
   country_codes_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_set_pointer:plaid.GetInstitutionsOptions.country_codes)
 }
-inline std::string* GetInstitutionOptions::_internal_add_country_codes() {
+inline std::string* GetInstitutionsOptions::_internal_add_country_codes() {
   return country_codes_.Add();
 }
-inline void GetInstitutionOptions::add_country_codes(const std::string& value) {
+inline void GetInstitutionsOptions::add_country_codes(const std::string& value) {
   country_codes_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_add:plaid.GetInstitutionsOptions.country_codes)
 }
-inline void GetInstitutionOptions::add_country_codes(std::string&& value) {
+inline void GetInstitutionsOptions::add_country_codes(std::string&& value) {
   country_codes_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_add:plaid.GetInstitutionsOptions.country_codes)
 }
-inline void GetInstitutionOptions::add_country_codes(const char* value) {
+inline void GetInstitutionsOptions::add_country_codes(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   country_codes_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_add_char:plaid.GetInstitutionsOptions.country_codes)
 }
-inline void GetInstitutionOptions::add_country_codes(const char* value, size_t size) {
+inline void GetInstitutionsOptions::add_country_codes(const char* value, size_t size) {
   country_codes_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:plaid.GetInstitutionOptions.country_codes)
+  // @@protoc_insertion_point(field_add_pointer:plaid.GetInstitutionsOptions.country_codes)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-GetInstitutionOptions::country_codes() const {
-  // @@protoc_insertion_point(field_list:plaid.GetInstitutionOptions.country_codes)
+GetInstitutionsOptions::country_codes() const {
+  // @@protoc_insertion_point(field_list:plaid.GetInstitutionsOptions.country_codes)
   return country_codes_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-GetInstitutionOptions::mutable_country_codes() {
-  // @@protoc_insertion_point(field_mutable_list:plaid.GetInstitutionOptions.country_codes)
+GetInstitutionsOptions::mutable_country_codes() {
+  // @@protoc_insertion_point(field_mutable_list:plaid.GetInstitutionsOptions.country_codes)
   return &country_codes_;
 }
 

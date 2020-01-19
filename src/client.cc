@@ -4,6 +4,7 @@
 #include <functional>
 #include <memory>
 #include <stdexcept>
+#include <vector>
 
 namespace plaid {
 
@@ -256,6 +257,80 @@ Client::GetIncome(const std::string &access_token) {
     return req;
   };
   return make_plaid_request<GetIncomeResponse>(req);
+}
+
+// Institutions
+
+StatusWrapped<GetInstitutionByIDResponse> Client::GetInstitutionByIDWithOptions(
+    const std::string &id, const GetInstitutionByIDOptions &options) {
+  if (id == "")
+    return StatusWrapped<GetInstitutionByIDResponse>::FromStatus(
+        Status::MissingInfo("missing id"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("institutions/get_by_id"));
+    auto req_data = GetInstitutionByIDRequest();
+    req_data.set_institution_id(id);
+    req_data.set_public_key(creds_.public_key);
+    *req_data.mutable_options() = options;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetInstitutionByIDResponse>(req);
+}
+
+StatusWrapped<GetInstitutionByIDResponse>
+Client::GetInstitutionByID(const std::string &id) {
+  return GetInstitutionByIDWithOptions(id, GetInstitutionByIDOptions());
+}
+
+StatusWrapped<GetInstitutionsResponse>
+Client::GetInstitutionsWithOptions(int count, int offset,
+                                   const GetInstitutionsOptions &options) {
+  if (count == 0)
+    count = 50;
+  auto req = [&]() {
+    auto req = Request(AppendUrl("institutions/get"));
+    auto req_data = GetInstitutionsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_count(count);
+    req_data.set_offset(offset);
+    *req_data.mutable_options() = options;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetInstitutionsResponse>(req);
+}
+
+StatusWrapped<GetInstitutionsResponse> Client::GetInstitutions(int count,
+                                                               int offset) {
+  return GetInstitutionsWithOptions(count, offset, GetInstitutionsOptions());
+}
+
+StatusWrapped<SearchInstitutionsResponse> Client::SearchInstitutionsWithOptions(
+    const std::string &query, const std::vector<std::string> &products,
+    const SearchInstitutionsOptions &options) {
+  if (query == "")
+    return StatusWrapped<SearchInstitutionsResponse>::FromStatus(
+        Status::MissingInfo("missing query"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("institutions/search"));
+    auto req_data = SearchInstitutionsRequest();
+    req_data.set_query(query);
+    for (const auto &product : products)
+      req_data.add_products(product);
+    *req_data.mutable_options() = options;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<SearchInstitutionsResponse>(req);
+}
+
+StatusWrapped<SearchInstitutionsResponse>
+Client::SearchInstitutions(const std::string &query,
+                           const std::vector<std::string> &products) {
+  return SearchInstitutionsWithOptions(query, products,
+                                       SearchInstitutionsOptions());
 }
 
 } // namespace plaid

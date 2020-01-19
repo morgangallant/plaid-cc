@@ -410,10 +410,10 @@ message GetInstitutionsRequest {
   string secret = 2;
   int64 count = 3;
   int64 offset = 4;
-  GetInstitutionOptions options = 5;
+  GetInstitutionsOptions options = 5;
 }
 
-message GetInstitutionOptions {
+message GetInstitutionsOptions {
   repeated string products = 1;
   bool include_optional_metadata = 2;
   repeated string country_codes = 3;
