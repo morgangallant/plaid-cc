@@ -64,6 +64,10 @@ public:
   StatusWrapped<GetHoldingsResponse>
   GetHoldings(const std::string &access_token);
 
+  // Identity
+  StatusWrapped<GetIdentityResponse>
+  GetIdentity(const std::string &access_token);
+
 private:
   Client(const Credentials &creds);
 

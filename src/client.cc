@@ -220,4 +220,23 @@ Client::GetHoldings(const std::string &access_token) {
   return GetHoldingsWithOptions(access_token, GetHoldingsOptions());
 }
 
+// Identity
+
+StatusWrapped<GetIdentityResponse>
+Client::GetIdentity(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<GetIdentityResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("identity/get"));
+    auto req_data = GetIdentityRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetIdentityResponse>(req);
+}
+
 } // namespace plaid
