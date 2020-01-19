@@ -15,7 +15,7 @@ A C++ client library for the [Plaid API](https://plaid.com/docs).
 
 As of January 13th, 2020, Plaid was [acquired by Visa](https://blog.plaid.com/plaid-and-visa/) for a whopping $5.3 billion dollars. A few days later, [Zach](https://twitter.com/zachperret) (the CEO and Co-Founder) of Plaid tweeted this:
 
-> Oh, and also ... we are very much still hiring. We've just finished the prologue to the @Plaid journey. Join us for Chapter 1!
+> ... we are very much still hiring. We've just finished the prologue to the @Plaid journey. Join us for Chapter 1!
 
 To me, this was pretty exciting. I've used Plaid in the past for personal projects, and I've followed Zach on Twitter for a good while now. The company has an incredible product... why? It's because they've built a road for so many other developers & entrepreneurs to securely interact with users bank accounts. The banking industry as a whole has been stuck in the past for a while now, and Plaid has been a pioneer in advancing this industry forward. 
 
