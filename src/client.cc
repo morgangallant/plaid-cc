@@ -35,6 +35,8 @@ std::unique_ptr<Client> Client::Create(const Credentials &creds) {
   return std::unique_ptr<Client>(new Client(creds));
 }
 
+Client::Client(const Credentials &creds) : creds_(creds) {}
+
 std::string Client::AppendUrl(const std::string &extra) const {
   return creds_.url + extra;
 }
