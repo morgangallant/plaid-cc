@@ -239,4 +239,23 @@ Client::GetIdentity(const std::string &access_token) {
   return make_plaid_request<GetIdentityResponse>(req);
 }
 
+// Income
+
+StatusWrapped<GetIncomeResponse>
+Client::GetIncome(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<GetIncomeResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("income/get"));
+    auto req_data = GetIncomeRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetIncomeResponse>(req);
+}
+
 } // namespace plaid

@@ -68,6 +68,9 @@ public:
   StatusWrapped<GetIdentityResponse>
   GetIdentity(const std::string &access_token);
 
+  // Income
+  StatusWrapped<GetIncomeResponse> GetIncome(const std::string &access_token);
+
 private:
   Client(const Credentials &creds);
 
