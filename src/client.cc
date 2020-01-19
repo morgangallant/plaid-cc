@@ -628,21 +628,74 @@ Client::ListPayments(const ListPaymentsOptions &options) {
 
 // Processors
 
+static StatusWrapped<CreateProcessorTokenResponse>
+CreateToken(const std::string &client_id, const std::string &secret,
+            const std::string &url, const std::string &access_token,
+            const std::string &account_id) {
+  if (access_token == "")
+    return StatusWrapped<CreateProcessorTokenResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  if (account_id == "")
+    return StatusWrapped<CreateProcessorTokenResponse>::FromStatus(
+        Status::MissingInfo("missing account id"));
+  auto req = [&]() {
+    auto req = Request(url);
+    auto req_data = CreateProcessorTokenRequest();
+    req_data.set_client_id(client_id);
+    req_data.set_secret(secret);
+    req_data.set_access_token(access_token);
+    req_data.set_account_id(account_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreateProcessorTokenResponse>(req);
+}
+
 StatusWrapped<CreateProcessorTokenResponse>
 Client::CreateApexToken(const std::string &access_token,
-                        const std::string &account_id) {}
+                        const std::string &account_id) {
+  return CreateToken(creds_.client_id, creds_.secret,
+                     AppendUrl("processor/apex/processor_token/create"),
+                     access_token, account_id);
+}
 
 StatusWrapped<CreateProcessorTokenResponse>
 Client::CreateDwollaToken(const std::string &access_token,
-                          const std::string &account_id) {}
+                          const std::string &account_id) {
+  return CreateToken(creds_.client_id, creds_.secret,
+                     AppendUrl("processor/dwolla/processor_token/create"),
+                     access_token, account_id);
+}
 
 StatusWrapped<CreateProcessorTokenResponse>
 Client::CreateOcrolusToken(const std::string &access_token,
-                           const std::string &account_id) {}
+                           const std::string &account_id) {
+  return CreateToken(creds_.client_id, creds_.secret,
+                     AppendUrl("processor/ocrolus/processor_token/create"),
+                     access_token, account_id);
+}
 
 StatusWrapped<CreateStripeTokenResponse>
 Client::CreateStripeToken(const std::string &access_token,
-                          const std::string &account_id) {}
+                          const std::string &account_id) {
+  if (access_token == "")
+    return StatusWrapped<CreateStripeTokenResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  if (account_id == "")
+    return StatusWrapped<CreateStripeTokenResponse>::FromStatus(
+        Status::MissingInfo("missing account id"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("processor/stripe/bank_account_token/create"));
+    auto req_data = CreateStripeTokenRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req_data.set_account_id(account_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreateStripeTokenResponse>(req);
+}
 
 // Sandbox
 
