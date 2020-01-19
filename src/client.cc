@@ -333,4 +333,39 @@ Client::SearchInstitutions(const std::string &query,
                                        SearchInstitutionsOptions());
 }
 
+// Investment Transactions
+
+StatusWrapped<GetInvestmentTransactionsResponse>
+Client::GetInvestmentTransactionsWithOptions(
+    const std::string &access_token,
+    const GetInvestmentTransactionsOptions &options) {
+  if (access_token == "")
+    return StatusWrapped<GetInvestmentTransactionsResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("investments/transactions/get"));
+    auto req_data = GetInvestmentTransactionsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req_data.set_start_date(options.start_date());
+    req_data.set_end_date(options.end_date());
+    auto req_ops = GetInvestmentTransactionsRequestOptions();
+    req_ops.set_count(options.count());
+    req_ops.set_offset(options.offset());
+    for (int i = 0; i < options.account_ids_size(); ++i)
+      req_ops.add_account_ids(options.account_ids(i));
+    *req_data.mutable_options() = req_ops;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetInvestmentTransactionsResponse>(req);
+}
+
+StatusWrapped<GetInvestmentTransactionsResponse>
+Client::GetInvestmentTransactions(const std::string &access_token) {
+  return GetInvestmentTransactionsWithOptions(
+      access_token, GetInvestmentTransactionsOptions());
+}
+
 } // namespace plaid

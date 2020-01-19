@@ -90,6 +90,14 @@ public:
   SearchInstitutions(const std::string &query,
                      const std::vector<std::string> &products);
 
+  // Investment Transactions
+  StatusWrapped<GetInvestmentTransactionsResponse>
+  GetInvestmentTransactionsWithOptions(
+      const std::string &access_token,
+      const GetInvestmentTransactionsOptions &options);
+  StatusWrapped<GetInvestmentTransactionsResponse>
+  GetInvestmentTransactions(const std::string &access_token);
+
 private:
   Client(const Credentials &creds);
 
