@@ -3092,7 +3092,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plaid_2eproto::offsets[] PROTO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::plaid::UpdateAccessTokenVersionRequest, client_id_),
   PROTOBUF_FIELD_OFFSET(::plaid::UpdateAccessTokenVersionRequest, secret_),
-  PROTOBUF_FIELD_OFFSET(::plaid::UpdateAccessTokenVersionRequest, access_token_v2_),
+  PROTOBUF_FIELD_OFFSET(::plaid::UpdateAccessTokenVersionRequest, access_token_v1_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::plaid::UpdateAccessTokenVersionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -4024,7 +4024,7 @@ const char descriptor_table_protodef_plaid_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\030\001 \001(\t\022\030\n\020new_access_token\030\002 \001(\t\"]\n\037Upda"
   "teAccessTokenVersionRequest\022\021\n\tclient_id"
   "\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\027\n\017access_token_v"
-  "2\030\003 \001(\t\"]\n UpdateAccessTokenVersionRespo"
+  "1\030\003 \001(\t\"]\n UpdateAccessTokenVersionRespo"
   "nse\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014access_token\030"
   "\002 \001(\t\022\017\n\007item_id\030\003 \001(\t\"S\n\030CreatePublicTo"
   "kenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030"
@@ -27240,9 +27240,9 @@ UpdateAccessTokenVersionRequest::UpdateAccessTokenVersionRequest(const UpdateAcc
   if (!from._internal_secret().empty()) {
     secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
   }
-  access_token_v2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_access_token_v2().empty()) {
-    access_token_v2_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.access_token_v2_);
+  access_token_v1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_access_token_v1().empty()) {
+    access_token_v1_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.access_token_v1_);
   }
   // @@protoc_insertion_point(copy_constructor:plaid.UpdateAccessTokenVersionRequest)
 }
@@ -27251,7 +27251,7 @@ void UpdateAccessTokenVersionRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateAccessTokenVersionRequest_plaid_2eproto.base);
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  access_token_v2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  access_token_v1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 UpdateAccessTokenVersionRequest::~UpdateAccessTokenVersionRequest() {
@@ -27262,7 +27262,7 @@ UpdateAccessTokenVersionRequest::~UpdateAccessTokenVersionRequest() {
 void UpdateAccessTokenVersionRequest::SharedDtor() {
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   secret_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  access_token_v2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  access_token_v1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UpdateAccessTokenVersionRequest::SetCachedSize(int size) const {
@@ -27282,7 +27282,7 @@ void UpdateAccessTokenVersionRequest::Clear() {
 
   client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   secret_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  access_token_v2_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  access_token_v1_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -27311,12 +27311,12 @@ const char* UpdateAccessTokenVersionRequest::_InternalParse(const char* ptr, ::P
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string access_token_v2 = 3;
+      // string access_token_v1 = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_access_token_v2();
+          auto str = _internal_mutable_access_token_v1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.UpdateAccessTokenVersionRequest.access_token_v2"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.UpdateAccessTokenVersionRequest.access_token_v1"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -27366,14 +27366,14 @@ failure:
         2, this->_internal_secret(), target);
   }
 
-  // string access_token_v2 = 3;
-  if (this->access_token_v2().size() > 0) {
+  // string access_token_v1 = 3;
+  if (this->access_token_v1().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_access_token_v2().data(), static_cast<int>(this->_internal_access_token_v2().length()),
+      this->_internal_access_token_v1().data(), static_cast<int>(this->_internal_access_token_v1().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.UpdateAccessTokenVersionRequest.access_token_v2");
+      "plaid.UpdateAccessTokenVersionRequest.access_token_v1");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_access_token_v2(), target);
+        3, this->_internal_access_token_v1(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -27406,11 +27406,11 @@ size_t UpdateAccessTokenVersionRequest::ByteSizeLong() const {
         this->_internal_secret());
   }
 
-  // string access_token_v2 = 3;
-  if (this->access_token_v2().size() > 0) {
+  // string access_token_v1 = 3;
+  if (this->access_token_v1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_access_token_v2());
+        this->_internal_access_token_v1());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -27452,9 +27452,9 @@ void UpdateAccessTokenVersionRequest::MergeFrom(const UpdateAccessTokenVersionRe
 
     secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
   }
-  if (from.access_token_v2().size() > 0) {
+  if (from.access_token_v1().size() > 0) {
 
-    access_token_v2_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.access_token_v2_);
+    access_token_v1_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.access_token_v1_);
   }
 }
 
@@ -27483,7 +27483,7 @@ void UpdateAccessTokenVersionRequest::InternalSwap(UpdateAccessTokenVersionReque
     GetArenaNoVirtual());
   secret_.Swap(&other->secret_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  access_token_v2_.Swap(&other->access_token_v2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  access_token_v1_.Swap(&other->access_token_v1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

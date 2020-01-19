@@ -14743,7 +14743,7 @@ class UpdateAccessTokenVersionRequest :
   enum : int {
     kClientIdFieldNumber = 1,
     kSecretFieldNumber = 2,
-    kAccessTokenV2FieldNumber = 3,
+    kAccessTokenV1FieldNumber = 3,
   };
   // string client_id = 1;
   void clear_client_id();
@@ -14777,20 +14777,20 @@ class UpdateAccessTokenVersionRequest :
   std::string* _internal_mutable_secret();
   public:
 
-  // string access_token_v2 = 3;
-  void clear_access_token_v2();
-  const std::string& access_token_v2() const;
-  void set_access_token_v2(const std::string& value);
-  void set_access_token_v2(std::string&& value);
-  void set_access_token_v2(const char* value);
-  void set_access_token_v2(const char* value, size_t size);
-  std::string* mutable_access_token_v2();
-  std::string* release_access_token_v2();
-  void set_allocated_access_token_v2(std::string* access_token_v2);
+  // string access_token_v1 = 3;
+  void clear_access_token_v1();
+  const std::string& access_token_v1() const;
+  void set_access_token_v1(const std::string& value);
+  void set_access_token_v1(std::string&& value);
+  void set_access_token_v1(const char* value);
+  void set_access_token_v1(const char* value, size_t size);
+  std::string* mutable_access_token_v1();
+  std::string* release_access_token_v1();
+  void set_allocated_access_token_v1(std::string* access_token_v1);
   private:
-  const std::string& _internal_access_token_v2() const;
-  void _internal_set_access_token_v2(const std::string& value);
-  std::string* _internal_mutable_access_token_v2();
+  const std::string& _internal_access_token_v1() const;
+  void _internal_set_access_token_v1(const std::string& value);
+  std::string* _internal_mutable_access_token_v1();
   public:
 
   // @@protoc_insertion_point(class_scope:plaid.UpdateAccessTokenVersionRequest)
@@ -14800,7 +14800,7 @@ class UpdateAccessTokenVersionRequest :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secret_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr access_token_v2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr access_token_v1_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_plaid_2eproto;
 };
@@ -40197,64 +40197,64 @@ inline void UpdateAccessTokenVersionRequest::set_allocated_secret(std::string* s
   // @@protoc_insertion_point(field_set_allocated:plaid.UpdateAccessTokenVersionRequest.secret)
 }
 
-// string access_token_v2 = 3;
-inline void UpdateAccessTokenVersionRequest::clear_access_token_v2() {
-  access_token_v2_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// string access_token_v1 = 3;
+inline void UpdateAccessTokenVersionRequest::clear_access_token_v1() {
+  access_token_v1_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& UpdateAccessTokenVersionRequest::access_token_v2() const {
-  // @@protoc_insertion_point(field_get:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
-  return _internal_access_token_v2();
+inline const std::string& UpdateAccessTokenVersionRequest::access_token_v1() const {
+  // @@protoc_insertion_point(field_get:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
+  return _internal_access_token_v1();
 }
-inline void UpdateAccessTokenVersionRequest::set_access_token_v2(const std::string& value) {
-  _internal_set_access_token_v2(value);
-  // @@protoc_insertion_point(field_set:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+inline void UpdateAccessTokenVersionRequest::set_access_token_v1(const std::string& value) {
+  _internal_set_access_token_v1(value);
+  // @@protoc_insertion_point(field_set:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
 }
-inline std::string* UpdateAccessTokenVersionRequest::mutable_access_token_v2() {
-  // @@protoc_insertion_point(field_mutable:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
-  return _internal_mutable_access_token_v2();
+inline std::string* UpdateAccessTokenVersionRequest::mutable_access_token_v1() {
+  // @@protoc_insertion_point(field_mutable:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
+  return _internal_mutable_access_token_v1();
 }
-inline const std::string& UpdateAccessTokenVersionRequest::_internal_access_token_v2() const {
-  return access_token_v2_.GetNoArena();
+inline const std::string& UpdateAccessTokenVersionRequest::_internal_access_token_v1() const {
+  return access_token_v1_.GetNoArena();
 }
-inline void UpdateAccessTokenVersionRequest::_internal_set_access_token_v2(const std::string& value) {
+inline void UpdateAccessTokenVersionRequest::_internal_set_access_token_v1(const std::string& value) {
   
-  access_token_v2_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  access_token_v1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void UpdateAccessTokenVersionRequest::set_access_token_v2(std::string&& value) {
+inline void UpdateAccessTokenVersionRequest::set_access_token_v1(std::string&& value) {
   
-  access_token_v2_.SetNoArena(
+  access_token_v1_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+  // @@protoc_insertion_point(field_set_rvalue:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
 }
-inline void UpdateAccessTokenVersionRequest::set_access_token_v2(const char* value) {
+inline void UpdateAccessTokenVersionRequest::set_access_token_v1(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  access_token_v2_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+  access_token_v1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
 }
-inline void UpdateAccessTokenVersionRequest::set_access_token_v2(const char* value, size_t size) {
+inline void UpdateAccessTokenVersionRequest::set_access_token_v1(const char* value, size_t size) {
   
-  access_token_v2_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  access_token_v1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+  // @@protoc_insertion_point(field_set_pointer:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
 }
-inline std::string* UpdateAccessTokenVersionRequest::_internal_mutable_access_token_v2() {
+inline std::string* UpdateAccessTokenVersionRequest::_internal_mutable_access_token_v1() {
   
-  return access_token_v2_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return access_token_v1_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* UpdateAccessTokenVersionRequest::release_access_token_v2() {
-  // @@protoc_insertion_point(field_release:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+inline std::string* UpdateAccessTokenVersionRequest::release_access_token_v1() {
+  // @@protoc_insertion_point(field_release:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
   
-  return access_token_v2_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return access_token_v1_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void UpdateAccessTokenVersionRequest::set_allocated_access_token_v2(std::string* access_token_v2) {
-  if (access_token_v2 != nullptr) {
+inline void UpdateAccessTokenVersionRequest::set_allocated_access_token_v1(std::string* access_token_v1) {
+  if (access_token_v1 != nullptr) {
     
   } else {
     
   }
-  access_token_v2_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), access_token_v2);
-  // @@protoc_insertion_point(field_set_allocated:plaid.UpdateAccessTokenVersionRequest.access_token_v2)
+  access_token_v1_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), access_token_v1);
+  // @@protoc_insertion_point(field_set_allocated:plaid.UpdateAccessTokenVersionRequest.access_token_v1)
 }
 
 // -------------------------------------------------------------------

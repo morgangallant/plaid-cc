@@ -569,7 +569,7 @@ message InvalidateAccessTokenResponse {
 message UpdateAccessTokenVersionRequest {
   string client_id = 1;
   string secret = 2;
-  string access_token_v2 = 3;
+  string access_token_v1 = 3;
 }
 
 message UpdateAccessTokenVersionResponse {

@@ -369,26 +369,128 @@ Client::GetInvestmentTransactions(const std::string &access_token) {
 // Items
 
 StatusWrapped<GetItemResponse>
-Client::GetItem(const std::string &access_token) {}
+Client::GetItem(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<GetItemResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/get"));
+    auto req_data = GetItemRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetItemResponse>(req);
+}
 
 StatusWrapped<RemoveItemResponse>
-Client::RemoveItem(const std::string &access_token) {}
+Client::RemoveItem(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<RemoveItemResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/remove"));
+    auto req_data = RemoveItemRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<RemoveItemResponse>(req);
+}
 
 StatusWrapped<UpdateItemWebhookResponse>
 Client::UpdateItemWebhook(const std::string &access_token,
-                          const std::string &webhook) {}
+                          const std::string &webhook) {
+  if (access_token == "")
+    return StatusWrapped<UpdateItemWebhookResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  if (webhook == "")
+    return StatusWrapped<UpdateItemWebhookResponse>::FromStatus(
+        Status::MissingInfo("missing webhook"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/webhook/update"));
+    auto req_data = UpdateItemWebhookRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req_data.set_webhook(webhook);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<UpdateItemWebhookResponse>(req);
+}
 
 StatusWrapped<InvalidateAccessTokenResponse>
-Client::InvalidateAccessToken(const std::string &access_token) {}
+Client::InvalidateAccessToken(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<InvalidateAccessTokenResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/access_token/invalidate"));
+    auto req_data = InvalidateAccessTokenRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<InvalidateAccessTokenResponse>(req);
+}
 
 StatusWrapped<UpdateAccessTokenVersionResponse>
-Client::UpdateAccessTokenVersion(const std::string &access_token) {}
+Client::UpdateAccessTokenVersion(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<UpdateAccessTokenVersionResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/access_token/update_version"));
+    auto req_data = UpdateAccessTokenVersionRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token_v1(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<UpdateAccessTokenVersionResponse>(req);
+}
 
 StatusWrapped<CreatePublicTokenResponse>
-Client::CreatePublicToken(const std::string &access_token) {}
+Client::CreatePublicToken(const std::string &access_token) {
+  if (access_token == "")
+    return StatusWrapped<CreatePublicTokenResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/public_token/create"));
+    auto req_data = CreatePublicTokenRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreatePublicTokenResponse>(req);
+}
 
 StatusWrapped<ExchangePublicTokenResponse>
-Client::ExchangePublicToken(const std::string &public_token) {}
+Client::ExchangePublicToken(const std::string &public_token) {
+  if (public_token == "")
+    return StatusWrapped<ExchangePublicTokenResponse>::FromStatus(
+        Status::MissingInfo("missing public token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("item/public_token/exchange"));
+    auto req_data = ExchangePublicTokenRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_public_token(public_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<ExchangePublicTokenResponse>(req);
+}
 
 // Liabilities
 
