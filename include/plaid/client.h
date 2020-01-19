@@ -27,11 +27,26 @@ public:
   static std::unique_ptr<Client> Create(const Credentials &creds);
   ~Client() = default;
 
+  // Accounts
+  StatusWrapped<GetBalancesResponse>
+  GetBalancesWithOptions(const std::string &access_token,
+                         const GetBalancesOptions &options);
+  StatusWrapped<GetBalancesResponse>
+  GetBalances(const std::string &access_token);
+  StatusWrapped<GetAccountsResponse>
+  GetAccountsWithOptions(const std::string &access_token,
+                         const GetAccountsOptions &options);
+  StatusWrapped<GetAccountsResponse>
+  GetAccounts(const std::string &access_token);
+
   // Categories
   StatusWrapped<GetCategoriesResponse> GetCategories();
 
 private:
   Client(const Credentials &creds);
+
+  std::string AppendUrl(const std::string &extra) const;
+
   Credentials creds_;
 };
 

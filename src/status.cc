@@ -21,10 +21,14 @@ Status Status::ParseError(const std::string &description) {
 Status Status::RequestError(const std::string &description) {
   return Status(Code::kRequestError, description);
 }
+Status Status::MissingInfo(const std::string &description) {
+  return Status(Code::kMissingInfo, description);
+}
 
 bool Status::IsOk() const { return code_ == Code::kOk; }
 bool Status::IsParseError() const { return code_ == Code::kParseError; }
 bool Status::IsRequestError() const { return code_ == Code::kRequestError; }
+bool Status::IsMissingInfo() const { return code_ == Code::kMissingInfo; }
 
 std::string Status::CodeDesc() const {
   switch (code_) {
@@ -34,6 +38,8 @@ std::string Status::CodeDesc() const {
     return "Parse Error";
   case Code::kRequestError:
     return "Request Error";
+  case Code::kMissingInfo:
+    return "Missing Info";
   default:
     throw std::runtime_error("invalid code provided");
   }

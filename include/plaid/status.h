@@ -12,16 +12,18 @@ public:
   static Status OK();
   static Status ParseError(const std::string &description);
   static Status RequestError(const std::string &description);
+  static Status MissingInfo(const std::string &description);
 
   bool IsOk() const;
   bool IsParseError() const;
   bool IsRequestError() const;
+  bool IsMissingInfo() const;
 
   std::string CodeDesc() const;
   std::string Description() const;
 
 private:
-  enum class Code { kOk, kParseError, kRequestError };
+  enum class Code { kOk, kParseError, kRequestError, kMissingInfo };
   Code code_;
   std::string description_;
 
