@@ -98,6 +98,73 @@ public:
   StatusWrapped<GetInvestmentTransactionsResponse>
   GetInvestmentTransactions(const std::string &access_token);
 
+  // Items
+  StatusWrapped<GetItemResponse> GetItem(const std::string &access_token);
+  StatusWrapped<RemoveItemResponse> RemoveItem(const std::string &access_token);
+  StatusWrapped<UpdateItemWebhookResponse>
+  UpdateItemWebhook(const std::string &access_token,
+                    const std::string &webhook);
+  StatusWrapped<InvalidateAccessTokenResponse>
+  InvalidateAccessToken(const std::string &access_token);
+  StatusWrapped<UpdateAccessTokenVersionResponse>
+  UpdateAccessTokenVersion(const std::string &access_token);
+  StatusWrapped<CreatePublicTokenResponse>
+  CreatePublicToken(const std::string &access_token);
+  StatusWrapped<ExchangePublicTokenResponse>
+  ExchangePublicToken(const std::string &public_token);
+
+  // Liabilities
+  StatusWrapped<GetLiabilitiesResponse>
+  GetLiabilitiesWithOptions(const std::string &access_token,
+                            const GetLiabilitiesOptions &options);
+  StatusWrapped<GetLiabilitiesResponse>
+  GetLiabilities(const std::string &access_token);
+
+  // Payments
+  StatusWrapped<CreatePaymentRecipientResponse>
+  CreatePaymentRecipient(const std::string &name, const std::string &iban,
+                         const PaymentRecipientAddress &address);
+  StatusWrapped<GetPaymentRecipientResponse>
+  GetPaymentRecipient(const std::string &recipient_id);
+  StatusWrapped<ListPaymentRecipientsResponse> ListPaymentRecipients();
+  StatusWrapped<CreatePaymentResponse>
+  CreatePayment(const std::string &recipient_id, const std::string &string,
+                const PaymentAmount &amount);
+  StatusWrapped<CreatePaymentTokenResponse>
+  CreatePaymentToken(const std::string &payment_id);
+  StatusWrapped<GetPaymentResponse> GetPayment(const std::string &payment_id);
+  StatusWrapped<ListPaymentsResponse>
+  ListPayments(const ListPaymentsOptions &options);
+
+  // Processors
+  StatusWrapped<CreateProcessorTokenResponse>
+  CreateApexToken(const std::string &access_token,
+                  const std::string &account_id);
+  StatusWrapped<CreateProcessorTokenResponse>
+  CreateDwollaToken(const std::string &access_token,
+                    const std::string &account_id);
+  StatusWrapped<CreateProcessorTokenResponse>
+  CreateOcrolusToken(const std::string &access_token,
+                     const std::string &account_id);
+  StatusWrapped<CreateStripeTokenResponse>
+  CreateStripeToken(const std::string &access_token,
+                    const std::string &account_id);
+
+  // Sandbox
+  StatusWrapped<CreateSandboxPublicTokenResponse>
+  CreateSandboxPublicToken(const std::string &institution_id,
+                           const std::vector<std::string> &initial_products);
+  StatusWrapped<ResetSandboxItemResponse>
+  ResetSandboxItem(const std::string &access_token);
+
+  // Transactions
+  StatusWrapped<GetTransactionsResponse>
+  GetTransactionsWithOptions(const std::string &access_token,
+                             const GetTransactionsOptions &options);
+  StatusWrapped<GetTransactionsResponse>
+  GetTransactions(const std::string &access_token,
+                  const std::string &start_date, const std::string &end_date);
+
 private:
   Client(const Credentials &creds);
 
