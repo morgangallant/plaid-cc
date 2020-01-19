@@ -12,6 +12,8 @@ inc = include_directories('include')
 subdir('include')
 subdir('src')
 
+h = install_headers(headers, subdir : 'plaid')
+
 pkg_mod = import ('pkgconfig')
 pkg_mod.generate(libraries : plaidlib,
                  version : '1.0',

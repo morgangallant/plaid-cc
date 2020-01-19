@@ -1,1 +1,1 @@
-install_headers('plaid/client.h', 'plaid/plaid.pb.h', 'plaid/status.h', 'plaid/transport.h')
+headers = files('plaid/client.h', 'plaid/plaid.pb.h', 'plaid/status.h', 'plaid/transport.h')
