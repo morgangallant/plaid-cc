@@ -48,6 +48,12 @@ public:
   StatusWrapped<RemoveAssetReportResponse>
   RemoveAssetReport(const std::string &asset_report_token);
 
+  // Authentication
+  StatusWrapped<GetAuthResponse>
+  GetAuthWithOptions(const std::string &access_token,
+                     const GetAuthOptions &options);
+  StatusWrapped<GetAuthResponse> GetAuth(const std::string &access_token);
+
   // Categories
   StatusWrapped<GetCategoriesResponse> GetCategories();
 

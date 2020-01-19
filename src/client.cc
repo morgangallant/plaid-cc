@@ -56,7 +56,7 @@ Client::GetBalancesWithOptions(const std::string &access_token,
                                const GetBalancesOptions &options) {
   if (access_token == "")
     return StatusWrapped<GetBalancesResponse>::FromStatus(
-        Status::MissingInfo("missing account token"));
+        Status::MissingInfo("missing access token"));
   auto req = [&]() {
     auto req = Request(AppendUrl("accounts/balance/get"));
     auto req_data = GetBalancesRequest();
@@ -81,7 +81,7 @@ Client::GetAccountsWithOptions(const std::string &access_token,
                                const GetAccountsOptions &options) {
   if (access_token == "")
     return StatusWrapped<GetAccountsResponse>::FromStatus(
-        Status::MissingInfo("missing account token"));
+        Status::MissingInfo("missing access token"));
   auto req = [&]() {
     auto req = Request(AppendUrl("accounts/get"));
     auto req_data = GetAccountsRequest();
@@ -157,6 +157,33 @@ Client::RemoveAssetReport(const std::string &asset_report_token) {
     return req;
   };
   return make_plaid_request<RemoveAssetReportResponse>(req);
+}
+
+// Authentication
+
+StatusWrapped<GetAuthResponse>
+Client::GetAuthWithOptions(const std::string &access_token,
+                           const GetAuthOptions &options) {
+  if (access_token == "")
+    return StatusWrapped<GetAuthResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&] {
+    auto req = Request(AppendUrl("auth/get"));
+    auto req_data = GetAuthRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    for (int i = 0; i < options.account_ids_size(); ++i)
+      req_data.mutable_options()->add_account_ids(options.account_ids(i));
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetAuthResponse>(req);
+}
+
+StatusWrapped<GetAuthResponse>
+Client::GetAuth(const std::string &access_token) {
+  return GetAuthWithOptions(access_token, GetAuthOptions());
 }
 
 // Categories
