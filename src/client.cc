@@ -743,11 +743,39 @@ Client::ResetSandboxItem(const std::string &access_token) {
 
 StatusWrapped<GetTransactionsResponse>
 Client::GetTransactionsWithOptions(const std::string &access_token,
-                                   const GetTransactionsOptions &options) {}
+                                   const GetTransactionsOptions &options) {
+  if (options.start_date() == "")
+    return StatusWrapped<GetTransactionsResponse>::FromStatus(
+        Status::MissingInfo("missing start date"));
+  if (options.end_date() == "")
+    return StatusWrapped<GetTransactionsResponse>::FromStatus(
+        Status::MissingInfo("missing end date"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("transactions/get"));
+    auto req_data = GetTransactionsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    req_data.set_start_date(options.start_date());
+    req_data.set_end_date(options.end_date());
+    req_data.mutable_options()->set_count(options.count());
+    req_data.mutable_options()->set_offset(options.offset());
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetTransactionsResponse>(req);
+}
 
 StatusWrapped<GetTransactionsResponse>
 Client::GetTransactions(const std::string &access_token,
                         const std::string &start_date,
-                        const std::string &end_date) {}
+                        const std::string &end_date) {
+  auto options = GetTransactionsOptions();
+  options.set_start_date(start_date);
+  options.set_end_date(end_date);
+  options.set_count(100);
+  options.set_offset(0);
+  return GetTransactionsWithOptions(access_token, options);
+}
 
 } // namespace plaid
