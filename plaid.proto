@@ -169,7 +169,7 @@ message CreateAuditCopyRequest {
   string auditor_id = 4;
 }
 
-message CreateAuditCopyRespose {
+message CreateAuditCopyTokenResponse {
   string request_id = 1;
   string audit_copy_token = 2;
 }

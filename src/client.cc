@@ -1,6 +1,7 @@
 #include "plaid/client.h"
 #include "plaid/transport.h"
 
+#include <functional>
 #include <memory>
 #include <stdexcept>
 
@@ -87,7 +88,7 @@ Client::GetAccountsWithOptions(const std::string &access_token,
     req_data.set_client_id(creds_.client_id);
     req_data.set_secret(creds_.secret);
     req_data.set_access_token(access_token);
-    for (int i = 0; i < options.account_ids_size; ++i)
+    for (int i = 0; i < options.account_ids_size(); ++i)
       req_data.mutable_options()->add_account_ids(options.account_ids(i));
     req.SetBody(req_data);
     return req;
@@ -98,6 +99,64 @@ Client::GetAccountsWithOptions(const std::string &access_token,
 StatusWrapped<GetAccountsResponse>
 Client::GetAccounts(const std::string &access_token) {
   return GetAccountsWithOptions(access_token, GetAccountsOptions());
+}
+
+// Assets
+
+StatusWrapped<GetAssetReportResponse>
+Client::GetAssetReport(const std::string &asset_report_token) {
+  if (asset_report_token == "")
+    return StatusWrapped<GetAssetReportResponse>::FromStatus(
+        Status::MissingInfo("missing asset report token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("asset_report/get"));
+    auto req_data = GetAssetReportRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_asset_report_token(asset_report_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetAssetReportResponse>(req);
+}
+
+StatusWrapped<CreateAuditCopyTokenResponse>
+Client::CreateAuditCopy(const std::string &asset_report_token,
+                        const std::string &auditor_id) {
+  if (asset_report_token == "")
+    return StatusWrapped<CreateAuditCopyTokenResponse>::FromStatus(
+        Status::MissingInfo("missing asset report token"));
+  if (auditor_id == "")
+    return StatusWrapped<CreateAuditCopyTokenResponse>::FromStatus(
+        Status::MissingInfo("missing auditor id"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("asset_report/audit_copy/create"));
+    auto req_data = CreateAuditCopyRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_asset_report_token(asset_report_token);
+    req_data.set_auditor_id(auditor_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreateAuditCopyTokenResponse>(req);
+}
+
+StatusWrapped<RemoveAssetReportResponse>
+Client::RemoveAssetReport(const std::string &asset_report_token) {
+  if (asset_report_token == "")
+    return StatusWrapped<RemoveAssetReportResponse>::FromStatus(
+        Status::MissingInfo("missing asset report token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("asset_report/remove"));
+    auto req_data = RemoveAssetReportRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_asset_report_token(asset_report_token);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<RemoveAssetReportResponse>(req);
 }
 
 // Categories

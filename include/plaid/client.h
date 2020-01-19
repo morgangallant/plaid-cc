@@ -39,6 +39,15 @@ public:
   StatusWrapped<GetAccountsResponse>
   GetAccounts(const std::string &access_token);
 
+  // Assets
+  StatusWrapped<GetAssetReportResponse>
+  GetAssetReport(const std::string &asset_report_token);
+  StatusWrapped<CreateAuditCopyTokenResponse>
+  CreateAuditCopy(const std::string &asset_report_token,
+                  const std::string &auditor_id);
+  StatusWrapped<RemoveAssetReportResponse>
+  RemoveAssetReport(const std::string &asset_report_token);
+
   // Categories
   StatusWrapped<GetCategoriesResponse> GetCategories();
 

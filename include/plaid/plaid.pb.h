@@ -94,9 +94,9 @@ extern CategoryDefaultTypeInternal _Category_default_instance_;
 class CreateAuditCopyRequest;
 class CreateAuditCopyRequestDefaultTypeInternal;
 extern CreateAuditCopyRequestDefaultTypeInternal _CreateAuditCopyRequest_default_instance_;
-class CreateAuditCopyRespose;
-class CreateAuditCopyResposeDefaultTypeInternal;
-extern CreateAuditCopyResposeDefaultTypeInternal _CreateAuditCopyRespose_default_instance_;
+class CreateAuditCopyTokenResponse;
+class CreateAuditCopyTokenResponseDefaultTypeInternal;
+extern CreateAuditCopyTokenResponseDefaultTypeInternal _CreateAuditCopyTokenResponse_default_instance_;
 class CreateProcessorTokenRequest;
 class CreateProcessorTokenRequestDefaultTypeInternal;
 extern CreateProcessorTokenRequestDefaultTypeInternal _CreateProcessorTokenRequest_default_instance_;
@@ -391,7 +391,7 @@ template<> ::plaid::AssetReportUser* Arena::CreateMaybeMessage<::plaid::AssetRep
 template<> ::plaid::BACSNumber* Arena::CreateMaybeMessage<::plaid::BACSNumber>(Arena*);
 template<> ::plaid::Category* Arena::CreateMaybeMessage<::plaid::Category>(Arena*);
 template<> ::plaid::CreateAuditCopyRequest* Arena::CreateMaybeMessage<::plaid::CreateAuditCopyRequest>(Arena*);
-template<> ::plaid::CreateAuditCopyRespose* Arena::CreateMaybeMessage<::plaid::CreateAuditCopyRespose>(Arena*);
+template<> ::plaid::CreateAuditCopyTokenResponse* Arena::CreateMaybeMessage<::plaid::CreateAuditCopyTokenResponse>(Arena*);
 template<> ::plaid::CreateProcessorTokenRequest* Arena::CreateMaybeMessage<::plaid::CreateProcessorTokenRequest>(Arena*);
 template<> ::plaid::CreateProcessorTokenResponse* Arena::CreateMaybeMessage<::plaid::CreateProcessorTokenResponse>(Arena*);
 template<> ::plaid::CreatePublicTokenRequest* Arena::CreateMaybeMessage<::plaid::CreatePublicTokenRequest>(Arena*);
@@ -4457,23 +4457,23 @@ class CreateAuditCopyRequest :
 };
 // -------------------------------------------------------------------
 
-class CreateAuditCopyRespose :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:plaid.CreateAuditCopyRespose) */ {
+class CreateAuditCopyTokenResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:plaid.CreateAuditCopyTokenResponse) */ {
  public:
-  CreateAuditCopyRespose();
-  virtual ~CreateAuditCopyRespose();
+  CreateAuditCopyTokenResponse();
+  virtual ~CreateAuditCopyTokenResponse();
 
-  CreateAuditCopyRespose(const CreateAuditCopyRespose& from);
-  CreateAuditCopyRespose(CreateAuditCopyRespose&& from) noexcept
-    : CreateAuditCopyRespose() {
+  CreateAuditCopyTokenResponse(const CreateAuditCopyTokenResponse& from);
+  CreateAuditCopyTokenResponse(CreateAuditCopyTokenResponse&& from) noexcept
+    : CreateAuditCopyTokenResponse() {
     *this = ::std::move(from);
   }
 
-  inline CreateAuditCopyRespose& operator=(const CreateAuditCopyRespose& from) {
+  inline CreateAuditCopyTokenResponse& operator=(const CreateAuditCopyTokenResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CreateAuditCopyRespose& operator=(CreateAuditCopyRespose&& from) noexcept {
+  inline CreateAuditCopyTokenResponse& operator=(CreateAuditCopyTokenResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -4491,37 +4491,37 @@ class CreateAuditCopyRespose :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const CreateAuditCopyRespose& default_instance();
+  static const CreateAuditCopyTokenResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const CreateAuditCopyRespose* internal_default_instance() {
-    return reinterpret_cast<const CreateAuditCopyRespose*>(
-               &_CreateAuditCopyRespose_default_instance_);
+  static inline const CreateAuditCopyTokenResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateAuditCopyTokenResponse*>(
+               &_CreateAuditCopyTokenResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     22;
 
-  friend void swap(CreateAuditCopyRespose& a, CreateAuditCopyRespose& b) {
+  friend void swap(CreateAuditCopyTokenResponse& a, CreateAuditCopyTokenResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(CreateAuditCopyRespose* other) {
+  inline void Swap(CreateAuditCopyTokenResponse* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline CreateAuditCopyRespose* New() const final {
-    return CreateMaybeMessage<CreateAuditCopyRespose>(nullptr);
+  inline CreateAuditCopyTokenResponse* New() const final {
+    return CreateMaybeMessage<CreateAuditCopyTokenResponse>(nullptr);
   }
 
-  CreateAuditCopyRespose* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateAuditCopyRespose>(arena);
+  CreateAuditCopyTokenResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateAuditCopyTokenResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const CreateAuditCopyRespose& from);
-  void MergeFrom(const CreateAuditCopyRespose& from);
+  void CopyFrom(const CreateAuditCopyTokenResponse& from);
+  void MergeFrom(const CreateAuditCopyTokenResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -4535,10 +4535,10 @@ class CreateAuditCopyRespose :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateAuditCopyRespose* other);
+  void InternalSwap(CreateAuditCopyTokenResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "plaid.CreateAuditCopyRespose";
+    return "plaid.CreateAuditCopyTokenResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -4598,7 +4598,7 @@ class CreateAuditCopyRespose :
   std::string* _internal_mutable_audit_copy_token();
   public:
 
-  // @@protoc_insertion_point(class_scope:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(class_scope:plaid.CreateAuditCopyTokenResponse)
  private:
   class _Internal;
 
@@ -25041,126 +25041,126 @@ inline void CreateAuditCopyRequest::set_allocated_auditor_id(std::string* audito
 
 // -------------------------------------------------------------------
 
-// CreateAuditCopyRespose
+// CreateAuditCopyTokenResponse
 
 // string request_id = 1;
-inline void CreateAuditCopyRespose::clear_request_id() {
+inline void CreateAuditCopyTokenResponse::clear_request_id() {
   request_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& CreateAuditCopyRespose::request_id() const {
-  // @@protoc_insertion_point(field_get:plaid.CreateAuditCopyRespose.request_id)
+inline const std::string& CreateAuditCopyTokenResponse::request_id() const {
+  // @@protoc_insertion_point(field_get:plaid.CreateAuditCopyTokenResponse.request_id)
   return _internal_request_id();
 }
-inline void CreateAuditCopyRespose::set_request_id(const std::string& value) {
+inline void CreateAuditCopyTokenResponse::set_request_id(const std::string& value) {
   _internal_set_request_id(value);
-  // @@protoc_insertion_point(field_set:plaid.CreateAuditCopyRespose.request_id)
+  // @@protoc_insertion_point(field_set:plaid.CreateAuditCopyTokenResponse.request_id)
 }
-inline std::string* CreateAuditCopyRespose::mutable_request_id() {
-  // @@protoc_insertion_point(field_mutable:plaid.CreateAuditCopyRespose.request_id)
+inline std::string* CreateAuditCopyTokenResponse::mutable_request_id() {
+  // @@protoc_insertion_point(field_mutable:plaid.CreateAuditCopyTokenResponse.request_id)
   return _internal_mutable_request_id();
 }
-inline const std::string& CreateAuditCopyRespose::_internal_request_id() const {
+inline const std::string& CreateAuditCopyTokenResponse::_internal_request_id() const {
   return request_id_.GetNoArena();
 }
-inline void CreateAuditCopyRespose::_internal_set_request_id(const std::string& value) {
+inline void CreateAuditCopyTokenResponse::_internal_set_request_id(const std::string& value) {
   
   request_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void CreateAuditCopyRespose::set_request_id(std::string&& value) {
+inline void CreateAuditCopyTokenResponse::set_request_id(std::string&& value) {
   
   request_id_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:plaid.CreateAuditCopyRespose.request_id)
+  // @@protoc_insertion_point(field_set_rvalue:plaid.CreateAuditCopyTokenResponse.request_id)
 }
-inline void CreateAuditCopyRespose::set_request_id(const char* value) {
+inline void CreateAuditCopyTokenResponse::set_request_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   request_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:plaid.CreateAuditCopyRespose.request_id)
+  // @@protoc_insertion_point(field_set_char:plaid.CreateAuditCopyTokenResponse.request_id)
 }
-inline void CreateAuditCopyRespose::set_request_id(const char* value, size_t size) {
+inline void CreateAuditCopyTokenResponse::set_request_id(const char* value, size_t size) {
   
   request_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:plaid.CreateAuditCopyRespose.request_id)
+  // @@protoc_insertion_point(field_set_pointer:plaid.CreateAuditCopyTokenResponse.request_id)
 }
-inline std::string* CreateAuditCopyRespose::_internal_mutable_request_id() {
+inline std::string* CreateAuditCopyTokenResponse::_internal_mutable_request_id() {
   
   return request_id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* CreateAuditCopyRespose::release_request_id() {
-  // @@protoc_insertion_point(field_release:plaid.CreateAuditCopyRespose.request_id)
+inline std::string* CreateAuditCopyTokenResponse::release_request_id() {
+  // @@protoc_insertion_point(field_release:plaid.CreateAuditCopyTokenResponse.request_id)
   
   return request_id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void CreateAuditCopyRespose::set_allocated_request_id(std::string* request_id) {
+inline void CreateAuditCopyTokenResponse::set_allocated_request_id(std::string* request_id) {
   if (request_id != nullptr) {
     
   } else {
     
   }
   request_id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), request_id);
-  // @@protoc_insertion_point(field_set_allocated:plaid.CreateAuditCopyRespose.request_id)
+  // @@protoc_insertion_point(field_set_allocated:plaid.CreateAuditCopyTokenResponse.request_id)
 }
 
 // string audit_copy_token = 2;
-inline void CreateAuditCopyRespose::clear_audit_copy_token() {
+inline void CreateAuditCopyTokenResponse::clear_audit_copy_token() {
   audit_copy_token_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& CreateAuditCopyRespose::audit_copy_token() const {
-  // @@protoc_insertion_point(field_get:plaid.CreateAuditCopyRespose.audit_copy_token)
+inline const std::string& CreateAuditCopyTokenResponse::audit_copy_token() const {
+  // @@protoc_insertion_point(field_get:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
   return _internal_audit_copy_token();
 }
-inline void CreateAuditCopyRespose::set_audit_copy_token(const std::string& value) {
+inline void CreateAuditCopyTokenResponse::set_audit_copy_token(const std::string& value) {
   _internal_set_audit_copy_token(value);
-  // @@protoc_insertion_point(field_set:plaid.CreateAuditCopyRespose.audit_copy_token)
+  // @@protoc_insertion_point(field_set:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
 }
-inline std::string* CreateAuditCopyRespose::mutable_audit_copy_token() {
-  // @@protoc_insertion_point(field_mutable:plaid.CreateAuditCopyRespose.audit_copy_token)
+inline std::string* CreateAuditCopyTokenResponse::mutable_audit_copy_token() {
+  // @@protoc_insertion_point(field_mutable:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
   return _internal_mutable_audit_copy_token();
 }
-inline const std::string& CreateAuditCopyRespose::_internal_audit_copy_token() const {
+inline const std::string& CreateAuditCopyTokenResponse::_internal_audit_copy_token() const {
   return audit_copy_token_.GetNoArena();
 }
-inline void CreateAuditCopyRespose::_internal_set_audit_copy_token(const std::string& value) {
+inline void CreateAuditCopyTokenResponse::_internal_set_audit_copy_token(const std::string& value) {
   
   audit_copy_token_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void CreateAuditCopyRespose::set_audit_copy_token(std::string&& value) {
+inline void CreateAuditCopyTokenResponse::set_audit_copy_token(std::string&& value) {
   
   audit_copy_token_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:plaid.CreateAuditCopyRespose.audit_copy_token)
+  // @@protoc_insertion_point(field_set_rvalue:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
 }
-inline void CreateAuditCopyRespose::set_audit_copy_token(const char* value) {
+inline void CreateAuditCopyTokenResponse::set_audit_copy_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   audit_copy_token_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:plaid.CreateAuditCopyRespose.audit_copy_token)
+  // @@protoc_insertion_point(field_set_char:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
 }
-inline void CreateAuditCopyRespose::set_audit_copy_token(const char* value, size_t size) {
+inline void CreateAuditCopyTokenResponse::set_audit_copy_token(const char* value, size_t size) {
   
   audit_copy_token_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:plaid.CreateAuditCopyRespose.audit_copy_token)
+  // @@protoc_insertion_point(field_set_pointer:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
 }
-inline std::string* CreateAuditCopyRespose::_internal_mutable_audit_copy_token() {
+inline std::string* CreateAuditCopyTokenResponse::_internal_mutable_audit_copy_token() {
   
   return audit_copy_token_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* CreateAuditCopyRespose::release_audit_copy_token() {
-  // @@protoc_insertion_point(field_release:plaid.CreateAuditCopyRespose.audit_copy_token)
+inline std::string* CreateAuditCopyTokenResponse::release_audit_copy_token() {
+  // @@protoc_insertion_point(field_release:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
   
   return audit_copy_token_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void CreateAuditCopyRespose::set_allocated_audit_copy_token(std::string* audit_copy_token) {
+inline void CreateAuditCopyTokenResponse::set_allocated_audit_copy_token(std::string* audit_copy_token) {
   if (audit_copy_token != nullptr) {
     
   } else {
     
   }
   audit_copy_token_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), audit_copy_token);
-  // @@protoc_insertion_point(field_set_allocated:plaid.CreateAuditCopyRespose.audit_copy_token)
+  // @@protoc_insertion_point(field_set_allocated:plaid.CreateAuditCopyTokenResponse.audit_copy_token)
 }
 
 // -------------------------------------------------------------------

@@ -151,10 +151,10 @@ class CreateAuditCopyRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateAuditCopyRequest> _instance;
 } _CreateAuditCopyRequest_default_instance_;
-class CreateAuditCopyResposeDefaultTypeInternal {
+class CreateAuditCopyTokenResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateAuditCopyRespose> _instance;
-} _CreateAuditCopyRespose_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateAuditCopyTokenResponse> _instance;
+} _CreateAuditCopyTokenResponse_default_instance_;
 class GetAuthRequestOptionsDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetAuthRequestOptions> _instance;
@@ -685,19 +685,19 @@ static void InitDefaultsscc_info_CreateAuditCopyRequest_plaid_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateAuditCopyRequest_plaid_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateAuditCopyRequest_plaid_2eproto}, {}};
 
-static void InitDefaultsscc_info_CreateAuditCopyRespose_plaid_2eproto() {
+static void InitDefaultsscc_info_CreateAuditCopyTokenResponse_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::plaid::_CreateAuditCopyRespose_default_instance_;
-    new (ptr) ::plaid::CreateAuditCopyRespose();
+    void* ptr = &::plaid::_CreateAuditCopyTokenResponse_default_instance_;
+    new (ptr) ::plaid::CreateAuditCopyTokenResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::plaid::CreateAuditCopyRespose::InitAsDefaultInstance();
+  ::plaid::CreateAuditCopyTokenResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateAuditCopyRespose_plaid_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateAuditCopyRespose_plaid_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateAuditCopyTokenResponse_plaid_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateAuditCopyTokenResponse_plaid_2eproto}, {}};
 
 static void InitDefaultsscc_info_CreateProcessorTokenRequest_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2249,12 +2249,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plaid_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyRequest, asset_report_token_),
   PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyRequest, auditor_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyRespose, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyTokenResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyRespose, request_id_),
-  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyRespose, audit_copy_token_),
+  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyTokenResponse, request_id_),
+  PROTOBUF_FIELD_OFFSET(::plaid::CreateAuditCopyTokenResponse, audit_copy_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::plaid::GetAuthRequestOptions, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3050,7 +3050,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 163, -1, sizeof(::plaid::RemoveAssetReportRequest)},
   { 171, -1, sizeof(::plaid::RemoveAssetReportResponse)},
   { 178, -1, sizeof(::plaid::CreateAuditCopyRequest)},
-  { 187, -1, sizeof(::plaid::CreateAuditCopyRespose)},
+  { 187, -1, sizeof(::plaid::CreateAuditCopyTokenResponse)},
   { 194, -1, sizeof(::plaid::GetAuthRequestOptions)},
   { 200, -1, sizeof(::plaid::GetAuthRequest)},
   { 209, -1, sizeof(::plaid::AccountNumberCollection)},
@@ -3160,7 +3160,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_RemoveAssetReportRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_RemoveAssetReportResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_CreateAuditCopyRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_CreateAuditCopyRespose_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_CreateAuditCopyTokenResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetAuthRequestOptions_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_GetAuthRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::plaid::_AccountNumberCollection_default_instance_),
@@ -3303,271 +3303,271 @@ const char descriptor_table_protodef_plaid_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "equest_id\030\001 \001(\t\022\017\n\007removed\030\002 \001(\010\"k\n\026Crea"
   "teAuditCopyRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n"
   "\006secret\030\002 \001(\t\022\032\n\022asset_report_token\030\003 \001("
-  "\t\022\022\n\nauditor_id\030\004 \001(\t\"F\n\026CreateAuditCopy"
-  "Respose\022\022\n\nrequest_id\030\001 \001(\t\022\030\n\020audit_cop"
-  "y_token\030\002 \001(\t\",\n\025GetAuthRequestOptions\022\023"
-  "\n\013account_ids\030\001 \003(\t\"x\n\016GetAuthRequest\022\021\n"
-  "\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014acce"
-  "ss_token\030\003 \001(\t\022-\n\007options\030\004 \001(\0132\034.plaid."
-  "GetAuthRequestOptions\"\242\001\n\027AccountNumberC"
-  "ollection\022\035\n\003ach\030\001 \003(\0132\020.plaid.ACHNumber"
-  "\022\035\n\003eft\030\002 \003(\0132\020.plaid.EFTNumber\022(\n\rinter"
-  "national\030\003 \003(\0132\021.plaid.IBANNumber\022\037\n\004bac"
-  "s\030\004 \003(\0132\021.plaid.BACSNumber\"x\n\017GetAuthRes"
-  "ponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010accounts\030\002 "
-  "\003(\0132\016.plaid.Account\022/\n\007numbers\030\003 \001(\0132\036.p"
-  "laid.AccountNumberCollection\"%\n\016GetAuthO"
-  "ptions\022\023\n\013account_ids\030\001 \003(\t\"A\n\010Category\022"
-  "\023\n\013category_id\030\001 \001(\t\022\r\n\005group\030\002 \001(\t\022\021\n\th"
-  "ierarchy\030\003 \003(\t\"P\n\025GetCategoriesResponse\022"
-  "\022\n\nrequest_id\030\001 \001(\t\022#\n\ncategories\030\002 \003(\0132"
-  "\017.plaid.Category\"\210\001\n\005Error\022\022\n\nrequest_id"
-  "\030\001 \001(\t\022\022\n\nerror_type\030\002 \001(\t\022\022\n\nerror_code"
-  "\030\003 \001(\t\022\025\n\rerror_message\030\004 \001(\t\022\027\n\017display"
-  "_message\030\005 \001(\t\022\023\n\013status_code\030\006 \001(\003\"\333\002\n\010"
-  "Security\022\023\n\013security_id\030\001 \001(\t\022\r\n\005cusip\030\002"
-  " \001(\t\022\r\n\005sedol\030\003 \001(\t\022\014\n\004isin\030\004 \001(\t\022\037\n\027ins"
-  "titution_security_id\030\005 \001(\t\022\026\n\016institutio"
-  "n_id\030\006 \001(\t\022\031\n\021proxy_security_id\030\007 \001(\t\022\014\n"
-  "\004name\030\010 \001(\t\022\025\n\rticker_symbol\030\t \001(\t\022\032\n\022is"
-  "_cash_equivalent\030\n \001(\010\022\014\n\004type\030\013 \001(\t\022\023\n\013"
-  "close_price\030\014 \001(\001\022\031\n\021close_price_as_of\030\r"
-  " \001(\t\022\031\n\021iso_currency_code\030\016 \001(\t\022 \n\030unoff"
-  "icial_currency_code\030\017 \001(\t\"\354\001\n\007Holding\022\022\n"
-  "\naccount_id\030\001 \001(\t\022\023\n\013security_id\030\002 \001(\t\022\031"
-  "\n\021institution_value\030\003 \001(\001\022\031\n\021institution"
-  "_price\030\004 \001(\001\022\020\n\010quantity\030\005 \001(\001\022\037\n\027instit"
-  "ution_price_as_of\030\006 \001(\t\022\022\n\ncost_basis\030\007 "
-  "\001(\001\022\031\n\021iso_currency_code\030\010 \001(\t\022 \n\030unoffi"
-  "cial_currency_code\030\t \001(\t\"y\n\022GetHoldingsR"
-  "equest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001("
-  "\t\022\024\n\014access_token\030\003 \001(\t\022*\n\007options\030\004 \001(\013"
-  "2\031.plaid.GetHoldingsOptions\")\n\022GetHoldin"
-  "gsOptions\022\023\n\013account_ids\030\001 \003(\t\"\255\001\n\023GetHo"
-  "ldingsResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010ac"
-  "counts\030\002 \003(\0132\016.plaid.Account\022\031\n\004item\030\003 \001"
-  "(\0132\013.plaid.Item\022#\n\nsecurities\030\004 \003(\0132\017.pl"
-  "aid.Security\022 \n\010holdings\030\005 \003(\0132\016.plaid.H"
-  "olding\"\205\001\n\010Identity\022!\n\taddresses\030\001 \003(\0132\016"
-  ".plaid.Address\022\034\n\006emails\030\002 \003(\0132\014.plaid.E"
-  "mail\022\r\n\005names\030\003 \003(\t\022)\n\rphone_numbers\030\004 \003"
-  "(\0132\022.plaid.PhoneNumber\"<\n\007Address\022 \n\004dat"
-  "a\030\001 \001(\0132\022.plaid.AddressData\022\017\n\007primary\030\002"
-  " \001(\010\"a\n\013AddressData\022\014\n\004city\030\001 \001(\t\022\016\n\006reg"
-  "ion\030\002 \001(\t\022\016\n\006street\030\003 \001(\t\022\023\n\013postal_code"
-  "\030\004 \001(\t\022\017\n\007country\030\005 \001(\t\"4\n\005Email\022\014\n\004data"
-  "\030\001 \001(\t\022\017\n\007primary\030\002 \001(\010\022\014\n\004type\030\003 \001(\t\":\n"
-  "\013PhoneNumber\022\017\n\007primary\030\001 \001(\010\022\014\n\004type\030\002 "
-  "\001(\t\022\014\n\004data\030\003 \001(\t\"M\n\022GetIdentityRequest\022"
-  "\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014ac"
-  "cess_token\030\003 \001(\t\"\341\001\n\021AccountWithOwners\022\037"
-  "\n\006owners\030\001 \003(\0132\017.plaid.Identity\022\022\n\naccou"
-  "nt_id\030\002 \001(\t\022(\n\010balances\030\003 \001(\0132\026.plaid.Ac"
-  "countBalances\022\014\n\004mask\030\004 \001(\t\022\014\n\004name\030\005 \001("
-  "\t\022\025\n\rofficial_name\030\006 \001(\t\022\017\n\007subtype\030\007 \001("
-  "\t\022\014\n\004type\030\010 \001(\t\022\033\n\023verification_status\030\t"
-  " \001(\t\"p\n\023GetIdentityResponse\022\022\n\nrequest_i"
-  "d\030\001 \001(\t\022*\n\010accounts\030\002 \003(\0132\030.plaid.Accoun"
-  "tWithOwners\022\031\n\004item\030\003 \001(\0132\013.plaid.Item\"\225"
-  "\002\n\006Income\022+\n\016income_streams\030\001 \003(\0132\023.plai"
-  "d.IncomeStream\022\030\n\020last_year_income\030\002 \001(\003"
-  "\022#\n\033last_year_income_before_tax\030\003 \001(\003\022\037\n"
-  "\027projected_yearly_income\030\004 \001(\003\022*\n\"projec"
-  "ted_yearly_income_before_tax\030\005 \001(\003\0220\n(ma"
-  "x_number_of_overlapping_income_streams\030\006"
-  " \001(\003\022 \n\030number_of_income_streams\030\007 \001(\003\"V"
-  "\n\014IncomeStream\022\022\n\nconfidence\030\001 \001(\001\022\014\n\004da"
-  "ys\030\002 \001(\003\022\026\n\016monthly_income\030\003 \001(\003\022\014\n\004name"
-  "\030\004 \001(\t\"K\n\020GetIncomeRequest\022\021\n\tclient_id\030"
-  "\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 "
-  "\001(\t\"F\n\021GetIncomeResponse\022\022\n\nrequest_id\030\001"
-  " \001(\t\022\035\n\006income\030\002 \001(\0132\r.plaid.Income\"\376\001\n\013"
-  "Institution\022&\n\013credentials\030\001 \003(\0132\021.plaid"
-  ".Credential\022\017\n\007has_mfa\030\002 \001(\010\022\026\n\016institut"
-  "ion_id\030\003 \001(\t\022\013\n\003mfa\030\004 \003(\t\022\014\n\004name\030\005 \001(\t\022"
-  "\020\n\010products\030\006 \003(\t\022\025\n\rcountry_codes\030\007 \003(\t"
-  "\022(\n\006status\030\010 \001(\0132\030.plaid.InstitutionStat"
-  "us\022\025\n\rprimary_color\030\t \001(\t\022\013\n\003url\030\n \001(\t\022\014"
-  "\n\004logo\030\013 \001(\t\";\n\021InstitutionStatus\022&\n\013ite"
-  "m_logins\030\001 \001(\0132\021.plaid.ItemLogins\"n\n\nIte"
-  "mLogins\022\016\n\006status\030\001 \001(\t\022\032\n\022last_status_c"
-  "hange\030\002 \001(\t\0224\n\tbreakdown\030\003 \001(\0132!.plaid.I"
-  "nstitutionStatusBreakdown\"]\n\032Institution"
-  "StatusBreakdown\022\017\n\007success\030\001 \001(\001\022\023\n\013erro"
-  "r_plaid\030\002 \001(\001\022\031\n\021error_institution\030\003 \001(\001"
-  "\"7\n\nCredential\022\r\n\005label\030\001 \001(\t\022\014\n\004name\030\002 "
-  "\001(\t\022\014\n\004type\030\003 \001(\t\"\211\001\n\026GetInstitutionsReq"
-  "uest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022"
-  "\r\n\005count\030\003 \001(\003\022\016\n\006offset\030\004 \001(\003\022-\n\007option"
-  "s\030\005 \001(\0132\034.plaid.GetInstitutionOptions\"c\n"
-  "\025GetInstitutionOptions\022\020\n\010products\030\001 \003(\t"
-  "\022!\n\031include_optional_metadata\030\002 \001(\010\022\025\n\rc"
-  "ountry_codes\030\003 \003(\t\"f\n\027GetInstitutionsRes"
-  "ponse\022\022\n\nrequest_id\030\001 \001(\t\022(\n\014institution"
-  "s\030\002 \003(\0132\022.plaid.Institution\022\r\n\005total\030\003 \001"
-  "(\003\"z\n\031GetInstitutionByIDRequest\022\026\n\016insti"
-  "tution_id\030\001 \001(\t\022\022\n\npublic_key\030\002 \001(\t\0221\n\007o"
-  "ptions\030\003 \001(\0132 .plaid.GetInstitutionByIDO"
-  "ptions\"V\n\031GetInstitutionByIDOptions\022!\n\031i"
-  "nclude_optional_metadata\030\001 \001(\010\022\026\n\016includ"
-  "e_status\030\002 \001(\010\"Y\n\032GetInstitutionByIDResp"
-  "onse\022\022\n\nrequest_id\030\001 \001(\t\022\'\n\013institution\030"
-  "\002 \001(\0132\022.plaid.Institution\"\203\001\n\031SearchInst"
-  "itutionsRequest\022\r\n\005query\030\001 \001(\t\022\020\n\010produc"
-  "ts\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\0221\n\007options\030"
-  "\004 \001(\0132 .plaid.SearchInstitutionsOptions\""
-  "n\n\031SearchInstitutionsOptions\022!\n\031include_"
-  "optional_metadata\030\001 \001(\010\022\025\n\rcountry_codes"
-  "\030\002 \003(\t\022\027\n\017routing_numbers\030\003 \003(\t\"Z\n\032Searc"
-  "hInstitutionsResponse\022\022\n\nrequest_id\030\001 \001("
-  "\t\022(\n\014institutions\030\002 \003(\0132\022.plaid.Institut"
-  "ion\"\250\002\n\025InvestmentTransaction\022!\n\031investm"
-  "ent_transaction_id\030\001 \001(\t\022\022\n\naccount_id\030\002"
-  " \001(\t\022\023\n\013security_id\030\003 \001(\t\022\035\n\025cancel_tran"
-  "saction_id\030\004 \001(\t\022\014\n\004date\030\005 \001(\t\022\014\n\004name\030\006"
-  " \001(\t\022\020\n\010quantity\030\007 \001(\001\022\016\n\006amount\030\010 \001(\001\022\r"
-  "\n\005price\030\t \001(\001\022\014\n\004fees\030\n \001(\001\022\014\n\004type\030\013 \001("
-  "\t\022\031\n\021iso_currency_code\030\014 \001(\t\022 \n\030unoffici"
-  "al_currency_code\030\r \001(\t\"\377\001\n!GetInvestment"
-  "TransactionsResponse\022\022\n\nrequest_id\030\001 \001(\t"
-  "\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\022 \n\010accounts\030"
-  "\003 \003(\0132\016.plaid.Account\022=\n\027investment_tran"
-  "sactions\030\004 \003(\0132\034.plaid.InvestmentTransac"
-  "tion\022#\n\nsecurities\030\005 \003(\0132\017.plaid.Securit"
-  "y\022%\n\035total_investment_transactions\030\006 \001(\003"
-  "\"|\n GetInvestmentTransactionsOptions\022\022\n\n"
-  "start_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t\022\023\n\013ac"
-  "count_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006offset"
-  "\030\005 \001(\003\"\302\001\n GetInvestmentTransactionsRequ"
+  "\t\022\022\n\nauditor_id\030\004 \001(\t\"L\n\034CreateAuditCopy"
+  "TokenResponse\022\022\n\nrequest_id\030\001 \001(\t\022\030\n\020aud"
+  "it_copy_token\030\002 \001(\t\",\n\025GetAuthRequestOpt"
+  "ions\022\023\n\013account_ids\030\001 \003(\t\"x\n\016GetAuthRequ"
   "est\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024"
-  "\n\014access_token\030\003 \001(\t\022\022\n\nstart_date\030\004 \001(\t"
-  "\022\020\n\010end_date\030\005 \001(\t\022\?\n\007options\030\006 \001(\0132..pl"
-  "aid.GetInvestmentTransactionsRequestOpti"
-  "ons\"]\n\'GetInvestmentTransactionsRequestO"
-  "ptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030\002 \001"
-  "(\003\022\016\n\006offset\030\003 \001(\003\"\222\001\n\004Item\022\032\n\022available"
-  "_products\030\001 \003(\t\022\027\n\017billed_products\030\002 \003(\t"
-  "\022\033\n\005error\030\003 \001(\0132\014.plaid.Error\022\026\n\016institu"
-  "tion_id\030\004 \001(\t\022\017\n\007item_id\030\005 \001(\t\022\017\n\007webhoo"
-  "k\030\006 \001(\t\"I\n\016GetItemRequest\022\021\n\tclient_id\030\001"
-  " \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001"
-  "(\t\"@\n\017GetItemResponse\022\022\n\nrequest_id\030\001 \001("
-  "\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"L\n\021RemoveIt"
-  "emRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002"
-  " \001(\t\022\024\n\014access_token\030\003 \001(\t\"9\n\022RemoveItem"
-  "Response\022\022\n\nrequest_id\030\001 \001(\t\022\017\n\007removed\030"
-  "\002 \001(\010\"d\n\030UpdateItemWebhookRequest\022\021\n\tcli"
-  "ent_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_t"
-  "oken\030\003 \001(\t\022\017\n\007webhook\030\004 \001(\t\"J\n\031UpdateIte"
-  "mWebhookResponse\022\022\n\nrequest_id\030\001 \001(\t\022\031\n\004"
-  "item\030\002 \001(\0132\013.plaid.Item\"W\n\034InvalidateAcc"
-  "essTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
-  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"M\n\035Inva"
-  "lidateAccessTokenResponse\022\022\n\nrequest_id\030"
-  "\001 \001(\t\022\030\n\020new_access_token\030\002 \001(\t\"]\n\037Updat"
-  "eAccessTokenVersionRequest\022\021\n\tclient_id\030"
-  "\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\027\n\017access_token_v2"
-  "\030\003 \001(\t\"]\n UpdateAccessTokenVersionRespon"
-  "se\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014access_token\030\002"
-  " \001(\t\022\017\n\007item_id\030\003 \001(\t\"S\n\030CreatePublicTok"
-  "enRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002"
-  " \001(\t\022\024\n\014access_token\030\003 \001(\t\"E\n\031CreatePubl"
-  "icTokenResponse\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014p"
-  "ublic_token\030\002 \001(\t\"U\n\032ExchangePublicToken"
-  "Request\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001"
-  "(\t\022\024\n\014public_token\030\003 \001(\t\"X\n\033ExchangePubl"
-  "icTokenResponse\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014a"
-  "ccess_token\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t\"\265\006\n\024S"
-  "tudentLoanLiability\022\022\n\naccount_id\030\001 \001(\t\022"
-  "\026\n\016account_number\030\002 \001(\t\022\032\n\022disbursement_"
-  "dates\030\003 \003(\t\022\034\n\024expected_payoff_date\030\004 \001("
-  "\t\022\021\n\tguarantor\030\005 \001(\t\022 \n\030interest_rate_pe"
-  "rcentage\030\006 \001(\001\022\022\n\nis_overdue\030\007 \001(\010\022\033\n\023la"
-  "st_payment_amount\030\010 \001(\001\022\031\n\021last_payment_"
-  "date\030\t \001(\t\022\035\n\025last_satement_balance\030\n \001("
-  "\001\022!\n\031last_statement_issue_date\030\013 \001(\t\022\021\n\t"
-  "loan_name\030\014 \001(\t\022-\n\013loan_status\030\r \001(\0132\030.p"
-  "laid.StudentLoanStatus\022\036\n\026minimum_paymen"
-  "t_amount\030\016 \001(\001\022\035\n\025next_payment_due_date\030"
-  "\017 \001(\t\022\030\n\020origination_date\030\020 \001(\t\022$\n\034origi"
-  "nation_principal_amount\030\021 \001(\001\022#\n\033outstan"
-  "ding_interest_amount\030\022 \001(\001\022 \n\030payment_re"
-  "ference_number\030\023 \001(\t\022&\n\013pslf_status\030\024 \001("
-  "\0132\021.plaid.PSLFStatus\0227\n\016repayment_plan\030\025"
-  " \001(\0132\037.plaid.StudentLoanRepaymentPlan\022\027\n"
-  "\017sequence_number\030\026 \001(\t\022;\n\020servicer_addre"
-  "ss\030\027 \001(\0132!.plaid.StudentLoanServicerAddr"
-  "ess\022\031\n\021ytd_interest_paid\030\030 \001(\001\022\032\n\022ytd_pr"
-  "incipal_paid\030\031 \001(\001\"c\n\nPSLFStatus\022\"\n\032esti"
-  "mated_eligibility_date\030\001 \001(\t\022\025\n\rpayments"
-  "_made\030\002 \001(\003\022\032\n\022payments_remaining\030\003 \001(\003\""
-  "p\n\032StudentLoanServicerAddress\022\014\n\004city\030\001 "
-  "\001(\t\022\017\n\007country\030\002 \001(\t\022\023\n\013postal_code\030\003 \001("
-  "\t\022\016\n\006region\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\"3\n\021Stu"
-  "dentLoanStatus\022\014\n\004type\030\001 \001(\t\022\020\n\010end_date"
-  "\030\002 \001(\t\"=\n\030StudentLoanRepaymentPlan\022\014\n\004ty"
-  "pe\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"3\n\034GetLiab"
-  "ilitiesRequestOptions\022\023\n\013account_ids\030\001 \003"
-  "(\t\"\206\001\n\025GetLiabilitiesRequest\022\021\n\tclient_i"
-  "d\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030"
-  "\003 \001(\t\0224\n\007options\030\004 \001(\0132#.plaid.GetLiabil"
-  "itiesRequestOptions\"\222\001\n\026GetLiabilitiesRe"
-  "sponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010accounts\030\002"
-  " \003(\0132\016.plaid.Account\022\031\n\004item\030\003 \001(\0132\013.pla"
-  "id.Item\022\'\n\013liabilities\030\004 \001(\0132\022.plaid.Lia"
-  "bilities\";\n\013Liabilities\022,\n\007student\030\001 \003(\013"
-  "2\033.plaid.StudentLoanLiability\",\n\025GetLiab"
-  "ilitiesOptions\022\023\n\013account_ids\030\001 \003(\t\"j\n\033C"
-  "reateProcessorTokenRequest\022\021\n\tclient_id\030"
-  "\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 "
-  "\001(\t\022\022\n\naccount_id\030\004 \001(\t\"K\n\034CreateProcess"
-  "orTokenResponse\022\022\n\nrequest_id\030\001 \001(\t\022\027\n\017p"
-  "rocessor_token\030\002 \001(\t\"g\n\030CreateStripeToke"
-  "nRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 "
-  "\001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\naccount_id\030"
-  "\004 \001(\t\"R\n\031CreateStripeTokenResponse\022\022\n\nre"
-  "quest_id\030\001 \001(\t\022!\n\031stripe_bank_account_to"
-  "ken\030\002 \001(\t\"f\n\037CreateSandboxPublicTokenReq"
-  "uest\022\026\n\016institution_id\030\001 \001(\t\022\027\n\017inital_p"
-  "roducts\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\"L\n Cre"
-  "ateSandboxPublicTokenResponse\022\022\n\nrequest"
-  "_id\030\001 \001(\t\022\024\n\014public_token\030\002 \001(\t\"R\n\027Reset"
-  "SandboxItemRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n"
-  "\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"C\n\030R"
-  "esetSandboxItemResponse\022\022\n\nrequest_id\030\001 "
-  "\001(\t\022\023\n\013reset_login\030\002 \001(\010\"\370\002\n\013Transaction"
-  "\022\022\n\naccount_id\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\022\031\n\021"
-  "iso_currency_code\030\003 \001(\t\022 \n\030unofficial_cu"
-  "rrency_code\030\004 \001(\t\022\020\n\010category\030\005 \003(\t\022\023\n\013c"
-  "ategory_id\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022!\n\010locati"
-  "on\030\010 \001(\0132\017.plaid.Location\022\014\n\004name\030\t \001(\t\022"
-  "(\n\014payment_meta\030\n \001(\0132\022.plaid.PaymentMet"
-  "a\022\017\n\007pending\030\013 \001(\010\022\036\n\026pending_transactio"
-  "n_id\030\014 \001(\t\022\025\n\raccount_owner\030\r \001(\t\022\026\n\016tra"
-  "nsaction_id\030\016 \001(\t\022\030\n\020transaction_type\030\017 "
-  "\001(\t\"\220\001\n\010Location\022\020\n\010addreess\030\001 \001(\t\022\014\n\004ci"
-  "ty\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013\n\003lon\030\004 \001(\001\022\016\n\006re"
-  "gion\030\005 \001(\t\022\024\n\014store_number\030\006 \001(\t\022\023\n\013post"
-  "al_code\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\255\001\n\013Payme"
-  "ntMeta\022\023\n\013by_order_of\030\001 \001(\t\022\r\n\005payee\030\002 \001"
-  "(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016payment_method\030\004 \001("
-  "\t\022\031\n\021payment_processor\030\005 \001(\t\022\016\n\006ppd_id\030\006"
-  " \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n\020reference_number"
-  "\030\010 \001(\t\"S\n\035GetTransactionsRequestOptions\022"
-  "\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030\002 \001(\003\022\016\n\006o"
-  "ffset\030\003 \001(\003\"\256\001\n\026GetTransactionsRequest\022\021"
-  "\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014acc"
-  "ess_token\030\003 \001(\t\022\022\n\nstart_date\030\004 \001(\t\022\020\n\010e"
-  "nd_date\030\005 \001(\t\0225\n\007options\030\006 \001(\0132$.plaid.G"
-  "etTransactionsRequestOptions\"\260\001\n\027GetTran"
-  "sactionsResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010"
-  "accounts\030\002 \003(\0132\016.plaid.Account\022\031\n\004item\030\003"
-  " \001(\0132\013.plaid.Item\022(\n\014transactions\030\004 \003(\0132"
-  "\022.plaid.Transaction\022\032\n\022total_transaction"
-  "s\030\005 \001(\003\"q\n\025GetTransactionOptions\022\022\n\nstar"
-  "t_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t\022\023\n\013accoun"
-  "t_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006offset\030\005 \001"
-  "(\003b\006proto3"
+  "\n\014access_token\030\003 \001(\t\022-\n\007options\030\004 \001(\0132\034."
+  "plaid.GetAuthRequestOptions\"\242\001\n\027AccountN"
+  "umberCollection\022\035\n\003ach\030\001 \003(\0132\020.plaid.ACH"
+  "Number\022\035\n\003eft\030\002 \003(\0132\020.plaid.EFTNumber\022(\n"
+  "\rinternational\030\003 \003(\0132\021.plaid.IBANNumber\022"
+  "\037\n\004bacs\030\004 \003(\0132\021.plaid.BACSNumber\"x\n\017GetA"
+  "uthResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010accou"
+  "nts\030\002 \003(\0132\016.plaid.Account\022/\n\007numbers\030\003 \001"
+  "(\0132\036.plaid.AccountNumberCollection\"%\n\016Ge"
+  "tAuthOptions\022\023\n\013account_ids\030\001 \003(\t\"A\n\010Cat"
+  "egory\022\023\n\013category_id\030\001 \001(\t\022\r\n\005group\030\002 \001("
+  "\t\022\021\n\thierarchy\030\003 \003(\t\"P\n\025GetCategoriesRes"
+  "ponse\022\022\n\nrequest_id\030\001 \001(\t\022#\n\ncategories\030"
+  "\002 \003(\0132\017.plaid.Category\"\210\001\n\005Error\022\022\n\nrequ"
+  "est_id\030\001 \001(\t\022\022\n\nerror_type\030\002 \001(\t\022\022\n\nerro"
+  "r_code\030\003 \001(\t\022\025\n\rerror_message\030\004 \001(\t\022\027\n\017d"
+  "isplay_message\030\005 \001(\t\022\023\n\013status_code\030\006 \001("
+  "\003\"\333\002\n\010Security\022\023\n\013security_id\030\001 \001(\t\022\r\n\005c"
+  "usip\030\002 \001(\t\022\r\n\005sedol\030\003 \001(\t\022\014\n\004isin\030\004 \001(\t\022"
+  "\037\n\027institution_security_id\030\005 \001(\t\022\026\n\016inst"
+  "itution_id\030\006 \001(\t\022\031\n\021proxy_security_id\030\007 "
+  "\001(\t\022\014\n\004name\030\010 \001(\t\022\025\n\rticker_symbol\030\t \001(\t"
+  "\022\032\n\022is_cash_equivalent\030\n \001(\010\022\014\n\004type\030\013 \001"
+  "(\t\022\023\n\013close_price\030\014 \001(\001\022\031\n\021close_price_a"
+  "s_of\030\r \001(\t\022\031\n\021iso_currency_code\030\016 \001(\t\022 \n"
+  "\030unofficial_currency_code\030\017 \001(\t\"\354\001\n\007Hold"
+  "ing\022\022\n\naccount_id\030\001 \001(\t\022\023\n\013security_id\030\002"
+  " \001(\t\022\031\n\021institution_value\030\003 \001(\001\022\031\n\021insti"
+  "tution_price\030\004 \001(\001\022\020\n\010quantity\030\005 \001(\001\022\037\n\027"
+  "institution_price_as_of\030\006 \001(\t\022\022\n\ncost_ba"
+  "sis\030\007 \001(\001\022\031\n\021iso_currency_code\030\010 \001(\t\022 \n\030"
+  "unofficial_currency_code\030\t \001(\t\"y\n\022GetHol"
+  "dingsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secre"
+  "t\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022*\n\007options"
+  "\030\004 \001(\0132\031.plaid.GetHoldingsOptions\")\n\022Get"
+  "HoldingsOptions\022\023\n\013account_ids\030\001 \003(\t\"\255\001\n"
+  "\023GetHoldingsResponse\022\022\n\nrequest_id\030\001 \001(\t"
+  "\022 \n\010accounts\030\002 \003(\0132\016.plaid.Account\022\031\n\004it"
+  "em\030\003 \001(\0132\013.plaid.Item\022#\n\nsecurities\030\004 \003("
+  "\0132\017.plaid.Security\022 \n\010holdings\030\005 \003(\0132\016.p"
+  "laid.Holding\"\205\001\n\010Identity\022!\n\taddresses\030\001"
+  " \003(\0132\016.plaid.Address\022\034\n\006emails\030\002 \003(\0132\014.p"
+  "laid.Email\022\r\n\005names\030\003 \003(\t\022)\n\rphone_numbe"
+  "rs\030\004 \003(\0132\022.plaid.PhoneNumber\"<\n\007Address\022"
+  " \n\004data\030\001 \001(\0132\022.plaid.AddressData\022\017\n\007pri"
+  "mary\030\002 \001(\010\"a\n\013AddressData\022\014\n\004city\030\001 \001(\t\022"
+  "\016\n\006region\030\002 \001(\t\022\016\n\006street\030\003 \001(\t\022\023\n\013posta"
+  "l_code\030\004 \001(\t\022\017\n\007country\030\005 \001(\t\"4\n\005Email\022\014"
+  "\n\004data\030\001 \001(\t\022\017\n\007primary\030\002 \001(\010\022\014\n\004type\030\003 "
+  "\001(\t\":\n\013PhoneNumber\022\017\n\007primary\030\001 \001(\010\022\014\n\004t"
+  "ype\030\002 \001(\t\022\014\n\004data\030\003 \001(\t\"M\n\022GetIdentityRe"
+  "quest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t"
+  "\022\024\n\014access_token\030\003 \001(\t\"\341\001\n\021AccountWithOw"
+  "ners\022\037\n\006owners\030\001 \003(\0132\017.plaid.Identity\022\022\n"
+  "\naccount_id\030\002 \001(\t\022(\n\010balances\030\003 \001(\0132\026.pl"
+  "aid.AccountBalances\022\014\n\004mask\030\004 \001(\t\022\014\n\004nam"
+  "e\030\005 \001(\t\022\025\n\rofficial_name\030\006 \001(\t\022\017\n\007subtyp"
+  "e\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\033\n\023verification_st"
+  "atus\030\t \001(\t\"p\n\023GetIdentityResponse\022\022\n\nreq"
+  "uest_id\030\001 \001(\t\022*\n\010accounts\030\002 \003(\0132\030.plaid."
+  "AccountWithOwners\022\031\n\004item\030\003 \001(\0132\013.plaid."
+  "Item\"\225\002\n\006Income\022+\n\016income_streams\030\001 \003(\0132"
+  "\023.plaid.IncomeStream\022\030\n\020last_year_income"
+  "\030\002 \001(\003\022#\n\033last_year_income_before_tax\030\003 "
+  "\001(\003\022\037\n\027projected_yearly_income\030\004 \001(\003\022*\n\""
+  "projected_yearly_income_before_tax\030\005 \001(\003"
+  "\0220\n(max_number_of_overlapping_income_str"
+  "eams\030\006 \001(\003\022 \n\030number_of_income_streams\030\007"
+  " \001(\003\"V\n\014IncomeStream\022\022\n\nconfidence\030\001 \001(\001"
+  "\022\014\n\004days\030\002 \001(\003\022\026\n\016monthly_income\030\003 \001(\003\022\014"
+  "\n\004name\030\004 \001(\t\"K\n\020GetIncomeRequest\022\021\n\tclie"
+  "nt_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_to"
+  "ken\030\003 \001(\t\"F\n\021GetIncomeResponse\022\022\n\nreques"
+  "t_id\030\001 \001(\t\022\035\n\006income\030\002 \001(\0132\r.plaid.Incom"
+  "e\"\376\001\n\013Institution\022&\n\013credentials\030\001 \003(\0132\021"
+  ".plaid.Credential\022\017\n\007has_mfa\030\002 \001(\010\022\026\n\016in"
+  "stitution_id\030\003 \001(\t\022\013\n\003mfa\030\004 \003(\t\022\014\n\004name\030"
+  "\005 \001(\t\022\020\n\010products\030\006 \003(\t\022\025\n\rcountry_codes"
+  "\030\007 \003(\t\022(\n\006status\030\010 \001(\0132\030.plaid.Instituti"
+  "onStatus\022\025\n\rprimary_color\030\t \001(\t\022\013\n\003url\030\n"
+  " \001(\t\022\014\n\004logo\030\013 \001(\t\";\n\021InstitutionStatus\022"
+  "&\n\013item_logins\030\001 \001(\0132\021.plaid.ItemLogins\""
+  "n\n\nItemLogins\022\016\n\006status\030\001 \001(\t\022\032\n\022last_st"
+  "atus_change\030\002 \001(\t\0224\n\tbreakdown\030\003 \001(\0132!.p"
+  "laid.InstitutionStatusBreakdown\"]\n\032Insti"
+  "tutionStatusBreakdown\022\017\n\007success\030\001 \001(\001\022\023"
+  "\n\013error_plaid\030\002 \001(\001\022\031\n\021error_institution"
+  "\030\003 \001(\001\"7\n\nCredential\022\r\n\005label\030\001 \001(\t\022\014\n\004n"
+  "ame\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"\211\001\n\026GetInstituti"
+  "onsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030"
+  "\002 \001(\t\022\r\n\005count\030\003 \001(\003\022\016\n\006offset\030\004 \001(\003\022-\n\007"
+  "options\030\005 \001(\0132\034.plaid.GetInstitutionOpti"
+  "ons\"c\n\025GetInstitutionOptions\022\020\n\010products"
+  "\030\001 \003(\t\022!\n\031include_optional_metadata\030\002 \001("
+  "\010\022\025\n\rcountry_codes\030\003 \003(\t\"f\n\027GetInstituti"
+  "onsResponse\022\022\n\nrequest_id\030\001 \001(\t\022(\n\014insti"
+  "tutions\030\002 \003(\0132\022.plaid.Institution\022\r\n\005tot"
+  "al\030\003 \001(\003\"z\n\031GetInstitutionByIDRequest\022\026\n"
+  "\016institution_id\030\001 \001(\t\022\022\n\npublic_key\030\002 \001("
+  "\t\0221\n\007options\030\003 \001(\0132 .plaid.GetInstitutio"
+  "nByIDOptions\"V\n\031GetInstitutionByIDOption"
+  "s\022!\n\031include_optional_metadata\030\001 \001(\010\022\026\n\016"
+  "include_status\030\002 \001(\010\"Y\n\032GetInstitutionBy"
+  "IDResponse\022\022\n\nrequest_id\030\001 \001(\t\022\'\n\013instit"
+  "ution\030\002 \001(\0132\022.plaid.Institution\"\203\001\n\031Sear"
+  "chInstitutionsRequest\022\r\n\005query\030\001 \001(\t\022\020\n\010"
+  "products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\0221\n\007op"
+  "tions\030\004 \001(\0132 .plaid.SearchInstitutionsOp"
+  "tions\"n\n\031SearchInstitutionsOptions\022!\n\031in"
+  "clude_optional_metadata\030\001 \001(\010\022\025\n\rcountry"
+  "_codes\030\002 \003(\t\022\027\n\017routing_numbers\030\003 \003(\t\"Z\n"
+  "\032SearchInstitutionsResponse\022\022\n\nrequest_i"
+  "d\030\001 \001(\t\022(\n\014institutions\030\002 \003(\0132\022.plaid.In"
+  "stitution\"\250\002\n\025InvestmentTransaction\022!\n\031i"
+  "nvestment_transaction_id\030\001 \001(\t\022\022\n\naccoun"
+  "t_id\030\002 \001(\t\022\023\n\013security_id\030\003 \001(\t\022\035\n\025cance"
+  "l_transaction_id\030\004 \001(\t\022\014\n\004date\030\005 \001(\t\022\014\n\004"
+  "name\030\006 \001(\t\022\020\n\010quantity\030\007 \001(\001\022\016\n\006amount\030\010"
+  " \001(\001\022\r\n\005price\030\t \001(\001\022\014\n\004fees\030\n \001(\001\022\014\n\004typ"
+  "e\030\013 \001(\t\022\031\n\021iso_currency_code\030\014 \001(\t\022 \n\030un"
+  "official_currency_code\030\r \001(\t\"\377\001\n!GetInve"
+  "stmentTransactionsResponse\022\022\n\nrequest_id"
+  "\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\022 \n\010acc"
+  "ounts\030\003 \003(\0132\016.plaid.Account\022=\n\027investmen"
+  "t_transactions\030\004 \003(\0132\034.plaid.InvestmentT"
+  "ransaction\022#\n\nsecurities\030\005 \003(\0132\017.plaid.S"
+  "ecurity\022%\n\035total_investment_transactions"
+  "\030\006 \001(\003\"|\n GetInvestmentTransactionsOptio"
+  "ns\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t"
+  "\022\023\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006"
+  "offset\030\005 \001(\003\"\302\001\n GetInvestmentTransactio"
+  "nsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002"
+  " \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date"
+  "\030\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\022\?\n\007options\030\006 \001("
+  "\0132..plaid.GetInvestmentTransactionsReque"
+  "stOptions\"]\n\'GetInvestmentTransactionsRe"
+  "questOptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005cou"
+  "nt\030\002 \001(\003\022\016\n\006offset\030\003 \001(\003\"\222\001\n\004Item\022\032\n\022ava"
+  "ilable_products\030\001 \003(\t\022\027\n\017billed_products"
+  "\030\002 \003(\t\022\033\n\005error\030\003 \001(\0132\014.plaid.Error\022\026\n\016i"
+  "nstitution_id\030\004 \001(\t\022\017\n\007item_id\030\005 \001(\t\022\017\n\007"
+  "webhook\030\006 \001(\t\"I\n\016GetItemRequest\022\021\n\tclien"
+  "t_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_tok"
+  "en\030\003 \001(\t\"@\n\017GetItemResponse\022\022\n\nrequest_i"
+  "d\030\001 \001(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"L\n\021Re"
+  "moveItemRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
+  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"9\n\022Remo"
+  "veItemResponse\022\022\n\nrequest_id\030\001 \001(\t\022\017\n\007re"
+  "moved\030\002 \001(\010\"d\n\030UpdateItemWebhookRequest\022"
+  "\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014ac"
+  "cess_token\030\003 \001(\t\022\017\n\007webhook\030\004 \001(\t\"J\n\031Upd"
+  "ateItemWebhookResponse\022\022\n\nrequest_id\030\001 \001"
+  "(\t\022\031\n\004item\030\002 \001(\0132\013.plaid.Item\"W\n\034Invalid"
+  "ateAccessTokenRequest\022\021\n\tclient_id\030\001 \001(\t"
+  "\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"M"
+  "\n\035InvalidateAccessTokenResponse\022\022\n\nreque"
+  "st_id\030\001 \001(\t\022\030\n\020new_access_token\030\002 \001(\t\"]\n"
+  "\037UpdateAccessTokenVersionRequest\022\021\n\tclie"
+  "nt_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\027\n\017access_to"
+  "ken_v2\030\003 \001(\t\"]\n UpdateAccessTokenVersion"
+  "Response\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014access_t"
+  "oken\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t\"S\n\030CreatePub"
+  "licTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
+  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\"E\n\031Crea"
+  "tePublicTokenResponse\022\022\n\nrequest_id\030\001 \001("
+  "\t\022\024\n\014public_token\030\002 \001(\t\"U\n\032ExchangePubli"
+  "cTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secr"
+  "et\030\002 \001(\t\022\024\n\014public_token\030\003 \001(\t\"X\n\033Exchan"
+  "gePublicTokenResponse\022\022\n\nrequest_id\030\001 \001("
+  "\t\022\024\n\014access_token\030\002 \001(\t\022\017\n\007item_id\030\003 \001(\t"
+  "\"\265\006\n\024StudentLoanLiability\022\022\n\naccount_id\030"
+  "\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\032\n\022disburs"
+  "ement_dates\030\003 \003(\t\022\034\n\024expected_payoff_dat"
+  "e\030\004 \001(\t\022\021\n\tguarantor\030\005 \001(\t\022 \n\030interest_r"
+  "ate_percentage\030\006 \001(\001\022\022\n\nis_overdue\030\007 \001(\010"
+  "\022\033\n\023last_payment_amount\030\010 \001(\001\022\031\n\021last_pa"
+  "yment_date\030\t \001(\t\022\035\n\025last_satement_balanc"
+  "e\030\n \001(\001\022!\n\031last_statement_issue_date\030\013 \001"
+  "(\t\022\021\n\tloan_name\030\014 \001(\t\022-\n\013loan_status\030\r \001"
+  "(\0132\030.plaid.StudentLoanStatus\022\036\n\026minimum_"
+  "payment_amount\030\016 \001(\001\022\035\n\025next_payment_due"
+  "_date\030\017 \001(\t\022\030\n\020origination_date\030\020 \001(\t\022$\n"
+  "\034origination_principal_amount\030\021 \001(\001\022#\n\033o"
+  "utstanding_interest_amount\030\022 \001(\001\022 \n\030paym"
+  "ent_reference_number\030\023 \001(\t\022&\n\013pslf_statu"
+  "s\030\024 \001(\0132\021.plaid.PSLFStatus\0227\n\016repayment_"
+  "plan\030\025 \001(\0132\037.plaid.StudentLoanRepaymentP"
+  "lan\022\027\n\017sequence_number\030\026 \001(\t\022;\n\020servicer"
+  "_address\030\027 \001(\0132!.plaid.StudentLoanServic"
+  "erAddress\022\031\n\021ytd_interest_paid\030\030 \001(\001\022\032\n\022"
+  "ytd_principal_paid\030\031 \001(\001\"c\n\nPSLFStatus\022\""
+  "\n\032estimated_eligibility_date\030\001 \001(\t\022\025\n\rpa"
+  "yments_made\030\002 \001(\003\022\032\n\022payments_remaining\030"
+  "\003 \001(\003\"p\n\032StudentLoanServicerAddress\022\014\n\004c"
+  "ity\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\023\n\013postal_cod"
+  "e\030\003 \001(\t\022\016\n\006region\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\""
+  "3\n\021StudentLoanStatus\022\014\n\004type\030\001 \001(\t\022\020\n\010en"
+  "d_date\030\002 \001(\t\"=\n\030StudentLoanRepaymentPlan"
+  "\022\014\n\004type\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"3\n\034G"
+  "etLiabilitiesRequestOptions\022\023\n\013account_i"
+  "ds\030\001 \003(\t\"\206\001\n\025GetLiabilitiesRequest\022\021\n\tcl"
+  "ient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_"
+  "token\030\003 \001(\t\0224\n\007options\030\004 \001(\0132#.plaid.Get"
+  "LiabilitiesRequestOptions\"\222\001\n\026GetLiabili"
+  "tiesResponse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010acco"
+  "unts\030\002 \003(\0132\016.plaid.Account\022\031\n\004item\030\003 \001(\013"
+  "2\013.plaid.Item\022\'\n\013liabilities\030\004 \001(\0132\022.pla"
+  "id.Liabilities\";\n\013Liabilities\022,\n\007student"
+  "\030\001 \003(\0132\033.plaid.StudentLoanLiability\",\n\025G"
+  "etLiabilitiesOptions\022\023\n\013account_ids\030\001 \003("
+  "\t\"j\n\033CreateProcessorTokenRequest\022\021\n\tclie"
+  "nt_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_to"
+  "ken\030\003 \001(\t\022\022\n\naccount_id\030\004 \001(\t\"K\n\034CreateP"
+  "rocessorTokenResponse\022\022\n\nrequest_id\030\001 \001("
+  "\t\022\027\n\017processor_token\030\002 \001(\t\"g\n\030CreateStri"
+  "peTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006sec"
+  "ret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\naccou"
+  "nt_id\030\004 \001(\t\"R\n\031CreateStripeTokenResponse"
+  "\022\022\n\nrequest_id\030\001 \001(\t\022!\n\031stripe_bank_acco"
+  "unt_token\030\002 \001(\t\"f\n\037CreateSandboxPublicTo"
+  "kenRequest\022\026\n\016institution_id\030\001 \001(\t\022\027\n\017in"
+  "ital_products\030\002 \003(\t\022\022\n\npublic_key\030\003 \001(\t\""
+  "L\n CreateSandboxPublicTokenResponse\022\022\n\nr"
+  "equest_id\030\001 \001(\t\022\024\n\014public_token\030\002 \001(\t\"R\n"
+  "\027ResetSandboxItemRequest\022\021\n\tclient_id\030\001 "
+  "\001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001("
+  "\t\"C\n\030ResetSandboxItemResponse\022\022\n\nrequest"
+  "_id\030\001 \001(\t\022\023\n\013reset_login\030\002 \001(\010\"\370\002\n\013Trans"
+  "action\022\022\n\naccount_id\030\001 \001(\t\022\016\n\006amount\030\002 \001"
+  "(\001\022\031\n\021iso_currency_code\030\003 \001(\t\022 \n\030unoffic"
+  "ial_currency_code\030\004 \001(\t\022\020\n\010category\030\005 \003("
+  "\t\022\023\n\013category_id\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022!\n\010"
+  "location\030\010 \001(\0132\017.plaid.Location\022\014\n\004name\030"
+  "\t \001(\t\022(\n\014payment_meta\030\n \001(\0132\022.plaid.Paym"
+  "entMeta\022\017\n\007pending\030\013 \001(\010\022\036\n\026pending_tran"
+  "saction_id\030\014 \001(\t\022\025\n\raccount_owner\030\r \001(\t\022"
+  "\026\n\016transaction_id\030\016 \001(\t\022\030\n\020transaction_t"
+  "ype\030\017 \001(\t\"\220\001\n\010Location\022\020\n\010addreess\030\001 \001(\t"
+  "\022\014\n\004city\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013\n\003lon\030\004 \001(\001"
+  "\022\016\n\006region\030\005 \001(\t\022\024\n\014store_number\030\006 \001(\t\022\023"
+  "\n\013postal_code\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\255\001\n"
+  "\013PaymentMeta\022\023\n\013by_order_of\030\001 \001(\t\022\r\n\005pay"
+  "ee\030\002 \001(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016payment_metho"
+  "d\030\004 \001(\t\022\031\n\021payment_processor\030\005 \001(\t\022\016\n\006pp"
+  "d_id\030\006 \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n\020reference_"
+  "number\030\010 \001(\t\"S\n\035GetTransactionsRequestOp"
+  "tions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030\002 \001("
+  "\003\022\016\n\006offset\030\003 \001(\003\"\256\001\n\026GetTransactionsReq"
+  "uest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022"
+  "\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date\030\004 \001("
+  "\t\022\020\n\010end_date\030\005 \001(\t\0225\n\007options\030\006 \001(\0132$.p"
+  "laid.GetTransactionsRequestOptions\"\260\001\n\027G"
+  "etTransactionsResponse\022\022\n\nrequest_id\030\001 \001"
+  "(\t\022 \n\010accounts\030\002 \003(\0132\016.plaid.Account\022\031\n\004"
+  "item\030\003 \001(\0132\013.plaid.Item\022(\n\014transactions\030"
+  "\004 \003(\0132\022.plaid.Transaction\022\032\n\022total_trans"
+  "actions\030\005 \001(\003\"q\n\025GetTransactionOptions\022\022"
+  "\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001(\t\022\023\n\013"
+  "account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n\006offs"
+  "et\030\005 \001(\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plaid_2eproto_deps[1] = {
 };
@@ -3585,7 +3585,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pla
   &scc_info_BACSNumber_plaid_2eproto.base,
   &scc_info_Category_plaid_2eproto.base,
   &scc_info_CreateAuditCopyRequest_plaid_2eproto.base,
-  &scc_info_CreateAuditCopyRespose_plaid_2eproto.base,
+  &scc_info_CreateAuditCopyTokenResponse_plaid_2eproto.base,
   &scc_info_CreateProcessorTokenRequest_plaid_2eproto.base,
   &scc_info_CreateProcessorTokenResponse_plaid_2eproto.base,
   &scc_info_CreatePublicTokenRequest_plaid_2eproto.base,
@@ -3683,7 +3683,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pla
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plaid_2eproto_once;
 static bool descriptor_table_plaid_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plaid_2eproto = {
-  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 12770,
+  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 12776,
   &descriptor_table_plaid_2eproto_once, descriptor_table_plaid_2eproto_sccs, descriptor_table_plaid_2eproto_deps, 107, 0,
   schemas, file_default_instances, TableStruct_plaid_2eproto::offsets,
   file_level_metadata_plaid_2eproto, 107, file_level_enum_descriptors_plaid_2eproto, file_level_service_descriptors_plaid_2eproto,
@@ -10134,18 +10134,18 @@ void CreateAuditCopyRequest::InternalSwap(CreateAuditCopyRequest* other) {
 
 // ===================================================================
 
-void CreateAuditCopyRespose::InitAsDefaultInstance() {
+void CreateAuditCopyTokenResponse::InitAsDefaultInstance() {
 }
-class CreateAuditCopyRespose::_Internal {
+class CreateAuditCopyTokenResponse::_Internal {
  public:
 };
 
-CreateAuditCopyRespose::CreateAuditCopyRespose()
+CreateAuditCopyTokenResponse::CreateAuditCopyTokenResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(constructor:plaid.CreateAuditCopyTokenResponse)
 }
-CreateAuditCopyRespose::CreateAuditCopyRespose(const CreateAuditCopyRespose& from)
+CreateAuditCopyTokenResponse::CreateAuditCopyTokenResponse(const CreateAuditCopyTokenResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -10157,36 +10157,36 @@ CreateAuditCopyRespose::CreateAuditCopyRespose(const CreateAuditCopyRespose& fro
   if (!from._internal_audit_copy_token().empty()) {
     audit_copy_token_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.audit_copy_token_);
   }
-  // @@protoc_insertion_point(copy_constructor:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(copy_constructor:plaid.CreateAuditCopyTokenResponse)
 }
 
-void CreateAuditCopyRespose::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateAuditCopyRespose_plaid_2eproto.base);
+void CreateAuditCopyTokenResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateAuditCopyTokenResponse_plaid_2eproto.base);
   request_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   audit_copy_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-CreateAuditCopyRespose::~CreateAuditCopyRespose() {
-  // @@protoc_insertion_point(destructor:plaid.CreateAuditCopyRespose)
+CreateAuditCopyTokenResponse::~CreateAuditCopyTokenResponse() {
+  // @@protoc_insertion_point(destructor:plaid.CreateAuditCopyTokenResponse)
   SharedDtor();
 }
 
-void CreateAuditCopyRespose::SharedDtor() {
+void CreateAuditCopyTokenResponse::SharedDtor() {
   request_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   audit_copy_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void CreateAuditCopyRespose::SetCachedSize(int size) const {
+void CreateAuditCopyTokenResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateAuditCopyRespose& CreateAuditCopyRespose::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateAuditCopyRespose_plaid_2eproto.base);
+const CreateAuditCopyTokenResponse& CreateAuditCopyTokenResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateAuditCopyTokenResponse_plaid_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void CreateAuditCopyRespose::Clear() {
-// @@protoc_insertion_point(message_clear_start:plaid.CreateAuditCopyRespose)
+void CreateAuditCopyTokenResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:plaid.CreateAuditCopyTokenResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10196,7 +10196,7 @@ void CreateAuditCopyRespose::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* CreateAuditCopyRespose::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CreateAuditCopyTokenResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -10208,7 +10208,7 @@ const char* CreateAuditCopyRespose::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_request_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.CreateAuditCopyRespose.request_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.CreateAuditCopyTokenResponse.request_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10217,7 +10217,7 @@ const char* CreateAuditCopyRespose::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_audit_copy_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.CreateAuditCopyRespose.audit_copy_token"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.CreateAuditCopyTokenResponse.audit_copy_token"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10241,9 +10241,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* CreateAuditCopyRespose::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* CreateAuditCopyTokenResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(serialize_to_array_start:plaid.CreateAuditCopyTokenResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10252,7 +10252,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_request_id().data(), static_cast<int>(this->_internal_request_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.CreateAuditCopyRespose.request_id");
+      "plaid.CreateAuditCopyTokenResponse.request_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_request_id(), target);
   }
@@ -10262,7 +10262,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_audit_copy_token().data(), static_cast<int>(this->_internal_audit_copy_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.CreateAuditCopyRespose.audit_copy_token");
+      "plaid.CreateAuditCopyTokenResponse.audit_copy_token");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_audit_copy_token(), target);
   }
@@ -10271,12 +10271,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(serialize_to_array_end:plaid.CreateAuditCopyTokenResponse)
   return target;
 }
 
-size_t CreateAuditCopyRespose::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:plaid.CreateAuditCopyRespose)
+size_t CreateAuditCopyTokenResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:plaid.CreateAuditCopyTokenResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10306,23 +10306,23 @@ size_t CreateAuditCopyRespose::ByteSizeLong() const {
   return total_size;
 }
 
-void CreateAuditCopyRespose::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:plaid.CreateAuditCopyRespose)
+void CreateAuditCopyTokenResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:plaid.CreateAuditCopyTokenResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const CreateAuditCopyRespose* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateAuditCopyRespose>(
+  const CreateAuditCopyTokenResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateAuditCopyTokenResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:plaid.CreateAuditCopyTokenResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:plaid.CreateAuditCopyRespose)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:plaid.CreateAuditCopyTokenResponse)
     MergeFrom(*source);
   }
 }
 
-void CreateAuditCopyRespose::MergeFrom(const CreateAuditCopyRespose& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:plaid.CreateAuditCopyRespose)
+void CreateAuditCopyTokenResponse::MergeFrom(const CreateAuditCopyTokenResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:plaid.CreateAuditCopyTokenResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10338,25 +10338,25 @@ void CreateAuditCopyRespose::MergeFrom(const CreateAuditCopyRespose& from) {
   }
 }
 
-void CreateAuditCopyRespose::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:plaid.CreateAuditCopyRespose)
+void CreateAuditCopyTokenResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:plaid.CreateAuditCopyTokenResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void CreateAuditCopyRespose::CopyFrom(const CreateAuditCopyRespose& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:plaid.CreateAuditCopyRespose)
+void CreateAuditCopyTokenResponse::CopyFrom(const CreateAuditCopyTokenResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:plaid.CreateAuditCopyTokenResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CreateAuditCopyRespose::IsInitialized() const {
+bool CreateAuditCopyTokenResponse::IsInitialized() const {
   return true;
 }
 
-void CreateAuditCopyRespose::InternalSwap(CreateAuditCopyRespose* other) {
+void CreateAuditCopyTokenResponse::InternalSwap(CreateAuditCopyTokenResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   request_id_.Swap(&other->request_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -10365,7 +10365,7 @@ void CreateAuditCopyRespose::InternalSwap(CreateAuditCopyRespose* other) {
     GetArenaNoVirtual());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata CreateAuditCopyRespose::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CreateAuditCopyTokenResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -36638,8 +36638,8 @@ template<> PROTOBUF_NOINLINE ::plaid::RemoveAssetReportResponse* Arena::CreateMa
 template<> PROTOBUF_NOINLINE ::plaid::CreateAuditCopyRequest* Arena::CreateMaybeMessage< ::plaid::CreateAuditCopyRequest >(Arena* arena) {
   return Arena::CreateInternal< ::plaid::CreateAuditCopyRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::plaid::CreateAuditCopyRespose* Arena::CreateMaybeMessage< ::plaid::CreateAuditCopyRespose >(Arena* arena) {
-  return Arena::CreateInternal< ::plaid::CreateAuditCopyRespose >(arena);
+template<> PROTOBUF_NOINLINE ::plaid::CreateAuditCopyTokenResponse* Arena::CreateMaybeMessage< ::plaid::CreateAuditCopyTokenResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::plaid::CreateAuditCopyTokenResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::plaid::GetAuthRequestOptions* Arena::CreateMaybeMessage< ::plaid::GetAuthRequestOptions >(Arena* arena) {
   return Arena::CreateInternal< ::plaid::GetAuthRequestOptions >(arena);
