@@ -496,10 +496,28 @@ Client::ExchangePublicToken(const std::string &public_token) {
 
 StatusWrapped<GetLiabilitiesResponse>
 Client::GetLiabilitiesWithOptions(const std::string &access_token,
-                                  const GetLiabilitiesOptions &options) {}
+                                  const GetLiabilitiesOptions &options) {
+  if (access_token == "")
+    return StatusWrapped<GetLiabilitiesResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("liabilities/get"));
+    auto req_data = GetLiabilitiesRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    for (int i = 0; i < options.account_ids_size(); ++i)
+      req_data.mutable_options()->add_account_ids(options.account_ids(i));
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetLiabilitiesResponse>(req);
+}
 
 StatusWrapped<GetLiabilitiesResponse>
-Client::GetLiabilities(const std::string &access_token) {}
+Client::GetLiabilities(const std::string &access_token) {
+  return GetLiabilitiesWithOptions(access_token, GetLiabilitiesOptions());
+}
 
 // Payments
 
