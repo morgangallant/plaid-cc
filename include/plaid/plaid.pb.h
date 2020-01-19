@@ -17994,20 +17994,19 @@ class CreatePaymentRecipientRequest :
   std::string* _internal_mutable_iban();
   public:
 
-  // string address = 5;
-  void clear_address();
-  const std::string& address() const;
-  void set_address(const std::string& value);
-  void set_address(std::string&& value);
-  void set_address(const char* value);
-  void set_address(const char* value, size_t size);
-  std::string* mutable_address();
-  std::string* release_address();
-  void set_allocated_address(std::string* address);
+  // .plaid.PaymentRecipientAddress address = 5;
+  bool has_address() const;
   private:
-  const std::string& _internal_address() const;
-  void _internal_set_address(const std::string& value);
-  std::string* _internal_mutable_address();
+  bool _internal_has_address() const;
+  public:
+  void clear_address();
+  const ::plaid::PaymentRecipientAddress& address() const;
+  ::plaid::PaymentRecipientAddress* release_address();
+  ::plaid::PaymentRecipientAddress* mutable_address();
+  void set_allocated_address(::plaid::PaymentRecipientAddress* address);
+  private:
+  const ::plaid::PaymentRecipientAddress& _internal_address() const;
+  ::plaid::PaymentRecipientAddress* _internal_mutable_address();
   public:
 
   // @@protoc_insertion_point(class_scope:plaid.CreatePaymentRecipientRequest)
@@ -18019,7 +18018,7 @@ class CreatePaymentRecipientRequest :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secret_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr iban_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
+  ::plaid::PaymentRecipientAddress* address_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_plaid_2eproto;
 };
@@ -44099,63 +44098,63 @@ inline void CreatePaymentRecipientRequest::set_allocated_iban(std::string* iban)
   // @@protoc_insertion_point(field_set_allocated:plaid.CreatePaymentRecipientRequest.iban)
 }
 
-// string address = 5;
-inline void CreatePaymentRecipientRequest::clear_address() {
-  address_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// .plaid.PaymentRecipientAddress address = 5;
+inline bool CreatePaymentRecipientRequest::_internal_has_address() const {
+  return this != internal_default_instance() && address_ != nullptr;
 }
-inline const std::string& CreatePaymentRecipientRequest::address() const {
+inline bool CreatePaymentRecipientRequest::has_address() const {
+  return _internal_has_address();
+}
+inline void CreatePaymentRecipientRequest::clear_address() {
+  if (GetArenaNoVirtual() == nullptr && address_ != nullptr) {
+    delete address_;
+  }
+  address_ = nullptr;
+}
+inline const ::plaid::PaymentRecipientAddress& CreatePaymentRecipientRequest::_internal_address() const {
+  const ::plaid::PaymentRecipientAddress* p = address_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::plaid::PaymentRecipientAddress*>(
+      &::plaid::_PaymentRecipientAddress_default_instance_);
+}
+inline const ::plaid::PaymentRecipientAddress& CreatePaymentRecipientRequest::address() const {
   // @@protoc_insertion_point(field_get:plaid.CreatePaymentRecipientRequest.address)
   return _internal_address();
 }
-inline void CreatePaymentRecipientRequest::set_address(const std::string& value) {
-  _internal_set_address(value);
-  // @@protoc_insertion_point(field_set:plaid.CreatePaymentRecipientRequest.address)
+inline ::plaid::PaymentRecipientAddress* CreatePaymentRecipientRequest::release_address() {
+  // @@protoc_insertion_point(field_release:plaid.CreatePaymentRecipientRequest.address)
+  
+  ::plaid::PaymentRecipientAddress* temp = address_;
+  address_ = nullptr;
+  return temp;
 }
-inline std::string* CreatePaymentRecipientRequest::mutable_address() {
+inline ::plaid::PaymentRecipientAddress* CreatePaymentRecipientRequest::_internal_mutable_address() {
+  
+  if (address_ == nullptr) {
+    auto* p = CreateMaybeMessage<::plaid::PaymentRecipientAddress>(GetArenaNoVirtual());
+    address_ = p;
+  }
+  return address_;
+}
+inline ::plaid::PaymentRecipientAddress* CreatePaymentRecipientRequest::mutable_address() {
   // @@protoc_insertion_point(field_mutable:plaid.CreatePaymentRecipientRequest.address)
   return _internal_mutable_address();
 }
-inline const std::string& CreatePaymentRecipientRequest::_internal_address() const {
-  return address_.GetNoArena();
-}
-inline void CreatePaymentRecipientRequest::_internal_set_address(const std::string& value) {
-  
-  address_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void CreatePaymentRecipientRequest::set_address(std::string&& value) {
-  
-  address_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:plaid.CreatePaymentRecipientRequest.address)
-}
-inline void CreatePaymentRecipientRequest::set_address(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  address_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:plaid.CreatePaymentRecipientRequest.address)
-}
-inline void CreatePaymentRecipientRequest::set_address(const char* value, size_t size) {
-  
-  address_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:plaid.CreatePaymentRecipientRequest.address)
-}
-inline std::string* CreatePaymentRecipientRequest::_internal_mutable_address() {
-  
-  return address_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* CreatePaymentRecipientRequest::release_address() {
-  // @@protoc_insertion_point(field_release:plaid.CreatePaymentRecipientRequest.address)
-  
-  return address_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void CreatePaymentRecipientRequest::set_allocated_address(std::string* address) {
-  if (address != nullptr) {
+inline void CreatePaymentRecipientRequest::set_allocated_address(::plaid::PaymentRecipientAddress* address) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete address_;
+  }
+  if (address) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      address = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, address, submessage_arena);
+    }
     
   } else {
     
   }
-  address_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address);
+  address_ = address;
   // @@protoc_insertion_point(field_set_allocated:plaid.CreatePaymentRecipientRequest.address)
 }
 

@@ -56,6 +56,7 @@ extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal:
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Payment_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PaymentAmount_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PaymentMeta_plaid_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PaymentRecipientAddress_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PhoneNumber_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Recipient_plaid_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_plaid_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SearchInstitutionsOptions_plaid_2eproto;
@@ -789,8 +790,9 @@ static void InitDefaultsscc_info_CreatePaymentRecipientRequest_plaid_2eproto() {
   ::plaid::CreatePaymentRecipientRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreatePaymentRecipientRequest_plaid_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreatePaymentRecipientRequest_plaid_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CreatePaymentRecipientRequest_plaid_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CreatePaymentRecipientRequest_plaid_2eproto}, {
+      &scc_info_PaymentRecipientAddress_plaid_2eproto.base,}};
 
 static void InitDefaultsscc_info_CreatePaymentRecipientResponse_plaid_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -4077,103 +4079,104 @@ const char descriptor_table_protodef_plaid_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "bilitiesOptions\022\023\n\013account_ids\030\001 \003(\t\"]\n\027"
   "PaymentRecipientAddress\022\016\n\006street\030\001 \003(\t\022"
   "\014\n\004city\030\002 \001(\t\022\023\n\013postal_code\030\003 \001(\t\022\017\n\007co"
-  "untry\030\004 \001(\t\"o\n\035CreatePaymentRecipientReq"
-  "uest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022"
-  "\014\n\004name\030\003 \001(\t\022\014\n\004iban\030\004 \001(\t\022\017\n\007address\030\005"
-  " \001(\t\"J\n\036CreatePaymentRecipientResponse\022\022"
-  "\n\nrequest_id\030\001 \001(\t\022\024\n\014recipient_id\030\002 \001(\t"
-  "\"U\n\032GetPaymentRecipientRequest\022\021\n\tclient"
-  "_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014recipient_i"
-  "d\030\003 \001(\t\"t\n\033GetPaymentRecipientResponse\022\022"
-  "\n\nrequest_id\030\001 \001(\t\022\024\n\014recipient_id\030\002 \001(\t"
-  "\022\014\n\004name\030\003 \001(\t\022\014\n\004iban\030\004 \001(\t\022\017\n\007address\030"
-  "\005 \001(\t\"A\n\034ListPaymentRecipientsRequest\022\021\n"
-  "\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\"N\n\tReci"
-  "pient\022\024\n\014recipient_id\030\001 \001(\t\022\014\n\004name\030\002 \001("
-  "\t\022\014\n\004iban\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\"Y\n\035List"
-  "PaymentRecipientsResponse\022\022\n\nrequest_id\030"
-  "\001 \001(\t\022$\n\nrecipients\030\002 \003(\0132\020.plaid.Recipi"
-  "ent\"0\n\rPaymentAmount\022\020\n\010currency\030\001 \001(\t\022\r"
-  "\n\005value\030\002 \001(\001\"\210\001\n\024CreatePaymentRequest\022\021"
-  "\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014rec"
-  "ipient_id\030\003 \001(\t\022\021\n\treference\030\004 \001(\t\022$\n\006am"
-  "ount\030\005 \001(\0132\024.plaid.PaymentAmount\"O\n\025Crea"
-  "tePaymentResponse\022\022\n\nrequest_id\030\001 \001(\t\022\022\n"
-  "\npayment_id\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\"R\n\031Cre"
-  "atePaymentTokenRequest\022\021\n\tclient_id\030\001 \001("
-  "\t\022\016\n\006secret\030\002 \001(\t\022\022\n\npayment_id\030\003 \001(\t\"n\n"
-  "\032CreatePaymentTokenResponse\022\022\n\nrequest_i"
-  "d\030\001 \001(\t\022\025\n\rpayment_token\030\002 \001(\t\022%\n\035paymen"
-  "t_token_expiration_time\030\003 \001(\t\"J\n\021GetPaym"
-  "entRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030"
-  "\002 \001(\t\022\022\n\npayment_id\030\003 \001(\t\"\365\001\n\022GetPayment"
-  "Response\022\022\n\nrequest_id\030\001 \001(\t\022\022\n\npayment_"
-  "id\030\002 \001(\t\022\025\n\rpayment_token\030\003 \001(\t\022\021\n\trefer"
-  "ence\030\004 \001(\t\022$\n\006amount\030\005 \001(\0132\024.plaid.Payme"
-  "ntAmount\022\016\n\006status\030\006 \001(\t\022\032\n\022last_status_"
-  "update\030\007 \001(\t\022%\n\035payment_token_expiration"
-  "_time\030\010 \001(\t\022\024\n\014recipient_id\030\t \001(\t\"W\n\023Lis"
-  "tPaymentsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006s"
-  "ecret\030\002 \001(\t\022\r\n\005count\030\003 \001(\003\022\016\n\006cursor\030\004 \001"
-  "(\t\"\326\001\n\007Payment\022\022\n\npayment_id\030\001 \001(\t\022\025\n\rpa"
-  "yment_token\030\002 \001(\t\022\021\n\treference\030\003 \001(\t\022$\n\006"
-  "amount\030\004 \001(\0132\024.plaid.PaymentAmount\022\016\n\006st"
-  "atus\030\005 \001(\t\022\032\n\022last_status_update\030\006 \001(\t\022%"
-  "\n\035payment_token_expiration_time\030\007 \001(\t\022\024\n"
-  "\014recipient_id\030\010 \001(\t\"a\n\024ListPaymentsRespo"
-  "nse\022\022\n\nrequest_id\030\001 \001(\t\022 \n\010payments\030\002 \003("
-  "\0132\016.plaid.Payment\022\023\n\013next_cursor\030\003 \001(\t\"4"
-  "\n\023ListPaymentsOptions\022\r\n\005count\030\001 \001(\003\022\016\n\006"
-  "cursor\030\002 \001(\t\"j\n\033CreateProcessorTokenRequ"
-  "est\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024"
-  "\n\014access_token\030\003 \001(\t\022\022\n\naccount_id\030\004 \001(\t"
-  "\"K\n\034CreateProcessorTokenResponse\022\022\n\nrequ"
-  "est_id\030\001 \001(\t\022\027\n\017processor_token\030\002 \001(\t\"g\n"
-  "\030CreateStripeTokenRequest\022\021\n\tclient_id\030\001"
-  " \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001"
-  "(\t\022\022\n\naccount_id\030\004 \001(\t\"R\n\031CreateStripeTo"
-  "kenResponse\022\022\n\nrequest_id\030\001 \001(\t\022!\n\031strip"
-  "e_bank_account_token\030\002 \001(\t\"f\n\037CreateSand"
-  "boxPublicTokenRequest\022\026\n\016institution_id\030"
-  "\001 \001(\t\022\027\n\017inital_products\030\002 \003(\t\022\022\n\npublic"
-  "_key\030\003 \001(\t\"L\n CreateSandboxPublicTokenRe"
-  "sponse\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014public_tok"
-  "en\030\002 \001(\t\"R\n\027ResetSandboxItemRequest\022\021\n\tc"
-  "lient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access"
-  "_token\030\003 \001(\t\"C\n\030ResetSandboxItemResponse"
-  "\022\022\n\nrequest_id\030\001 \001(\t\022\023\n\013reset_login\030\002 \001("
-  "\010\"\370\002\n\013Transaction\022\022\n\naccount_id\030\001 \001(\t\022\016\n"
-  "\006amount\030\002 \001(\001\022\031\n\021iso_currency_code\030\003 \001(\t"
-  "\022 \n\030unofficial_currency_code\030\004 \001(\t\022\020\n\010ca"
-  "tegory\030\005 \003(\t\022\023\n\013category_id\030\006 \001(\t\022\014\n\004dat"
-  "e\030\007 \001(\t\022!\n\010location\030\010 \001(\0132\017.plaid.Locati"
-  "on\022\014\n\004name\030\t \001(\t\022(\n\014payment_meta\030\n \001(\0132\022"
-  ".plaid.PaymentMeta\022\017\n\007pending\030\013 \001(\010\022\036\n\026p"
-  "ending_transaction_id\030\014 \001(\t\022\025\n\raccount_o"
-  "wner\030\r \001(\t\022\026\n\016transaction_id\030\016 \001(\t\022\030\n\020tr"
-  "ansaction_type\030\017 \001(\t\"\220\001\n\010Location\022\020\n\010add"
-  "reess\030\001 \001(\t\022\014\n\004city\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013"
-  "\n\003lon\030\004 \001(\001\022\016\n\006region\030\005 \001(\t\022\024\n\014store_num"
-  "ber\030\006 \001(\t\022\023\n\013postal_code\030\007 \001(\t\022\017\n\007countr"
-  "y\030\010 \001(\t\"\255\001\n\013PaymentMeta\022\023\n\013by_order_of\030\001"
-  " \001(\t\022\r\n\005payee\030\002 \001(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016pa"
-  "yment_method\030\004 \001(\t\022\031\n\021payment_processor\030"
-  "\005 \001(\t\022\016\n\006ppd_id\030\006 \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n"
-  "\020reference_number\030\010 \001(\t\"S\n\035GetTransactio"
-  "nsRequestOptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n"
-  "\005count\030\002 \001(\003\022\016\n\006offset\030\003 \001(\003\"\256\001\n\026GetTran"
-  "sactionsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
-  "cret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstar"
-  "t_date\030\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\0225\n\007option"
-  "s\030\006 \001(\0132$.plaid.GetTransactionsRequestOp"
-  "tions\"\260\001\n\027GetTransactionsResponse\022\022\n\nreq"
-  "uest_id\030\001 \001(\t\022 \n\010accounts\030\002 \003(\0132\016.plaid."
-  "Account\022\031\n\004item\030\003 \001(\0132\013.plaid.Item\022(\n\014tr"
-  "ansactions\030\004 \003(\0132\022.plaid.Transaction\022\032\n\022"
-  "total_transactions\030\005 \001(\003\"r\n\026GetTransacti"
-  "onsOptions\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_da"
-  "te\030\002 \001(\t\022\023\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004"
-  " \001(\003\022\016\n\006offset\030\005 \001(\003b\006proto3"
+  "untry\030\004 \001(\t\"\217\001\n\035CreatePaymentRecipientRe"
+  "quest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t"
+  "\022\014\n\004name\030\003 \001(\t\022\014\n\004iban\030\004 \001(\t\022/\n\007address\030"
+  "\005 \001(\0132\036.plaid.PaymentRecipientAddress\"J\n"
+  "\036CreatePaymentRecipientResponse\022\022\n\nreque"
+  "st_id\030\001 \001(\t\022\024\n\014recipient_id\030\002 \001(\t\"U\n\032Get"
+  "PaymentRecipientRequest\022\021\n\tclient_id\030\001 \001"
+  "(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014recipient_id\030\003 \001(\t"
+  "\"t\n\033GetPaymentRecipientResponse\022\022\n\nreque"
+  "st_id\030\001 \001(\t\022\024\n\014recipient_id\030\002 \001(\t\022\014\n\004nam"
+  "e\030\003 \001(\t\022\014\n\004iban\030\004 \001(\t\022\017\n\007address\030\005 \001(\t\"A"
+  "\n\034ListPaymentRecipientsRequest\022\021\n\tclient"
+  "_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\"N\n\tRecipient\022\024"
+  "\n\014recipient_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004ib"
+  "an\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\"Y\n\035ListPayment"
+  "RecipientsResponse\022\022\n\nrequest_id\030\001 \001(\t\022$"
+  "\n\nrecipients\030\002 \003(\0132\020.plaid.Recipient\"0\n\r"
+  "PaymentAmount\022\020\n\010currency\030\001 \001(\t\022\r\n\005value"
+  "\030\002 \001(\001\"\210\001\n\024CreatePaymentRequest\022\021\n\tclien"
+  "t_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014recipient_"
+  "id\030\003 \001(\t\022\021\n\treference\030\004 \001(\t\022$\n\006amount\030\005 "
+  "\001(\0132\024.plaid.PaymentAmount\"O\n\025CreatePayme"
+  "ntResponse\022\022\n\nrequest_id\030\001 \001(\t\022\022\n\npaymen"
+  "t_id\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\"R\n\031CreatePaym"
+  "entTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006se"
+  "cret\030\002 \001(\t\022\022\n\npayment_id\030\003 \001(\t\"n\n\032Create"
+  "PaymentTokenResponse\022\022\n\nrequest_id\030\001 \001(\t"
+  "\022\025\n\rpayment_token\030\002 \001(\t\022%\n\035payment_token"
+  "_expiration_time\030\003 \001(\t\"J\n\021GetPaymentRequ"
+  "est\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\022"
+  "\n\npayment_id\030\003 \001(\t\"\365\001\n\022GetPaymentRespons"
+  "e\022\022\n\nrequest_id\030\001 \001(\t\022\022\n\npayment_id\030\002 \001("
+  "\t\022\025\n\rpayment_token\030\003 \001(\t\022\021\n\treference\030\004 "
+  "\001(\t\022$\n\006amount\030\005 \001(\0132\024.plaid.PaymentAmoun"
+  "t\022\016\n\006status\030\006 \001(\t\022\032\n\022last_status_update\030"
+  "\007 \001(\t\022%\n\035payment_token_expiration_time\030\010"
+  " \001(\t\022\024\n\014recipient_id\030\t \001(\t\"W\n\023ListPaymen"
+  "tsRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002"
+  " \001(\t\022\r\n\005count\030\003 \001(\003\022\016\n\006cursor\030\004 \001(\t\"\326\001\n\007"
+  "Payment\022\022\n\npayment_id\030\001 \001(\t\022\025\n\rpayment_t"
+  "oken\030\002 \001(\t\022\021\n\treference\030\003 \001(\t\022$\n\006amount\030"
+  "\004 \001(\0132\024.plaid.PaymentAmount\022\016\n\006status\030\005 "
+  "\001(\t\022\032\n\022last_status_update\030\006 \001(\t\022%\n\035payme"
+  "nt_token_expiration_time\030\007 \001(\t\022\024\n\014recipi"
+  "ent_id\030\010 \001(\t\"a\n\024ListPaymentsResponse\022\022\n\n"
+  "request_id\030\001 \001(\t\022 \n\010payments\030\002 \003(\0132\016.pla"
+  "id.Payment\022\023\n\013next_cursor\030\003 \001(\t\"4\n\023ListP"
+  "aymentsOptions\022\r\n\005count\030\001 \001(\003\022\016\n\006cursor\030"
+  "\002 \001(\t\"j\n\033CreateProcessorTokenRequest\022\021\n\t"
+  "client_id\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014acces"
+  "s_token\030\003 \001(\t\022\022\n\naccount_id\030\004 \001(\t\"K\n\034Cre"
+  "ateProcessorTokenResponse\022\022\n\nrequest_id\030"
+  "\001 \001(\t\022\027\n\017processor_token\030\002 \001(\t\"g\n\030Create"
+  "StripeTokenRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n"
+  "\006secret\030\002 \001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\na"
+  "ccount_id\030\004 \001(\t\"R\n\031CreateStripeTokenResp"
+  "onse\022\022\n\nrequest_id\030\001 \001(\t\022!\n\031stripe_bank_"
+  "account_token\030\002 \001(\t\"f\n\037CreateSandboxPubl"
+  "icTokenRequest\022\026\n\016institution_id\030\001 \001(\t\022\027"
+  "\n\017inital_products\030\002 \003(\t\022\022\n\npublic_key\030\003 "
+  "\001(\t\"L\n CreateSandboxPublicTokenResponse\022"
+  "\022\n\nrequest_id\030\001 \001(\t\022\024\n\014public_token\030\002 \001("
+  "\t\"R\n\027ResetSandboxItemRequest\022\021\n\tclient_i"
+  "d\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\024\n\014access_token\030"
+  "\003 \001(\t\"C\n\030ResetSandboxItemResponse\022\022\n\nreq"
+  "uest_id\030\001 \001(\t\022\023\n\013reset_login\030\002 \001(\010\"\370\002\n\013T"
+  "ransaction\022\022\n\naccount_id\030\001 \001(\t\022\016\n\006amount"
+  "\030\002 \001(\001\022\031\n\021iso_currency_code\030\003 \001(\t\022 \n\030uno"
+  "fficial_currency_code\030\004 \001(\t\022\020\n\010category\030"
+  "\005 \003(\t\022\023\n\013category_id\030\006 \001(\t\022\014\n\004date\030\007 \001(\t"
+  "\022!\n\010location\030\010 \001(\0132\017.plaid.Location\022\014\n\004n"
+  "ame\030\t \001(\t\022(\n\014payment_meta\030\n \001(\0132\022.plaid."
+  "PaymentMeta\022\017\n\007pending\030\013 \001(\010\022\036\n\026pending_"
+  "transaction_id\030\014 \001(\t\022\025\n\raccount_owner\030\r "
+  "\001(\t\022\026\n\016transaction_id\030\016 \001(\t\022\030\n\020transacti"
+  "on_type\030\017 \001(\t\"\220\001\n\010Location\022\020\n\010addreess\030\001"
+  " \001(\t\022\014\n\004city\030\002 \001(\t\022\013\n\003lat\030\003 \001(\001\022\013\n\003lon\030\004"
+  " \001(\001\022\016\n\006region\030\005 \001(\t\022\024\n\014store_number\030\006 \001"
+  "(\t\022\023\n\013postal_code\030\007 \001(\t\022\017\n\007country\030\010 \001(\t"
+  "\"\255\001\n\013PaymentMeta\022\023\n\013by_order_of\030\001 \001(\t\022\r\n"
+  "\005payee\030\002 \001(\t\022\r\n\005payer\030\003 \001(\t\022\026\n\016payment_m"
+  "ethod\030\004 \001(\t\022\031\n\021payment_processor\030\005 \001(\t\022\016"
+  "\n\006ppd_id\030\006 \001(\t\022\016\n\006reason\030\007 \001(\t\022\030\n\020refere"
+  "nce_number\030\010 \001(\t\"S\n\035GetTransactionsReque"
+  "stOptions\022\023\n\013account_ids\030\001 \003(\t\022\r\n\005count\030"
+  "\002 \001(\003\022\016\n\006offset\030\003 \001(\003\"\256\001\n\026GetTransaction"
+  "sRequest\022\021\n\tclient_id\030\001 \001(\t\022\016\n\006secret\030\002 "
+  "\001(\t\022\024\n\014access_token\030\003 \001(\t\022\022\n\nstart_date\030"
+  "\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\0225\n\007options\030\006 \001(\013"
+  "2$.plaid.GetTransactionsRequestOptions\"\260"
+  "\001\n\027GetTransactionsResponse\022\022\n\nrequest_id"
+  "\030\001 \001(\t\022 \n\010accounts\030\002 \003(\0132\016.plaid.Account"
+  "\022\031\n\004item\030\003 \001(\0132\013.plaid.Item\022(\n\014transacti"
+  "ons\030\004 \003(\0132\022.plaid.Transaction\022\032\n\022total_t"
+  "ransactions\030\005 \001(\003\"r\n\026GetTransactionsOpti"
+  "ons\022\022\n\nstart_date\030\001 \001(\t\022\020\n\010end_date\030\002 \001("
+  "\t\022\023\n\013account_ids\030\003 \003(\t\022\r\n\005count\030\004 \001(\003\022\016\n"
+  "\006offset\030\005 \001(\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plaid_2eproto_deps[1] = {
 };
@@ -4308,7 +4311,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pla
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plaid_2eproto_once;
 static bool descriptor_table_plaid_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plaid_2eproto = {
-  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 14788,
+  &descriptor_table_plaid_2eproto_initialized, descriptor_table_protodef_plaid_2eproto, "plaid.proto", 14821,
   &descriptor_table_plaid_2eproto_once, descriptor_table_plaid_2eproto_sccs, descriptor_table_plaid_2eproto_deps, 126, 0,
   schemas, file_default_instances, TableStruct_plaid_2eproto::offsets,
   file_level_metadata_plaid_2eproto, 126, file_level_enum_descriptors_plaid_2eproto, file_level_service_descriptors_plaid_2eproto,
@@ -32468,11 +32471,18 @@ void PaymentRecipientAddress::InternalSwap(PaymentRecipientAddress* other) {
 // ===================================================================
 
 void CreatePaymentRecipientRequest::InitAsDefaultInstance() {
+  ::plaid::_CreatePaymentRecipientRequest_default_instance_._instance.get_mutable()->address_ = const_cast< ::plaid::PaymentRecipientAddress*>(
+      ::plaid::PaymentRecipientAddress::internal_default_instance());
 }
 class CreatePaymentRecipientRequest::_Internal {
  public:
+  static const ::plaid::PaymentRecipientAddress& address(const CreatePaymentRecipientRequest* msg);
 };
 
+const ::plaid::PaymentRecipientAddress&
+CreatePaymentRecipientRequest::_Internal::address(const CreatePaymentRecipientRequest* msg) {
+  return *msg->address_;
+}
 CreatePaymentRecipientRequest::CreatePaymentRecipientRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -32498,9 +32508,10 @@ CreatePaymentRecipientRequest::CreatePaymentRecipientRequest(const CreatePayment
   if (!from._internal_iban().empty()) {
     iban_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.iban_);
   }
-  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_address().empty()) {
-    address_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_);
+  if (from._internal_has_address()) {
+    address_ = new ::plaid::PaymentRecipientAddress(*from.address_);
+  } else {
+    address_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:plaid.CreatePaymentRecipientRequest)
 }
@@ -32511,7 +32522,7 @@ void CreatePaymentRecipientRequest::SharedCtor() {
   secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   iban_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  address_ = nullptr;
 }
 
 CreatePaymentRecipientRequest::~CreatePaymentRecipientRequest() {
@@ -32524,7 +32535,7 @@ void CreatePaymentRecipientRequest::SharedDtor() {
   secret_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   iban_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete address_;
 }
 
 void CreatePaymentRecipientRequest::SetCachedSize(int size) const {
@@ -32546,7 +32557,10 @@ void CreatePaymentRecipientRequest::Clear() {
   secret_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   iban_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  address_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && address_ != nullptr) {
+    delete address_;
+  }
+  address_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -32593,12 +32607,10 @@ const char* CreatePaymentRecipientRequest::_InternalParse(const char* ptr, ::PRO
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string address = 5;
+      // .plaid.PaymentRecipientAddress address = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_address();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "plaid.CreatePaymentRecipientRequest.address"));
+          ptr = ctx->ParseMessage(_internal_mutable_address(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -32668,14 +32680,12 @@ failure:
         4, this->_internal_iban(), target);
   }
 
-  // string address = 5;
-  if (this->address().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "plaid.CreatePaymentRecipientRequest.address");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_address(), target);
+  // .plaid.PaymentRecipientAddress address = 5;
+  if (this->has_address()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::address(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -32722,11 +32732,11 @@ size_t CreatePaymentRecipientRequest::ByteSizeLong() const {
         this->_internal_iban());
   }
 
-  // string address = 5;
-  if (this->address().size() > 0) {
+  // .plaid.PaymentRecipientAddress address = 5;
+  if (this->has_address()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_address());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *address_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -32776,9 +32786,8 @@ void CreatePaymentRecipientRequest::MergeFrom(const CreatePaymentRecipientReques
 
     iban_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.iban_);
   }
-  if (from.address().size() > 0) {
-
-    address_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_);
+  if (from.has_address()) {
+    _internal_mutable_address()->::plaid::PaymentRecipientAddress::MergeFrom(from._internal_address());
   }
 }
 
@@ -32811,8 +32820,7 @@ void CreatePaymentRecipientRequest::InternalSwap(CreatePaymentRecipientRequest* 
     GetArenaNoVirtual());
   iban_.Swap(&other->iban_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  address_.Swap(&other->address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  swap(address_, other->address_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreatePaymentRecipientRequest::GetMetadata() const {

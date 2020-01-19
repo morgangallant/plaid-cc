@@ -128,7 +128,7 @@ public:
   GetPaymentRecipient(const std::string &recipient_id);
   StatusWrapped<ListPaymentRecipientsResponse> ListPaymentRecipients();
   StatusWrapped<CreatePaymentResponse>
-  CreatePayment(const std::string &recipient_id, const std::string &string,
+  CreatePayment(const std::string &recipient_id, const std::string &reference,
                 const PaymentAmount &amount);
   StatusWrapped<CreatePaymentTokenResponse>
   CreatePaymentToken(const std::string &payment_id);

@@ -695,7 +695,7 @@ message CreatePaymentRecipientRequest {
   string secret = 2;
   string name = 3;
   string iban = 4;
-  string address = 5;
+  PaymentRecipientAddress address = 5;
 }
 
 message CreatePaymentRecipientResponse {

@@ -525,25 +525,106 @@ StatusWrapped<CreatePaymentRecipientResponse>
 Client::Client::CreatePaymentRecipient(const std::string &name,
                                        const std::string &iban,
                                        const PaymentRecipientAddress &address) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/recipient/create"));
+    auto req_data = CreatePaymentRecipientRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_name(name);
+    req_data.set_iban(iban);
+    *req_data.mutable_address() = address;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreatePaymentRecipientResponse>(req);
 }
 
 StatusWrapped<GetPaymentRecipientResponse>
-GetPaymentRecipient(const std::string &recipient_id) {}
+Client::GetPaymentRecipient(const std::string &recipient_id) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/recipient/get"));
+    auto req_data = GetPaymentRecipientRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_recipient_id(recipient_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetPaymentRecipientResponse>(req);
+}
 
-StatusWrapped<ListPaymentRecipientsResponse> Client::ListPaymentRecipients() {}
+StatusWrapped<ListPaymentRecipientsResponse> Client::ListPaymentRecipients() {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/recipient/list"));
+    auto req_data = ListPaymentRecipientsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<ListPaymentRecipientsResponse>(req);
+}
 
 StatusWrapped<CreatePaymentResponse>
 Client::CreatePayment(const std::string &recipient_id,
-                      const std::string &string, const PaymentAmount &amount) {}
+                      const std::string &reference,
+                      const PaymentAmount &amount) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/payment/create"));
+    auto req_data = CreatePaymentRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_recipient_id(recipient_id);
+    req_data.set_reference(reference);
+    *req_data.mutable_amount() = amount;
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreatePaymentResponse>(req);
+}
 
 StatusWrapped<CreatePaymentTokenResponse>
-Client::CreatePaymentToken(const std::string &payment_id) {}
+Client::CreatePaymentToken(const std::string &payment_id) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/payment/token/create"));
+    auto req_data = CreatePaymentTokenRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_payment_id(payment_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<CreatePaymentTokenResponse>(req);
+}
 
 StatusWrapped<GetPaymentResponse>
-Client::GetPayment(const std::string &payment_id) {}
+Client::GetPayment(const std::string &payment_id) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/payment/get"));
+    auto req_data = GetPaymentRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_payment_id(payment_id);
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetPaymentResponse>(req);
+}
 
 StatusWrapped<ListPaymentsResponse>
-Client::ListPayments(const ListPaymentsOptions &options) {}
+Client::ListPayments(const ListPaymentsOptions &options) {
+  auto req = [&]() {
+    auto req = Request(AppendUrl("payment_initiation/payment/list"));
+    auto req_data = ListPaymentsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_count(options.count());
+    req_data.set_cursor(options.cursor());
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<ListPaymentsResponse>(req);
+}
 
 // Processors
 
