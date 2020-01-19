@@ -57,6 +57,13 @@ public:
   // Categories
   StatusWrapped<GetCategoriesResponse> GetCategories();
 
+  // Holdings
+  StatusWrapped<GetHoldingsResponse>
+  GetHoldingsWithOptions(const std::string &access_token,
+                         const GetHoldingsOptions &options);
+  StatusWrapped<GetHoldingsResponse>
+  GetHoldings(const std::string &access_token);
+
 private:
   Client(const Credentials &creds);
 

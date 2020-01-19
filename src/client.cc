@@ -193,4 +193,31 @@ StatusWrapped<GetCategoriesResponse> Client::GetCategories() {
   return make_plaid_request<GetCategoriesResponse>(req);
 }
 
+// Holdings
+
+StatusWrapped<GetHoldingsResponse>
+Client::GetHoldingsWithOptions(const std::string &access_token,
+                               const GetHoldingsOptions &options) {
+  if (access_token == "")
+    return StatusWrapped<GetHoldingsResponse>::FromStatus(
+        Status::MissingInfo("missing access token"));
+  auto req = [&]() {
+    auto req = Request(AppendUrl("investments/holdings/get"));
+    auto req_data = GetHoldingsRequest();
+    req_data.set_client_id(creds_.client_id);
+    req_data.set_secret(creds_.secret);
+    req_data.set_access_token(access_token);
+    for (int i = 0; i < options.account_ids_size(); ++i)
+      req_data.mutable_options()->add_account_ids(options.account_ids(i));
+    req.SetBody(req_data);
+    return req;
+  };
+  return make_plaid_request<GetHoldingsResponse>(req);
+}
+
+StatusWrapped<GetHoldingsResponse>
+Client::GetHoldings(const std::string &access_token) {
+  return GetHoldingsWithOptions(access_token, GetHoldingsOptions());
+}
+
 } // namespace plaid
